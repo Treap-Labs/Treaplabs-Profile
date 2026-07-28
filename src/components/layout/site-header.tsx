@@ -56,7 +56,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className={`theme-toggle relative z-[102] ${open ? "theme-toggle--menu-open" : ""}`}
+            className="theme-toggle desktop-theme-toggle relative z-[102]"
             aria-label="Toggle color theme"
             title="Toggle color theme"
             onClick={toggleTheme}
@@ -91,6 +91,18 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <div className="mobile-theme-control">
+            <span>Appearance</span>
+            <button
+              type="button"
+              className="mobile-theme-toggle"
+              aria-label="Toggle color theme"
+              onClick={toggleTheme}
+            >
+              <span className="mobile-theme-dark">Dark</span>
+              <span className="mobile-theme-light">Light</span>
+            </button>
+          </div>
           <Link href="#contact" className="button button-lime mt-10" onClick={() => setOpen(false)}>
             Start a project <span aria-hidden="true">→</span>
           </Link>
