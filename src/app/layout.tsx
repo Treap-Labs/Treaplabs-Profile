@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Familjen_Grotesk, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -7,6 +8,16 @@ import { siteConfig } from "@/content/site";
 import { SITE_LOCALE } from "@/lib/constants";
 
 import "./globals.css";
+
+const display = Familjen_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const body = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -28,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${display.variable} ${body.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

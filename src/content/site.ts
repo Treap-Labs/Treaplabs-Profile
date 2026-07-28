@@ -1,15 +1,18 @@
 import type { NavigationItem } from "@/types";
 
 const navigation = [
-  { label: "Home", href: "/" },
-  { label: "Architecture", href: "#architecture" },
+  { label: "Services", href: "#services" },
+  { label: "Work", href: "#work" },
+  { label: "Process", href: "#process" },
+  { label: "About", href: "#about" },
+  { label: "Careers", href: "#careers" },
 ] satisfies NavigationItem[];
 
 export const siteConfig = {
   name: "TreapLabs",
-  title: "TreapLabs Profile",
+  title: "TreapLabs | Software House in Jakarta",
   description:
-    "A statically generated profile built with Next.js, TypeScript, Tailwind CSS, and Motion.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    "A senior engineering team in Jakarta building mobile apps, web platforms, AI products, and dependable technology for growing businesses.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://treaplabs.com",
   navigation,
 } as const;
