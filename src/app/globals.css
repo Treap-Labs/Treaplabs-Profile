@@ -13,6 +13,15 @@
   --on-accent: #0d0d0f;
   --nav-glass: rgb(17 17 19 / .86);
   --card-shadow: rgb(0 0 0 / .22);
+  --menu-bg: var(--deep);
+  --menu-fg: #ffffff;
+  --menu-muted: rgb(255 255 255 / .55);
+  --menu-subtle: rgb(255 255 255 / .45);
+  --menu-border: rgb(255 255 255 / .08);
+  --menu-toggle-bg: rgb(255 255 255 / .06);
+  --menu-toggle-border: rgb(255 255 255 / .12);
+  --menu-selected-bg: #ffffff;
+  --menu-selected-fg: var(--deep);
   color-scheme: dark;
 }
 
@@ -26,6 +35,15 @@
   --blue: #3b49ff;
   --nav-glass: rgb(234 232 226 / .86);
   --card-shadow: rgb(13 13 15 / .06);
+  --menu-bg: var(--canvas);
+  --menu-fg: var(--ink);
+  --menu-muted: var(--muted);
+  --menu-subtle: var(--muted);
+  --menu-border: var(--hairline);
+  --menu-toggle-bg: var(--surface);
+  --menu-toggle-border: var(--hairline);
+  --menu-selected-bg: var(--ink);
+  --menu-selected-fg: var(--canvas);
   color-scheme: light;
 }
 
@@ -85,17 +103,18 @@ a, button { cursor: pointer; }
 .theme-icon-dark { display: none; }
 :root[data-theme="light"] .theme-icon-light { display: none; }
 :root[data-theme="light"] .theme-icon-dark { display: block; }
-.mobile-menu { background: var(--deep); display: grid; inset: 0; opacity: 0; padding: 110px 32px 48px; pointer-events: none; position: fixed; transform: translateY(-16px); transition: opacity .3s, transform .3s; visibility: hidden; z-index: 101; }
+.mobile-menu { background: var(--menu-bg); color: var(--menu-fg); display: grid; inset: 0; opacity: 0; padding: 110px 32px 48px; pointer-events: none; position: fixed; transform: translateY(-16px); transition: background-color .25s ease, color .25s ease, opacity .3s, transform .3s; visibility: hidden; z-index: 101; }
 .mobile-menu--open { opacity: 1; pointer-events: auto; transform: translateY(0); visibility: visible; }
 .mobile-menu nav { align-self: center; }
-.mobile-menu li { border-bottom: 1px solid rgb(255 255 255 / .08); }
-.mobile-menu li a { color: white; display: block; font-family: var(--font-display); font-size: clamp(2.5rem, 12vw, 3.5rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; padding: 12px 0; }
-.mobile-theme-control { align-items: center; border-bottom: 1px solid rgb(255 255 255 / .08); color: rgb(255 255 255 / .55); display: flex; font-size: 13px; font-weight: 600; justify-content: space-between; letter-spacing: .08em; padding: 22px 0; text-transform: uppercase; }
-.mobile-theme-toggle { align-items: center; background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .12); border-radius: 999px; display: flex; gap: 3px; padding: 3px; }
-.mobile-theme-toggle span { border-radius: 999px; color: rgb(255 255 255 / .45); font-size: 12px; letter-spacing: 0; padding: 5px 10px; text-transform: none; }
-.mobile-theme-dark { background: white; color: var(--deep) !important; }
-:root[data-theme="light"] .mobile-theme-dark { background: transparent; color: rgb(255 255 255 / .45) !important; }
-:root[data-theme="light"] .mobile-theme-light { background: white; color: var(--deep) !important; }
+.mobile-menu-icon { color: var(--menu-fg); }
+.mobile-menu li { border-bottom: 1px solid var(--menu-border); }
+.mobile-menu li a { color: var(--menu-fg); display: block; font-family: var(--font-display); font-size: clamp(2.5rem, 12vw, 3.5rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; padding: 12px 0; }
+.mobile-theme-control { align-items: center; border-bottom: 1px solid var(--menu-border); color: var(--menu-muted); display: flex; font-size: 13px; font-weight: 600; justify-content: space-between; letter-spacing: .08em; padding: 22px 0; text-transform: uppercase; }
+.mobile-theme-toggle { align-items: center; background: var(--menu-toggle-bg); border: 1px solid var(--menu-toggle-border); border-radius: 999px; display: flex; gap: 3px; padding: 3px; }
+.mobile-theme-toggle span { border-radius: 999px; color: var(--menu-subtle); font-size: 12px; letter-spacing: 0; padding: 5px 10px; text-transform: none; }
+.mobile-theme-dark { background: var(--menu-selected-bg); color: var(--menu-selected-fg) !important; }
+:root[data-theme="light"] .mobile-theme-dark { background: transparent; color: var(--menu-subtle) !important; }
+:root[data-theme="light"] .mobile-theme-light { background: var(--menu-selected-bg); color: var(--menu-selected-fg) !important; }
 
 .marquee { overflow: hidden; white-space: nowrap; }
 .marquee-track { animation: marquee 32s linear infinite; display: flex; width: max-content; }
