@@ -9,6 +9,15 @@ import { SITE_LOCALE } from "@/lib/constants";
 
 import "./globals.css";
 
+const themeScript = `
+  try {
+    var savedTheme = localStorage.getItem("treaplabs-theme");
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+  } catch (_) {
+    document.documentElement.dataset.theme = "dark";
+  }
+`;
+
 const display = Familjen_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
@@ -38,7 +47,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${display.variable} ${body.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />

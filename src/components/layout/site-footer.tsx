@@ -11,7 +11,7 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="dark-section bg-ink px-5 pb-10 lg:px-10">
+    <footer className="dark-section bg-deep px-5 pb-10 lg:px-10">
       <div className="mx-auto max-w-[1280px]">
         <div className="overflow-hidden border-b border-white/10">
           <p className="outlined-wordmark">TREAPLABS</p>

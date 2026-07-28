@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -24,6 +24,16 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  const toggleTheme = () => {
+    const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = nextTheme;
+    try {
+      localStorage.setItem("treaplabs-theme", nextTheme);
+    } catch {
+      // The visual toggle still works when storage is unavailable.
+    }
+  };
+
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="site-nav">
@@ -43,19 +53,31 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <Link href="#contact" className="button button-primary hidden md:inline-flex">
-          Start a project
-        </Link>
-        <button
-          type="button"
-          className="relative z-[102] inline-flex size-10 items-center justify-center md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X className="text-white" /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className={`theme-toggle relative z-[102] ${open ? "theme-toggle--menu-open" : ""}`}
+            aria-label="Toggle color theme"
+            title="Toggle color theme"
+            onClick={toggleTheme}
+          >
+            <Sun className="theme-icon-light size-[18px]" />
+            <Moon className="theme-icon-dark size-[18px]" />
+          </button>
+          <Link href="#contact" className="button button-primary hidden md:inline-flex">
+            Start a project
+          </Link>
+          <button
+            type="button"
+            className="relative z-[102] inline-flex size-10 items-center justify-center md:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X className="text-white" /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>

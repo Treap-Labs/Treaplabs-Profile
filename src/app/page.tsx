@@ -273,7 +273,7 @@ export default function Home() {
 
       <section
         id="services"
-        className="dark-section section-pad scroll-mt-20 bg-ink"
+        className="dark-section section-pad scroll-mt-20 bg-deep"
       >
         <Container>
           <SectionHeader
@@ -381,7 +381,7 @@ export default function Home() {
 
       <section
         id="process"
-        className="dark-section section-pad scroll-mt-20 bg-ink"
+        className="dark-section section-pad scroll-mt-20 bg-deep"
       >
         <Container>
           <SectionHeader title="How we work." dark />
@@ -500,7 +500,7 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2">
             {testimonials.map((testimonial, index) => (
               <Reveal key={testimonial.name} delay={index * 0.1}>
-                <figure className="flex h-full min-h-80 flex-col justify-between rounded-xl border border-hairline bg-surface p-7 transition-shadow hover:shadow-[0_16px_48px_rgb(13_13_15/.06)] md:p-11">
+                <figure className="flex h-full min-h-80 flex-col justify-between rounded-xl border border-hairline bg-surface p-7 transition-shadow hover:shadow-[0_16px_48px_var(--card-shadow)] md:p-11">
                   <blockquote className="font-display text-xl font-medium leading-[1.45] tracking-[-.01em] text-ink md:text-[22px]">
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
@@ -530,7 +530,7 @@ export default function Home() {
 
       <section
         id="contact"
-        className="dark-section section-pad relative scroll-mt-20 overflow-hidden bg-ink text-center"
+        className="dark-section section-pad relative scroll-mt-20 overflow-hidden bg-deep text-center"
       >
         <div className="pointer-events-none absolute left-1/2 top-1/2 size-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(59,73,255,.08),transparent_70%)]" />
         <Container className="relative">
