@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f5f4f1;
-  --surface: #ffffff;
+  --canvas: #eae8e2;
+  --surface: #f3f1ec;
   --ink: #0d0d0f;
   --body: #4a4a52;
   --muted: #8a8a94;
-  --hairline: #e3e1dc;
+  --hairline: #d2cfc7;
   --blue: #3b49ff;
   --lime: #c8ff4d;
   color-scheme: light;
