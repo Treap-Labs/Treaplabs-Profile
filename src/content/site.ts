@@ -1,18 +1,18 @@
 import type { NavigationItem } from "@/types";
 
 const navigation = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Careers", href: "#careers" },
+  { label: "Layanan", href: "#services" },
+  { label: "Proyek", href: "#work" },
+  { label: "Proses", href: "#process" },
+  { label: "Tentang", href: "#about" },
+  { label: "Karier", href: "#careers" },
 ] satisfies NavigationItem[];
 
 export const siteConfig = {
   name: "TreapLabs",
-  title: "TreapLabs | Software House in Jakarta",
+  title: "TreapLabs | Software House di Jakarta",
   description:
-    "A senior engineering team in Jakarta building mobile apps, web platforms, AI products, and dependable technology for growing businesses.",
+    "Tim engineering senior di Jakarta yang membangun aplikasi mobile, platform web, solusi AI, dan teknologi andal untuk bisnis yang terus berkembang.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://treaplabs.com",
   navigation,
 } as const;

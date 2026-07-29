@@ -41,7 +41,7 @@ export function SiteHeader() {
           {siteConfig.name}
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden md:block">
+        <nav aria-label="Navigasi utama" className="hidden md:block">
           <ul className="flex items-center gap-8 lg:gap-10">
             {siteConfig.navigation.map((item) => (
               <li key={item.href}>
@@ -57,22 +57,22 @@ export function SiteHeader() {
           <button
             type="button"
             className="theme-toggle desktop-theme-toggle relative z-[102]"
-            aria-label="Toggle color theme"
-            title="Toggle color theme"
+            aria-label="Ganti tema warna"
+            title="Ganti tema warna"
             onClick={toggleTheme}
           >
             <Sun className="theme-icon-light size-[18px]" />
             <Moon className="theme-icon-dark size-[18px]" />
           </button>
           <Link href="#contact" className="button button-primary hidden md:inline-flex">
-            Start a project
+            Mulai Proyek
           </Link>
           <button
             type="button"
             className="relative z-[102] inline-flex size-10 items-center justify-center md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? "Tutup menu" : "Buka menu"}
             onClick={() => setOpen((value) => !value)}
           >
             {open ? <X className="mobile-menu-icon" /> : <Menu />}
@@ -81,7 +81,7 @@ export function SiteHeader() {
       </div>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>
-        <nav aria-label="Mobile navigation">
+        <nav aria-label="Navigasi mobile">
           <ul>
             {siteConfig.navigation.map((item) => (
               <li key={item.href}>
@@ -92,19 +92,19 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="mobile-theme-control">
-            <span>Appearance</span>
+            <span>Tampilan</span>
             <button
               type="button"
               className="mobile-theme-toggle"
-              aria-label="Toggle color theme"
+              aria-label="Ganti tema warna"
               onClick={toggleTheme}
             >
-              <span className="mobile-theme-dark">Dark</span>
-              <span className="mobile-theme-light">Light</span>
+              <span className="mobile-theme-dark">Gelap</span>
+              <span className="mobile-theme-light">Terang</span>
             </button>
           </div>
           <Link href="#contact" className="button button-lime mt-10" onClick={() => setOpen(false)}>
-            Start a project <span aria-hidden="true">→</span>
+            Mulai Proyek <span aria-hidden="true">→</span>
           </Link>
         </nav>
       </div>

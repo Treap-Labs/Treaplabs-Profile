@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const columns = [
   {
-    title: "Services",
-    links: ["Mobile Apps", "Web Platforms", "AI & Computer Vision", "Consulting"],
+    title: "Layanan",
+    links: ["Aplikasi Mobile", "Platform Web", "AI & Computer Vision", "Konsultasi"],
   },
-  { title: "Company", links: ["About", "Process", "Work", "Careers"] },
-  { title: "Social", links: ["LinkedIn", "Instagram", "GitHub", "Dribbble"] },
+  { title: "Perusahaan", links: ["Tentang", "Proses", "Proyek", "Karier"] },
+  { title: "Media Sosial", links: ["LinkedIn", "Instagram", "GitHub", "Dribbble"] },
 ];
 
 export function SiteFooter() {
@@ -21,7 +21,7 @@ export function SiteFooter() {
           <div>
             <p className="font-display text-xl font-bold text-white">TreapLabs</p>
             <p className="mt-3 max-w-60 text-sm leading-6 text-white/45">
-              A senior engineering team building software that earns its keep. Jakarta, Indonesia.
+              Tim engineering senior yang membangun software untuk menjawab kebutuhan bisnis. Jakarta, Indonesia.
             </p>
           </div>
           {columns.map((column) => (
@@ -41,10 +41,10 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-[13px] text-white/30 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} TreapLabs · Made in Indonesia</p>
+          <p>© {new Date().getFullYear()} TreapLabs · Dibuat di Indonesia</p>
           <div className="flex gap-6">
-            <Link className="hover:text-white/60" href="#">Privacy</Link>
-            <Link className="hover:text-white/60" href="#">Terms</Link>
+            <Link className="hover:text-white/60" href="#">Privasi</Link>
+            <Link className="hover:text-white/60" href="#">Ketentuan</Link>
           </div>
         </div>
       </div>

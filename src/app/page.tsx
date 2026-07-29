@@ -30,7 +30,7 @@ const services = [
     index: "01",
     title: "Mobile App Development",
     description:
-      "Cross-platform apps built in Flutter that feel native on iOS and Android - shipped fast, maintained long.",
+      "Aplikasi lintas platform berbasis Flutter yang terasa native di iOS dan Android - cepat diluncurkan dan mudah dikembangkan.",
     tags: ["Flutter", "iOS", "Android", "Dart"],
     large: true,
   },
@@ -38,7 +38,7 @@ const services = [
     index: "02",
     title: "Web Platforms",
     description:
-      "Full-stack web applications with modern architecture and serious performance.",
+      "Aplikasi web full-stack dengan arsitektur modern, performa tinggi, dan siap berkembang bersama bisnis Anda.",
     tags: ["Next.js", "Laravel", "Supabase"],
     large: false,
   },
@@ -46,16 +46,16 @@ const services = [
     index: "03",
     title: "AI & Computer Vision",
     description:
-      "Custom AI models and vision pipelines that solve real operational problems.",
+      "Model AI dan pipeline computer vision khusus untuk menyelesaikan masalah operasional yang nyata.",
     tags: ["Python", "YOLO", "PyTorch"],
     large: false,
   },
   {
     index: "04",
-    title: "Technology Consulting",
+    title: "Konsultasi Teknologi",
     description:
-      "Architecture reviews, tech audits, and hands-on team augmentation from senior engineers.",
-    tags: ["Architecture", "Audits", "Team Aug"],
+      "Review arsitektur, audit teknologi, dan dukungan langsung dari engineer senior untuk memperkuat tim Anda.",
+    tags: ["Arsitektur", "Audit", "Team Augmentation"],
     large: false,
   },
 ] as const;
@@ -63,17 +63,17 @@ const services = [
 const caseStudies = [
   {
     categories: ["Mobile App", "HRIS"],
-    title: "Kami HRIS - Mobile-first HR for 200-person companies",
-    outcome: "Cut payroll processing from 3 days to 20 minutes",
+    title: "Kami HRIS - Pengelolaan HR mobile-first untuk perusahaan dengan 200 karyawan",
+    outcome: "Memangkas proses payroll dari 3 hari menjadi 20 menit",
     image: mobileHris,
-    alt: "HRIS mobile app showing payroll and employee management screens",
+    alt: "Aplikasi mobile HRIS yang menampilkan payroll dan pengelolaan karyawan",
   },
   {
     categories: ["AI", "Computer Vision"],
-    title: "Defect Eye - AI-powered car body inspection",
-    outcome: "Detected 94% of surface defects at 3x human inspection speed",
+    title: "Defect Eye - Inspeksi bodi mobil berbasis AI",
+    outcome: "Mendeteksi 94% cacat permukaan dengan kecepatan 3x inspeksi manual",
     image: defectAi,
-    alt: "AI computer vision system analyzing automotive surface defects",
+    alt: "Sistem AI computer vision yang menganalisis cacat permukaan kendaraan",
   },
 ] as const;
 
@@ -82,25 +82,25 @@ const processSteps = [
     number: "01",
     title: "Discovery",
     description:
-      "We map your goals, constraints, and user needs in a structured 2-week kickoff. No skipped steps.",
+      "Kami memetakan tujuan, batasan, dan kebutuhan pengguna melalui kickoff terstruktur selama 2 minggu.",
   },
   {
     number: "02",
     title: "Design",
     description:
-      "High-fidelity prototypes before a single line of production code. You see exactly what you're getting.",
+      "Prototipe high-fidelity disiapkan sebelum kode produksi dibuat, sehingga hasil akhirnya dapat dipahami sejak awal.",
   },
   {
     number: "03",
     title: "Build",
     description:
-      "2-week sprints with weekly demos. You're involved throughout, not surprised at the end.",
+      "Pengerjaan dalam sprint 2 minggu dengan demo mingguan agar Anda selalu terlibat dalam setiap perkembangan.",
   },
   {
     number: "04",
-    title: "Launch & Support",
+    title: "Peluncuran & Dukungan",
     description:
-      "We ship to production, monitor performance, and stay on for 30 days post-launch at no extra charge.",
+      "Kami meluncurkan produk, memantau performa, dan memberikan dukungan selama 30 hari setelah peluncuran tanpa biaya tambahan.",
   },
 ] as const;
 
@@ -124,31 +124,10 @@ const team = [
 ] as const;
 
 const stats = [
-  { value: "3", label: "Projects delivered" },
-  { value: "12+", label: "Years combined XP" },
-  { value: "100%", label: "Client retention" },
-  { value: "<4h", label: "Avg response time" },
-] as const;
-
-const testimonials = [
-  {
-    quote:
-      "TreapLabs was the first dev partner that actually pushed back on our spec. They told us we were building the wrong thing and proposed a leaner MVP. They were right. We launched in six weeks and validated the market.",
-    name: "Budi Santoso",
-    role: "Co-founder",
-    company: "Kami HRIS",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=160&h=160&fit=crop&auto=format&facepad=3",
-  },
-  {
-    quote:
-      "The defect detection system they built saved us two full-time QA roles. What impressed me most was how transparent they were about what the model could and couldn't do before we signed anything.",
-    name: "Hartono Wijaya",
-    role: "Head of Operations",
-    company: "AutoVision Indonesia",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&auto=format&facepad=3",
-  },
+  { value: "3", label: "Proyek diselesaikan" },
+  { value: "12+", label: "Tahun pengalaman gabungan" },
+  { value: "100%", label: "Retensi klien" },
+  { value: "<4j", label: "Rata-rata waktu respons" },
 ] as const;
 
 function SectionHeader({
@@ -182,34 +161,35 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="max-w-5xl text-[clamp(2.75rem,6.67vw,6rem)] font-bold leading-[.98] tracking-[-.04em]">
-              We build software that earns its keep.
+              Kami membangun software yang bekerja untuk bisnis Anda.
             </h1>
           </Reveal>
           <Reveal delay={0.16} className="mt-8">
             <p className="max-w-[480px] text-lg leading-8 md:text-xl">
-              A senior engineering team in Jakarta building mobile apps, web
-              platforms, and AI products for startups and growing businesses.
+              Tim engineering senior yang membangun aplikasi mobile, platform
+              web, dan solusi AI untuk startup serta bisnis yang terus
+              berkembang.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <Link
                 href="#contact"
                 className="button button-primary px-7 py-3.5 text-base"
               >
-                Start a project
+                Bangun Bersama TreapLabs
               </Link>
               <Link
                 href="#work"
                 className="group inline-flex items-center gap-2 font-medium text-ink"
               >
-                See our work{" "}
+                Lihat Produk Kami{" "}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
               </Link>
             </div>
             <div className="mt-11 flex items-center gap-2.5 text-[13px] text-muted">
               <span className="pulse-dot size-2 rounded-full bg-lime" />
               <span>
-                Available for new projects -{" "}
-                <strong className="text-body">Q4 2026</strong>
+                Tersedia untuk proyek baru -{" "}
+                <strong className="text-body">Kuartal IV 2026</strong>
               </span>
             </div>
           </Reveal>
@@ -218,7 +198,7 @@ export default function Home() {
             <div className="image-zoom relative aspect-video overflow-hidden rounded-t-xl bg-hairline">
               <Image
                 src={heroImage}
-                alt="HRIS mobile app dashboard showing employee management interface"
+                alt="Dashboard aplikasi mobile HRIS untuk pengelolaan karyawan"
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1280px"
@@ -229,7 +209,7 @@ export default function Home() {
         </Container>
         <div
           className="marquee border-y border-hairline py-4"
-          aria-label="Technologies we use"
+          aria-label="Teknologi yang kami gunakan"
         >
           <div className="marquee-track">
             {[...technologies, ...technologies].map((technology, index) => (
@@ -248,7 +228,7 @@ export default function Home() {
       <section className="border-b border-hairline bg-canvas py-16 md:py-[72px]">
         <Container>
           <Reveal>
-            <p className="eyebrow mb-9 text-center">Trusted by teams at</p>
+            <p className="eyebrow mb-9 text-center">Dipercaya oleh tim di</p>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-7 md:gap-x-16">
               {clients.map((client) => (
                 <span
@@ -269,8 +249,8 @@ export default function Home() {
       >
         <Container>
           <SectionHeader
-            eyebrow="What we do"
-            title="Four ways we help you ship."
+            eyebrow="Yang kami kerjakan"
+            title="Empat cara kami membantu Anda meluncurkan produk."
             dark
           />
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
@@ -317,7 +297,7 @@ export default function Home() {
 
       <section id="work" className="section-pad scroll-mt-20 bg-canvas">
         <Container>
-          <SectionHeader eyebrow="Selected work" title="Proof, not promises." />
+          <SectionHeader eyebrow="Proyek pilihan" title="Hasil nyata, bukan sekadar janji." />
           <div className="mt-16 space-y-20 md:mt-20 md:space-y-24">
             {caseStudies.map((study, index) => (
               <Reveal key={study.title}>
@@ -355,7 +335,7 @@ export default function Home() {
                       href="#"
                       className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue"
                     >
-                      Read case study{" "}
+                      Baca studi kasus{" "}
                       <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
                     </Link>
                   </div>
@@ -365,7 +345,7 @@ export default function Home() {
           </div>
           <Reveal className="mt-16 text-center md:mt-20">
             <Link href="#" className="button button-ghost">
-              View all projects
+              Lihat semua proyek
             </Link>
           </Reveal>
         </Container>
@@ -376,7 +356,7 @@ export default function Home() {
         className="dark-section section-pad scroll-mt-20 bg-deep"
       >
         <Container>
-          <SectionHeader title="How we work." dark />
+          <SectionHeader title="Cara kami bekerja." dark />
           <div className="mt-16 grid gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => (
               <Reveal
@@ -399,7 +379,7 @@ export default function Home() {
             ))}
           </div>
           <Reveal className="mt-14 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/10 pt-9">
-            {["2-week sprints", "Weekly demos", "Fixed-price options"].map(
+            {["Sprint 2 minggu", "Demo mingguan", "Opsi harga tetap"].map(
               (item) => (
                 <span
                   key={item}
@@ -426,21 +406,20 @@ export default function Home() {
         <Container>
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
-              <p className="eyebrow mb-6">Who we are</p>
+              <p className="eyebrow mb-6">Tentang kami</p>
               <h2 className="section-title max-w-lg">
-                A small team, <span className="text-muted">on purpose.</span>
+                Tim kecil, <span className="text-muted">dengan alasan yang jelas.</span>
               </h2>
               <div className="mt-8 max-w-[480px] space-y-5 text-lg leading-[1.7]">
                 <p>
-                  We don&apos;t scale headcount to win projects. Every TreapLabs
-                  engagement is staffed with senior engineers who have shipped
-                  real products - not juniors learning on your budget.
+                  Kami tidak menambah anggota tim hanya untuk memenangkan proyek.
+                  Setiap proyek TreapLabs dikerjakan oleh engineer berpengalaman
+                  yang telah meluncurkan produk nyata.
                 </p>
                 <p>
-                  You get direct Slack access to the engineer writing your code.
-                  No account managers, no layers. We believe transparency about
-                  process, timeline, and cost is the only way to build lasting
-                  partnerships.
+                  Anda berkomunikasi langsung dengan engineer yang mengerjakan
+                  produk Anda, tanpa perantara. Kami percaya transparansi proses,
+                  timeline, dan biaya adalah dasar kemitraan jangka panjang.
                 </p>
               </div>
             </Reveal>
@@ -520,17 +499,17 @@ export default function Home() {
         <Container className="relative">
           <Reveal>
             <h2 className="text-[clamp(2.75rem,5.5vw,5rem)] font-bold leading-none tracking-[-.03em]">
-              Let&apos;s build the thing.
+              Mari wujudkan ide Anda.
             </h2>
             <p className="mt-6 text-lg text-white/50">
-              Tell us what you&apos;re building. We&apos;ll tell you honestly if
-              we can help.
+              Ceritakan produk yang ingin Anda bangun. Kami akan menjelaskan
+              secara jujur bagaimana kami dapat membantu.
             </p>
             <a
               href="mailto:treaplabs@gmail.com"
               className="button button-primary mt-11 px-9 py-4 text-base"
             >
-              Book a 30-minute call
+              Jadwalkan konsultasi 30 menit
             </a>
             <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/40">
               <a

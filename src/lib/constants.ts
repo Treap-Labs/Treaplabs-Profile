@@ -1,1 +1,1 @@
-export const SITE_LOCALE = "en-US";
+export const SITE_LOCALE = "id-ID";
