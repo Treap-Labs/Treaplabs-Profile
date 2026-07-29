@@ -1,22 +1,20 @@
-import Link from "next/link";
-
 const columns = [
   {
     title: "Layanan",
     links: [
-      { label: "Aplikasi Mobile", href: "/#services" },
-      { label: "Platform Web", href: "/#services" },
-      { label: "AI & Computer Vision", href: "/#services" },
-      { label: "Konsultasi", href: "/#contact" },
+      { label: "Aplikasi Mobile", href: "#services" },
+      { label: "Platform Web", href: "#services" },
+      { label: "AI & Computer Vision", href: "#services" },
+      { label: "Konsultasi", href: "#contact" },
     ],
   },
   {
     title: "Perusahaan",
     links: [
-      { label: "Tentang", href: "/#about" },
-      { label: "Proses", href: "/#process" },
-      { label: "Proyek", href: "/#work" },
-      { label: "Karier", href: "/#careers" },
+      { label: "Tentang", href: "#about" },
+      { label: "Proses", href: "#process" },
+      { label: "Proyek", href: "#work" },
+      { label: "Karier", href: "#careers" },
     ],
   },
   {
@@ -66,7 +64,7 @@ export function SiteFooter() {
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link
+                    <a
                       href={link.href}
                       className="text-sm text-white/55 transition-colors hover:text-white"
                       target={
@@ -79,7 +77,7 @@ export function SiteFooter() {
                       }
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

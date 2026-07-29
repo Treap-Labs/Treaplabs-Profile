@@ -1,6 +1,5 @@
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
@@ -177,19 +176,19 @@ export default function Home() {
               berkembang.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-7">
-              <Link
-                href="/#contact"
+              <a
+                href="#contact"
                 className="button button-primary px-7 py-3.5 text-base"
               >
                 Bangun Bersama TreapLabs
-              </Link>
-              <Link
-                href="/#work"
+              </a>
+              <a
+                href="#work"
                 className="group inline-flex items-center gap-2 font-medium text-ink"
               >
                 Lihat Produk Kami{" "}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
-              </Link>
+              </a>
             </div>
             <div className="mt-11 flex items-center gap-2.5 text-[13px] text-muted">
               <span className="pulse-dot size-2 rounded-full bg-lime" />

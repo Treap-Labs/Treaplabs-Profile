@@ -1,7 +1,6 @@
 "use client";
 
 import { Menu, Moon, Sun, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/content/site";
@@ -37,17 +36,17 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="site-nav">
-        <Link href="/" className="font-display text-xl font-bold tracking-[-0.03em]">
+        <a href="#hero" className="font-display text-xl font-bold tracking-[-0.03em]">
           {siteConfig.name}
-        </Link>
+        </a>
 
         <nav aria-label="Navigasi utama" className="hidden md:block">
           <ul className="flex items-center gap-8 lg:gap-10">
             {siteConfig.navigation.map((item) => (
               <li key={item.href}>
-                <Link className="nav-link" href={item.href}>
+                <a className="nav-link" href={item.href}>
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -64,9 +63,9 @@ export function SiteHeader() {
             <Sun className="theme-icon-light size-[18px]" />
             <Moon className="theme-icon-dark size-[18px]" />
           </button>
-          <Link href="/#contact" className="button button-primary hidden md:inline-flex">
+          <a href="#contact" className="button button-primary hidden md:inline-flex">
             Mulai Proyek
-          </Link>
+          </a>
           <button
             type="button"
             className="relative z-[102] inline-flex size-10 items-center justify-center md:hidden"
@@ -85,9 +84,9 @@ export function SiteHeader() {
           <ul>
             {siteConfig.navigation.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} onClick={() => setOpen(false)}>
+                <a href={item.href} onClick={() => setOpen(false)}>
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -103,9 +102,9 @@ export function SiteHeader() {
               <span className="mobile-theme-light">Terang</span>
             </button>
           </div>
-          <Link href="/#contact" className="button button-lime mt-10" onClick={() => setOpen(false)}>
+          <a href="#contact" className="button button-lime mt-10" onClick={() => setOpen(false)}>
             Mulai Proyek <span aria-hidden="true">→</span>
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
