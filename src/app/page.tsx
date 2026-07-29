@@ -124,9 +124,9 @@ const team = [
 ] as const;
 
 const stats = [
-  { value: "47", label: "Projects delivered" },
+  { value: "3", label: "Projects delivered" },
   { value: "12+", label: "Years combined XP" },
-  { value: "94%", label: "Client retention" },
+  { value: "100%", label: "Client retention" },
   { value: "<4h", label: "Avg response time" },
 ] as const;
 
@@ -478,7 +478,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section id="testimonials" className="section-pad bg-canvas pt-0 md:pt-0">
+      {/* <section id="testimonials" className="section-pad bg-canvas pt-0 md:pt-0">
         <Container>
           <p className="eyebrow mb-8">What clients say</p>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -510,7 +510,7 @@ export default function Home() {
             ))}
           </div>
         </Container>
-      </section>
+      </section> */}
 
       <section
         id="contact"
