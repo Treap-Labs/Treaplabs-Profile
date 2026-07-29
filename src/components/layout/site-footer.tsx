@@ -4,19 +4,19 @@ const columns = [
   {
     title: "Layanan",
     links: [
-      { label: "Aplikasi Mobile", href: "#services" },
-      { label: "Platform Web", href: "#services" },
-      { label: "AI & Computer Vision", href: "#services" },
-      { label: "Konsultasi", href: "#contact" },
+      { label: "Aplikasi Mobile", href: "/#services" },
+      { label: "Platform Web", href: "/#services" },
+      { label: "AI & Computer Vision", href: "/#services" },
+      { label: "Konsultasi", href: "/#contact" },
     ],
   },
   {
     title: "Perusahaan",
     links: [
-      { label: "Tentang", href: "#about" },
-      { label: "Proses", href: "#process" },
-      { label: "Proyek", href: "#work" },
-      { label: "Karier", href: "#careers" },
+      { label: "Tentang", href: "/#about" },
+      { label: "Proses", href: "/#process" },
+      { label: "Proyek", href: "/#work" },
+      { label: "Karier", href: "/#careers" },
     ],
   },
   {
@@ -89,14 +89,6 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-[13px] text-white/30 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} TreapLabs · Dibuat di Indonesia</p>
-          <div className="flex gap-6">
-            <Link className="hover:text-white/60" href="#">
-              Privasi
-            </Link>
-            <Link className="hover:text-white/60" href="#">
-              Ketentuan
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

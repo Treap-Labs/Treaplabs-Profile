@@ -1,11 +1,11 @@
 import type { NavigationItem } from "@/types";
 
 const navigation = [
-  { label: "Layanan", href: "#services" },
-  { label: "Proyek", href: "#work" },
-  { label: "Proses", href: "#process" },
-  { label: "Tentang", href: "#about" },
-  { label: "Karier", href: "#careers" },
+  { label: "Layanan", href: "/#services" },
+  { label: "Proyek", href: "/#work" },
+  { label: "Proses", href: "/#process" },
+  { label: "Tentang", href: "/#about" },
+  { label: "Karier", href: "/#careers" },
 ] satisfies NavigationItem[];
 
 export const siteConfig = {

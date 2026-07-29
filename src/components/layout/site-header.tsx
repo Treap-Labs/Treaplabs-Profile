@@ -37,7 +37,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="site-nav">
-        <Link href="#hero" className="font-display text-xl font-bold tracking-[-0.03em]">
+        <Link href="/" className="font-display text-xl font-bold tracking-[-0.03em]">
           {siteConfig.name}
         </Link>
 
@@ -64,7 +64,7 @@ export function SiteHeader() {
             <Sun className="theme-icon-light size-[18px]" />
             <Moon className="theme-icon-dark size-[18px]" />
           </button>
-          <Link href="#contact" className="button button-primary hidden md:inline-flex">
+          <Link href="/#contact" className="button button-primary hidden md:inline-flex">
             Mulai Proyek
           </Link>
           <button
@@ -103,7 +103,7 @@ export function SiteHeader() {
               <span className="mobile-theme-light">Terang</span>
             </button>
           </div>
-          <Link href="#contact" className="button button-lime mt-10" onClick={() => setOpen(false)}>
+          <Link href="/#contact" className="button button-lime mt-10" onClick={() => setOpen(false)}>
             Mulai Proyek <span aria-hidden="true">→</span>
           </Link>
         </nav>

@@ -178,13 +178,13 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <Link
-                href="#contact"
+                href="/#contact"
                 className="button button-primary px-7 py-3.5 text-base"
               >
                 Bangun Bersama TreapLabs
               </Link>
               <Link
-                href="#work"
+                href="/#work"
                 className="group inline-flex items-center gap-2 font-medium text-ink"
               >
                 Lihat Produk Kami{" "}
@@ -340,23 +340,11 @@ export default function Home() {
                       <span className="mt-2 size-1.5 shrink-0 rounded-full bg-lime" />
                       {study.outcome}
                     </p>
-                    <Link
-                      href="#"
-                      className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue"
-                    >
-                      Baca studi kasus{" "}
-                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
-                    </Link>
                   </div>
                 </article>
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-16 text-center md:mt-20">
-            <Link href="#" className="button button-ghost">
-              Lihat semua proyek
-            </Link>
-          </Reveal>
         </Container>
       </section>
 
