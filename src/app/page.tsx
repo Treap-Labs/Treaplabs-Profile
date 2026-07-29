@@ -106,28 +106,16 @@ const processSteps = [
 
 const team = [
   {
-    name: "Arief Prasetyo",
-    role: "Founder / Engineering Lead",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&auto=format&facepad=3",
+    name: "Bimantara Tito Wahyudi",
+    role: "Backend & AI Engineer",
   },
   {
-    name: "Dian Wulandari",
-    role: "Senior Mobile Engineer",
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=600&fit=crop&auto=format&facepad=3",
+    name: "Ali Hasyimi Assegaf",
+    role: "AI & Machine Learning Engineer",
   },
   {
-    name: "Rizky Firmansyah",
-    role: "AI & Backend Engineer",
-    image:
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=600&h=600&fit=crop&auto=format&facepad=3",
-  },
-  {
-    name: "Mega Sari",
-    role: "Product Designer",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop&auto=format&facepad=3",
+    name: "Achmad Zidan Ramdani",
+    role: "Full-stack Engineer",
   },
 ] as const;
 
@@ -452,29 +440,21 @@ export default function Home() {
                 </p>
               </div>
             </Reveal>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4">
               {team.map((member, index) => (
                 <Reveal key={member.name} delay={index * 0.06}>
-                  <article
-                    className="team-card relative aspect-square overflow-hidden rounded-xl bg-hairline"
-                    tabIndex={0}
-                  >
-                    <Image
-                      src={member.image}
-                      alt={`${member.name}, ${member.role}`}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover"
-                    />
-                    <div className="team-overlay absolute inset-0 flex items-end p-4">
-                      <div>
-                        <h3 className="text-base font-bold text-white">
-                          {member.name}
-                        </h3>
-                        <p className="mt-0.5 text-xs text-white/60">
-                          {member.role}
-                        </p>
-                      </div>
+                  <article className="team-card flex min-h-40 flex-col justify-between rounded-xl border border-hairline bg-surface p-6 sm:min-h-44 sm:p-8">
+                    <div className="flex items-start justify-between">
+                      <span className="font-mono text-xs tracking-[.12em] text-muted">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="team-card-mark" aria-hidden="true" />
+                    </div>
+                    <div className="mt-10">
+                      <h3 className="text-[clamp(1.35rem,2.2vw,1.75rem)] font-bold leading-tight tracking-[-.025em]">
+                        {member.name}
+                      </h3>
+                      <p className="mt-2 text-sm text-muted">{member.role}</p>
                     </div>
                   </article>
                 </Reveal>
