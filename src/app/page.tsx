@@ -163,7 +163,7 @@ export default function Home() {
       <section id="hero" className="bg-canvas pt-36 md:pt-40">
         <Container>
           <Reveal>
-            <p className="eyebrow mb-6">Software House / Jakarta, Indonesia</p>
+            <p className="eyebrow mb-6">Software House / Surabaya, Indonesia</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="max-w-5xl text-[clamp(2.75rem,6.67vw,6rem)] font-bold leading-[.98] tracking-[-.04em]">
