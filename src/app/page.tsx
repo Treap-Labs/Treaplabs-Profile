@@ -113,7 +113,7 @@ const processSteps = [
 const team = [
   {
     name: "Ali Hasyimi Assegaf",
-    role: "Founder & Mobile Developer",
+    role: "Founder & Lead Engineer",
   },
   {
     name: "Bimantara Tito Wahyudi",
@@ -121,7 +121,7 @@ const team = [
   },
   {
     name: "Achmad Zidan Ramdani",
-    role: "Frontend Developer",
+    role: "Frontend Developer & Mobile Developer",
   },
   {
     name: "Rachmatullah Rizaldi",
