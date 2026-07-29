@@ -106,16 +106,20 @@ const processSteps = [
 
 const team = [
   {
-    name: "Bimantara Tito Wahyudi",
-    role: "Backend & AI Engineer",
+    name: "Ali Hasyimi Assegaf",
+    role: "Founder & Mobile Developer",
   },
   {
-    name: "Ali Hasyimi Assegaf",
-    role: "AI & Machine Learning Engineer",
+    name: "Bimantara Tito Wahyudi",
+    role: "CTO & Backend Engineer",
   },
   {
     name: "Achmad Zidan Ramdani",
-    role: "Full-stack Engineer",
+    role: "Frontend Developer",
+  },
+  {
+    name: "Rachmatullah Rizaldi",
+    role: "Backend Developer",
   },
 ] as const;
 
