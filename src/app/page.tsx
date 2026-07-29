@@ -8,6 +8,10 @@ import heroImage from "@/images/hero.png";
 import mobileHris from "@/images/caseStudies/mobile_hris.png";
 import defectAi from "@/images/caseStudies/defect_ai.png";
 
+const whatsappMessage = encodeURIComponent(
+  "Halo TreapLabs, saya tertarik untuk menjadwalkan konsultasi gratis selama 30 menit. Apakah ada jadwal yang tersedia?",
+);
+
 const technologies = [
   "Flutter",
   "Next.js",
@@ -63,7 +67,8 @@ const services = [
 const caseStudies = [
   {
     categories: ["Mobile App", "HRIS"],
-    title: "Kami HRIS - Pengelolaan HR mobile-first untuk perusahaan dengan 200 karyawan",
+    title:
+      "Kami HRIS - Pengelolaan HR mobile-first untuk perusahaan dengan 200 karyawan",
     outcome: "Memangkas proses payroll dari 3 hari menjadi 20 menit",
     image: mobileHris,
     alt: "Aplikasi mobile HRIS yang menampilkan payroll dan pengelolaan karyawan",
@@ -71,7 +76,8 @@ const caseStudies = [
   {
     categories: ["AI", "Computer Vision"],
     title: "Defect Eye - Inspeksi bodi mobil berbasis AI",
-    outcome: "Mendeteksi 94% cacat permukaan dengan kecepatan 3x inspeksi manual",
+    outcome:
+      "Mendeteksi 94% cacat permukaan dengan kecepatan 3x inspeksi manual",
     image: defectAi,
     alt: "Sistem AI computer vision yang menganalisis cacat permukaan kendaraan",
   },
@@ -297,7 +303,10 @@ export default function Home() {
 
       <section id="work" className="section-pad scroll-mt-20 bg-canvas">
         <Container>
-          <SectionHeader eyebrow="Proyek pilihan" title="Hasil nyata, bukan sekadar janji." />
+          <SectionHeader
+            eyebrow="Proyek pilihan"
+            title="Hasil nyata, bukan sekadar janji."
+          />
           <div className="mt-16 space-y-20 md:mt-20 md:space-y-24">
             {caseStudies.map((study, index) => (
               <Reveal key={study.title}>
@@ -408,18 +417,20 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow mb-6">Tentang kami</p>
               <h2 className="section-title max-w-lg">
-                Tim kecil, <span className="text-muted">dengan alasan yang jelas.</span>
+                Tim kecil,{" "}
+                <span className="text-muted">dengan alasan yang jelas.</span>
               </h2>
               <div className="mt-8 max-w-[480px] space-y-5 text-lg leading-[1.7]">
                 <p>
-                  Kami tidak menambah anggota tim hanya untuk memenangkan proyek.
-                  Setiap proyek TreapLabs dikerjakan oleh engineer berpengalaman
-                  yang telah meluncurkan produk nyata.
+                  Kami tidak menambah anggota tim hanya untuk memenangkan
+                  proyek. Setiap proyek TreapLabs dikerjakan oleh engineer
+                  berpengalaman yang telah meluncurkan produk nyata.
                 </p>
                 <p>
                   Anda berkomunikasi langsung dengan engineer yang mengerjakan
-                  produk Anda, tanpa perantara. Kami percaya transparansi proses,
-                  timeline, dan biaya adalah dasar kemitraan jangka panjang.
+                  produk Anda, tanpa perantara. Kami percaya transparansi
+                  proses, timeline, dan biaya adalah dasar kemitraan jangka
+                  panjang.
                 </p>
               </div>
             </Reveal>
@@ -506,7 +517,9 @@ export default function Home() {
               secara jujur bagaimana kami dapat membantu.
             </p>
             <a
-              href="mailto:treaplabs@gmail.com"
+              href={`https://wa.me/6285183170436?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="button button-primary mt-11 px-9 py-4 text-base"
             >
               Jadwalkan konsultasi 30 menit
