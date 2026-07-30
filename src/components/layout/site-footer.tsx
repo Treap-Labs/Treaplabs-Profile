@@ -2,19 +2,19 @@ const columns = [
   {
     title: "Layanan",
     links: [
-      { label: "Aplikasi Mobile", href: "#services" },
-      { label: "Platform Web", href: "#services" },
-      { label: "AI & Computer Vision", href: "#services" },
-      { label: "Konsultasi", href: "#contact" },
+      { label: "Aplikasi Mobile", href: "/jasa-pembuatan-aplikasi/" },
+      { label: "Platform Web", href: "/jasa-pembuatan-website/" },
+      { label: "AI & Computer Vision", href: "/solusi-ai-bisnis/" },
+      { label: "Konsultasi", href: "/konsultasi-teknologi/" },
     ],
   },
   {
     title: "Perusahaan",
     links: [
-      { label: "Tentang", href: "#about" },
-      { label: "Proses", href: "#process" },
-      { label: "Proyek", href: "#work" },
-      { label: "Karier", href: "#careers" },
+      { label: "Tentang", href: "https://treaplabs.com/#about" },
+      { label: "Proses", href: "https://treaplabs.com/#process" },
+      { label: "Proyek", href: "https://treaplabs.com/#work" },
+      { label: "Karier", href: "https://treaplabs.com/#careers" },
     ],
   },
   {
@@ -30,7 +30,7 @@ const columns = [
       },
       {
         label: "GitHub",
-        href: "https://github.com/treaplabs",
+        href: "https://github.com/Treap-Labs",
       },
       {
         label: "Website",
@@ -54,8 +54,8 @@ export function SiteFooter() {
               TreapLabs
             </p>
             <p className="mt-3 max-w-60 text-sm leading-6 text-white/45">
-              Tim engineering senior yang membangun software untuk menjawab
-              kebutuhan bisnis. Jakarta, Indonesia.
+              Jasa pembuatan aplikasi mobile, website, dan solusi AI custom
+              untuk bisnis di seluruh Indonesia.
             </p>
           </div>
           {columns.map((column) => (
@@ -67,14 +67,8 @@ export function SiteFooter() {
                     <a
                       href={link.href}
                       className="text-sm text-white/55 transition-colors hover:text-white"
-                      target={
-                        link.href.startsWith("http") ? "_blank" : undefined
-                      }
-                      rel={
-                        link.href.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
+                      target={link.href.startsWith("http") && !link.href.startsWith("https://treaplabs.com") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") && !link.href.startsWith("https://treaplabs.com") ? "noopener noreferrer" : undefined}
                     >
                       {link.label}
                     </a>

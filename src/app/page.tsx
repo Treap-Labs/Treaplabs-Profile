@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
-import heroImage from "@/images/hero.png";
-import mobileHris from "@/images/caseStudies/mobile_hris.png";
-import defectAi from "@/images/caseStudies/defect_ai.png";
+import defectAi from "@/images/optimized/defect-ai.webp";
+import heroImage from "@/images/optimized/hero.webp";
+import mobileHris from "@/images/optimized/mobile-hris.webp";
 
 const whatsappMessage = encodeURIComponent(
   "Halo TreapLabs, saya tertarik untuk menjadwalkan konsultasi gratis selama 30 menit. Apakah ada jadwal yang tersedia?",
@@ -35,6 +35,7 @@ const services = [
     description:
       "Aplikasi lintas platform berbasis Flutter yang terasa native di iOS dan Android - cepat diluncurkan dan mudah dikembangkan.",
     tags: ["Flutter", "iOS", "Android", "Dart"],
+    href: "/jasa-pembuatan-aplikasi/",
     large: true,
   },
   {
@@ -43,6 +44,7 @@ const services = [
     description:
       "Aplikasi web full-stack dengan arsitektur modern, performa tinggi, dan siap berkembang bersama bisnis Anda.",
     tags: ["Next.js", "Laravel", "Supabase"],
+    href: "/jasa-pembuatan-website/",
     large: false,
   },
   {
@@ -51,6 +53,7 @@ const services = [
     description:
       "Model AI dan pipeline computer vision khusus untuk menyelesaikan masalah operasional yang nyata.",
     tags: ["Python", "YOLO", "PyTorch"],
+    href: "/solusi-ai-bisnis/",
     large: false,
   },
   {
@@ -59,6 +62,7 @@ const services = [
     description:
       "Review arsitektur, audit teknologi, dan dukungan langsung dari engineer senior untuk memperkuat tim Anda.",
     tags: ["Arsitektur", "Audit", "Team Augmentation"],
+    href: "/konsultasi-teknologi/",
     large: false,
   },
 ] as const;
@@ -162,18 +166,17 @@ export default function Home() {
       <section id="hero" className="bg-canvas pt-36 md:pt-40">
         <Container>
           <Reveal>
-            <p className="eyebrow mb-6">Software House / Surabaya, Indonesia</p>
+            <p className="eyebrow mb-6">Software House / Indonesia</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="max-w-5xl text-[clamp(2.75rem,6.67vw,6rem)] font-bold leading-[.98] tracking-[-.04em]">
-              Kami membangun software yang bekerja untuk bisnis Anda.
+              Jasa pembuatan aplikasi yang bekerja untuk bisnis Anda.
             </h1>
           </Reveal>
           <Reveal delay={0.16} className="mt-8">
             <p className="max-w-[480px] text-lg leading-8 md:text-xl">
-              Tim engineering senior yang membangun aplikasi mobile, platform
-              web, dan solusi AI untuk startup serta bisnis yang terus
-              berkembang.
+              TreapLabs membangun aplikasi mobile, website, dan solusi AI custom
+              untuk startup, UMKM, serta perusahaan di seluruh Indonesia.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <a
@@ -269,7 +272,8 @@ export default function Home() {
                     : ""
                 }
               >
-                <article
+                <a
+                  href={service.href}
                   className={`service-tile flex h-full min-h-56 flex-col justify-between rounded-xl p-7 ${service.large ? "lg:min-h-[456px] lg:p-9" : ""}`}
                 >
                   <div>
@@ -293,7 +297,7 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                </article>
+                </a>
               </Reveal>
             ))}
           </div>

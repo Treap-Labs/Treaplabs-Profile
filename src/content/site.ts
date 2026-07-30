@@ -10,9 +10,16 @@ const navigation = [
 
 export const siteConfig = {
   name: "TreapLabs",
-  title: "TreapLabs | Software House di Jakarta",
+  title: "Jasa Pembuatan Aplikasi untuk Bisnis | TreapLabs",
   description:
-    "Tim engineering senior di Jakarta yang membangun aplikasi mobile, platform web, solusi AI, dan teknologi andal untuk bisnis yang terus berkembang.",
+    "TreapLabs menyediakan jasa pembuatan aplikasi mobile, website, dan solusi AI custom untuk startup, UMKM, dan perusahaan di seluruh Indonesia.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://treaplabs.com",
+  email: "treaplabs@gmail.com",
+  phone: "+6285183170436",
+  social: {
+    linkedin: "https://www.linkedin.com/company/treaplabs",
+    instagram: "https://www.instagram.com/treaplabs",
+    github: "https://github.com/Treap-Labs",
+  },
   navigation,
 } as const;

@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0d0d0f"/>
+  <circle cx="1040" cy="90" r="220" fill="#3b49ff" opacity="0.18"/>
+  <circle cx="1080" cy="560" r="180" fill="#c8ff4d" opacity="0.08"/>
+  <text x="80" y="105" fill="#c8ff4d" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">TREAPLABS</text>
+  <text x="80" y="245" fill="#f3f1ec" font-family="Arial, sans-serif" font-size="68" font-weight="700">Jasa Pembuatan</text>
+  <text x="80" y="325" fill="#f3f1ec" font-family="Arial, sans-serif" font-size="68" font-weight="700">Aplikasi untuk Bisnis</text>
+  <text x="80" y="435" fill="#b8b6b0" font-family="Arial, sans-serif" font-size="30">Mobile  /  Website  /  AI Custom</text>
+  <text x="80" y="535" fill="#85858d" font-family="Arial, sans-serif" font-size="24">treaplabs.com</text>
+</svg>

@@ -25,6 +25,7 @@ pnpm dev        # Start the development server
 pnpm build      # Create the static site in out/
 pnpm lint       # Run ESLint
 pnpm typecheck  # Check TypeScript without emitting files
+pnpm optimize:images # Regenerate optimized WebP and social images
 ```
 
 ## Architecture
@@ -85,6 +86,9 @@ be imported directly into a page or component.
    | Footer | `src/components/layout/site-footer.tsx` |
    | Metadata and navigation | `src/content/site.ts` |
    | Local images | `src/images/` |
+
+   Setelah mengganti PNG sumber di `src/images/`, jalankan
+   `pnpm optimize:images` agar file WebP yang digunakan website ikut diperbarui.
 
 4. Verify the website before publishing:
 
