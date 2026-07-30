@@ -19,7 +19,6 @@ const technologies = [
   "PyTorch",
   "Supabase",
   "React Native",
-  "YOLO",
   "TypeScript",
   "PostgreSQL",
   "Docker",
@@ -49,10 +48,10 @@ const services = [
   },
   {
     index: "03",
-    title: "AI & Computer Vision",
+    title: "AI Automation & Integration",
     description:
-      "Model AI dan pipeline computer vision khusus untuk menyelesaikan masalah operasional yang nyata.",
-    tags: ["Python", "YOLO", "PyTorch"],
+      "Solusi AI custom untuk mengotomasi workflow, mengintegrasikan model ke aplikasi, dan meningkatkan efisiensi operasional bisnis.",
+    tags: ["Python", "AI Integration", "Automation"],
     href: "/solusi-ai-bisnis/",
     large: false,
   },
@@ -77,7 +76,7 @@ const caseStudies = [
     alt: "Aplikasi mobile HRIS yang menampilkan payroll dan pengelolaan karyawan",
   },
   {
-    categories: ["AI", "Computer Vision"],
+    categories: ["AI", "Automation"],
     title: "Defect Eye - Inspeksi bodi mobil berbasis AI",
     outcome:
       "Mendeteksi 94% cacat permukaan dengan kecepatan 3x inspeksi manual",

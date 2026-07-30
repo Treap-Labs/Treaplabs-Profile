@@ -61,24 +61,24 @@ export const servicePages = [
   {
     slug: "solusi-ai-bisnis",
     title: "Solusi AI Custom untuk Kebutuhan Bisnis",
-    metaTitle: "Solusi AI dan Computer Vision untuk Bisnis | TreapLabs",
+    metaTitle: "AI Automation dan Integrasi untuk Bisnis | TreapLabs",
     description:
-      "Pengembangan solusi AI, machine learning, dan computer vision custom untuk otomasi dan kebutuhan operasional bisnis di Indonesia.",
-    eyebrow: "AI & Computer Vision",
+      "Pengembangan AI automation, model custom, dan integrasi AI ke aplikasi untuk meningkatkan efisiensi operasional bisnis di Indonesia.",
+    eyebrow: "AI Automation & Integration",
     intro:
-      "Kami membantu bisnis menerapkan AI pada masalah yang terukur: deteksi visual, klasifikasi, otomasi proses, dan integrasi model ke sistem operasional yang sudah digunakan.",
+      "Kami membantu bisnis mengotomasi workflow, mengintegrasikan model AI ke aplikasi, dan membangun solusi custom yang menghasilkan dampak operasional terukur.",
     benefits: [
-      { title: "Dimulai dari masalah", description: "Kami memvalidasi kebutuhan dan data sebelum merekomendasikan model atau teknologi AI." },
-      { title: "Terukur", description: "Keberhasilan solusi ditentukan dengan metrik yang jelas seperti akurasi, waktu proses, atau penghematan operasional." },
-      { title: "Siap diintegrasikan", description: "Model tidak berhenti di eksperimen; kami membantu membawanya ke aplikasi dan workflow bisnis." },
+      { title: "Dimulai dari kebutuhan", description: "Kami memvalidasi workflow, data, dan tujuan bisnis sebelum merekomendasikan teknologi atau model AI." },
+      { title: "Efisiensi terukur", description: "Keberhasilan solusi dinilai melalui waktu proses, pengurangan pekerjaan manual, biaya operasional, atau kualitas output." },
+      { title: "Terintegrasi ke sistem", description: "Model tidak berhenti di eksperimen; kami menghubungkannya dengan aplikasi dan workflow yang sudah digunakan." },
     ],
-    deliverables: ["AI feasibility study", "Data preparation", "Model custom", "Computer vision pipeline", "API dan integrasi sistem", "Monitoring model"],
-    technologies: ["Python", "PyTorch", "YOLO", "OpenCV", "FastAPI", "PostgreSQL"],
-    caseStudy: { title: "Defect Eye", result: "Mendeteksi 94% cacat permukaan dengan kecepatan 3x inspeksi manual." },
+    deliverables: ["AI feasibility study", "Workflow automation", "Model AI custom", "Integrasi AI ke aplikasi", "API dan integrasi sistem", "Monitoring model"],
+    technologies: ["Python", "PyTorch", "FastAPI", "LLM API", "PostgreSQL", "Cloud"],
+    caseStudy: { title: "Defect Eye", result: "Salah satu implementasi AI TreapLabs untuk membantu inspeksi operasional, dengan deteksi 94% cacat permukaan pada kecepatan 3x inspeksi manual." },
     faq: [
-      { question: "Apakah setiap bisnis membutuhkan AI custom?", answer: "Tidak selalu. Kami akan menilai apakah AI benar-benar memberi manfaat dibanding solusi software konvensional yang lebih sederhana." },
-      { question: "Apakah data perusahaan harus dibagikan?", answer: "Model biasanya membutuhkan data relevan. Lingkup akses, penyimpanan, dan perlindungan data disepakati sebelum proyek dimulai." },
-      { question: "Bisakah model AI terhubung ke aplikasi kami?", answer: "Bisa. Kami dapat menyediakan API atau integrasi langsung sesuai arsitektur aplikasi dan kebutuhan operasional Anda." },
+      { question: "Workflow apa yang dapat diotomasi dengan AI?", answer: "AI dapat membantu klasifikasi data, pemrosesan dokumen, pencarian informasi, rekomendasi, quality control, dan pekerjaan berulang lain yang memiliki pola serta tujuan jelas." },
+      { question: "Bisakah AI diintegrasikan ke aplikasi yang sudah digunakan?", answer: "Bisa. Kami dapat menyediakan API atau integrasi langsung sesuai arsitektur aplikasi, keamanan data, dan kebutuhan operasional Anda." },
+      { question: "Apakah TreapLabs menggunakan model yang sudah ada atau membuat model custom?", answer: "Keduanya memungkinkan. Kami memilih model siap pakai, fine-tuning, atau model custom berdasarkan kebutuhan, data, biaya, dan target performa." },
     ],
   },
   {

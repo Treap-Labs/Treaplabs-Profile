@@ -4,7 +4,7 @@ const columns = [
     links: [
       { label: "Aplikasi Mobile", href: "/jasa-pembuatan-aplikasi/" },
       { label: "Platform Web", href: "/jasa-pembuatan-website/" },
-      { label: "AI & Computer Vision", href: "/solusi-ai-bisnis/" },
+      { label: "AI Automation", href: "/solusi-ai-bisnis/" },
       { label: "Konsultasi", href: "/konsultasi-teknologi/" },
     ],
   },
