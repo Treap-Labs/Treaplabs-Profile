@@ -1,5 +1,4 @@
 import { ArrowRight, Check } from "lucide-react";
-import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -40,11 +39,6 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       <JsonLd data={schema} />
       <section className="bg-canvas pb-24 pt-36 md:pb-32 md:pt-44">
         <Container>
-          <nav aria-label="Breadcrumb" className="mb-10 text-sm text-muted">
-            <Link href="/" className="hover:text-ink">Beranda</Link>
-            <span aria-hidden="true" className="mx-2">/</span>
-            <span>{service.eyebrow}</span>
-          </nav>
           <p className="eyebrow mb-6">{service.eyebrow} / Indonesia</p>
           <h1 className="max-w-5xl text-[clamp(2.75rem,6vw,5.5rem)] font-bold leading-[.98] tracking-[-.04em]">
             {service.title}
