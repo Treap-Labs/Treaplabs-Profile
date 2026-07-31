@@ -1,5 +1,6 @@
 import { ArrowRight, Check } from "lucide-react";
 
+import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { JsonLd } from "@/components/seo/json-ld";
 import type { ServiceContent } from "@/content/services";
@@ -44,9 +45,9 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             {service.title}
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 md:text-xl">{service.intro}</p>
-          <a href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" className="button button-primary mt-10 px-7 py-3.5 text-base">
+          <TrackedWhatsAppLink href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" service={service.slug} ctaLocation="hero" className="button button-primary mt-10 px-7 py-3.5 text-base">
             Diskusikan proyek Anda <ArrowRight className="size-4" />
-          </a>
+          </TrackedWhatsAppLink>
         </Container>
       </section>
 
@@ -117,7 +118,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
         <Container>
           <h2 className="text-[clamp(2.75rem,5vw,4.5rem)] font-bold leading-none tracking-[-.03em]">Mari wujudkan produk Anda.</h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/50">Ceritakan kebutuhan bisnis Anda dan dapatkan konsultasi awal selama 30 menit.</p>
-          <a href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" className="button button-primary mt-10 px-8 py-4 text-base">Hubungi TreapLabs</a>
+          <TrackedWhatsAppLink href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" service={service.slug} ctaLocation="bottom_cta" className="button button-primary mt-10 px-8 py-4 text-base">Hubungi TreapLabs</TrackedWhatsAppLink>
         </Container>
       </section>
 

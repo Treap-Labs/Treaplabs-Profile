@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Image from "next/image";
 
+import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
 import defectAi from "@/images/optimized/defect-ai.webp";
@@ -506,14 +507,16 @@ export default function Home() {
               Ceritakan produk yang ingin Anda bangun. Kami akan menjelaskan
               secara jujur bagaimana kami dapat membantu.
             </p>
-            <a
+            <TrackedWhatsAppLink
               href={`https://wa.me/6285183170436?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
+              service="general"
+              ctaLocation="contact"
               className="button button-primary mt-11 px-9 py-4 text-base"
             >
               Jadwalkan konsultasi 30 menit
-            </a>
+            </TrackedWhatsAppLink>
             <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/40">
               <a
                 className="transition-colors hover:text-white/80"
@@ -522,12 +525,14 @@ export default function Home() {
                 treaplabs@gmail.com
               </a>
               <span className="text-white/15">/</span>
-              <a
+              <TrackedWhatsAppLink
                 className="transition-colors hover:text-white/80"
                 href="https://wa.me/6285183170436"
+                service="general"
+                ctaLocation="contact_text_link"
               >
                 WhatsApp <span aria-hidden="true">→</span>
-              </a>
+              </TrackedWhatsAppLink>
             </div>
           </Reveal>
         </Container>
