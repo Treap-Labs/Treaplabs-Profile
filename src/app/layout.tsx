@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Familjen_Grotesk, Inter } from "next/font/google";
+import Script from "next/script";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -135,6 +136,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className={`${display.variable} ${body.variable} antialiased`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RVZY02XX5Z"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RVZY02XX5Z');
+          `}
+        </Script>
         <JsonLd data={globalSchema} />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
