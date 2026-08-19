@@ -308,7 +308,7 @@ export default function Home() {
         <Container>
           <SectionHeader
             eyebrow="Proyek pilihan"
-            title="Hasil nyata, bukan sekadar janji."
+            title="Hasil nyata, bukan sekedar janji."
           />
           <div className="mt-16 space-y-20 md:mt-20 md:space-y-24">
             {caseStudies.map((study, index) => (
