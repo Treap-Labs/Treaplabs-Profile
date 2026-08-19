@@ -14,9 +14,9 @@ import "./globals.css";
 const themeScript = `
   try {
     var savedTheme = localStorage.getItem("treaplabs-theme");
-    document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
   } catch (_) {
-    document.documentElement.dataset.theme = "light";
+    document.documentElement.dataset.theme = "dark";
   }
 `;
 
@@ -131,7 +131,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="id" data-theme="light" suppressHydrationWarning>
+    <html lang="id" data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Script id="google-tag-manager" strategy="beforeInteractive">
