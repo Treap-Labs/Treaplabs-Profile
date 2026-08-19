@@ -133,7 +133,7 @@ const team = [
 ] as const;
 
 const stats = [
-  { value: "3", label: "Proyek diselesaikan" },
+  { value: "5", label: "Proyek diselesaikan" },
   { value: "12+", label: "Tahun pengalaman gabungan" },
   { value: "100%", label: "Retensi klien" },
   { value: "<4j", label: "Rata-rata waktu respons" },
