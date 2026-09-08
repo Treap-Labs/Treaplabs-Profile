@@ -145,6 +145,8 @@ a, button { cursor: pointer; }
 @media (max-width: 767px) {
   .site-header { padding: 18px 20px; }
   .site-header--scrolled { padding: 8px 12px; }
+  /* Keep the close button above the menu despite the scrolled nav's backdrop-filter. */
+  .site-nav { position: relative; z-index: 102; }
   .site-header--scrolled .site-nav { padding: 8px 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
