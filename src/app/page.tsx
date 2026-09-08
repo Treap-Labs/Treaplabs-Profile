@@ -163,7 +163,7 @@ function SectionHeader({
 export default function Home() {
   return (
     <>
-      <section id="hero" className="bg-canvas">
+      <section id="hero" className="bg-canvas" lang="en">
         <div className="hero-cinema">
           <Image
             src={heroImage}
@@ -180,47 +180,47 @@ export default function Home() {
               TREAPLABS<span aria-hidden="true">.</span>
             </p>
             <h1 className="hero-cinema-tagline">
-              Aplikasi yang bekerja untuk bisnis Anda.
+              Software that works for your business.
             </h1>
           </div>
           <a className="hero-cinema-down" href="#hero-intro">
-            Kenali TreapLabs
+            Discover TreapLabs
             <ArrowRight className="size-4 rotate-90" aria-hidden="true" />
           </a>
         </div>
         <Container>
           <div id="hero-intro" className="scroll-mt-28 py-12 md:py-16">
             <p className="max-w-[480px] text-lg leading-8 md:text-xl">
-              TreapLabs membangun aplikasi mobile, website, dan solusi AI custom
-              untuk startup, UMKM, serta perusahaan di seluruh Indonesia.
+              TreapLabs builds mobile apps, websites, and custom AI solutions for
+              startups, small businesses, and enterprises across Indonesia.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <a
                 href="#contact"
                 className="button button-primary px-7 py-3.5 text-base"
               >
-                Bangun Bersama TreapLabs
+                Build With TreapLabs
               </a>
               <a
                 href="#work"
                 className="group inline-flex items-center gap-2 font-medium text-ink"
               >
-                Lihat Produk Kami{" "}
+                Explore Our Work{" "}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
               </a>
             </div>
             <div className="mt-11 flex items-center gap-2.5 text-[13px] text-muted">
               <span className="pulse-dot size-2 rounded-full bg-lime" />
               <span>
-                Tersedia untuk proyek baru -{" "}
-                <strong className="text-body">Kuartal IV 2026</strong>
+                Available for new projects -{" "}
+                <strong className="text-body">Q4 2026</strong>
               </span>
             </div>
           </div>
         </Container>
         <div
           className="marquee border-y border-hairline py-4"
-          aria-label="Teknologi yang kami gunakan"
+          aria-label="Technologies we use"
         >
           <div className="marquee-track">
             {[...technologies, ...technologies].map((technology, index) => (
