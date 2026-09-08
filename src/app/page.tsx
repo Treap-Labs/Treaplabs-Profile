@@ -4,9 +4,7 @@ import Image from "next/image";
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
-import defectAi from "@/images/optimized/defect-ai.webp";
 import heroImage from "@/images/optimized/hero.webp";
-import mobileHris from "@/images/optimized/mobile-hris.webp";
 
 const whatsappMessage = encodeURIComponent(
   "Halo TreapLabs, saya tertarik untuk menjadwalkan konsultasi gratis selama 30 menit. Apakah ada jadwal yang tersedia?",
@@ -69,20 +67,36 @@ const services = [
 
 const caseStudies = [
   {
-    categories: ["Mobile App", "HRIS"],
-    title:
-      "Kami HRIS - Pengelolaan HR mobile-first untuk perusahaan dengan 200 karyawan",
-    outcome: "Memangkas proses payroll dari 3 hari menjadi 20 menit",
-    image: mobileHris,
-    alt: "Aplikasi mobile HRIS yang menampilkan payroll dan pengelolaan karyawan",
+    categories: ["Web Platform", "Mobile App", "HRIS"],
+    title: "Ikigawe HRIS",
+    description:
+      "Connected workforce management across web and mobile. Employee administration, attendance, shifts, and schedules with permission-based access.",
+    image: "/images/portfolio/ikigawe-hris-mockup.webp",
+    alt: "Illustrative Ikigawe HRIS desktop attendance dashboard and mobile app mockup with demo data",
   },
   {
-    categories: ["AI", "Automation"],
-    title: "Defect Eye - Inspeksi bodi mobil berbasis AI",
-    outcome:
-      "Mendeteksi 94% cacat permukaan dengan kecepatan 3x inspeksi manual",
-    image: defectAi,
-    alt: "Sistem AI computer vision yang menganalisis cacat permukaan kendaraan",
+    categories: ["Mobile App", "AI Integration"],
+    title: "Walk Around Check",
+    description:
+      "A guided vehicle-inspection workflow with six-angle photo capture, condition checklists, AI-analysis integration, and PDF reporting.",
+    image: "/images/portfolio/walk-around-check-mockup.webp",
+    alt: "Walk Around Check mobile dashboard presented in a phone mockup with sample inspection totals",
+  },
+  {
+    categories: ["E-Commerce", "Web Platform"],
+    title: "Heelwa",
+    description:
+      "A fashion storefront paired with retail administration, connecting product browsing, cart and checkout flows with inventory and point-of-sale tools.",
+    image: "/images/portfolio/heelwa-mockup.webp",
+    alt: "Heelwa fashion storefront homepage presented in a desktop mockup",
+  },
+  {
+    categories: ["SaaS", "Web Platform", "Point of Sale"],
+    title: "Juniper",
+    description:
+      "A connected cafe workspace bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
+    image: "/images/portfolio/juniper-mockup.webp",
+    alt: "Juniper cafe platform English landing page presented in a desktop mockup, featuring an illustrative dashboard",
   },
 ] as const;
 
@@ -307,11 +321,11 @@ export default function Home() {
         </Container>
       </section>
 
-      <section id="work" className="section-pad scroll-mt-20 bg-canvas">
+      <section id="work" className="section-pad scroll-mt-20 bg-canvas" lang="en">
         <Container>
           <SectionHeader
-            eyebrow="Proyek pilihan"
-            title="Hasil nyata, bukan sekedar janji."
+            eyebrow="Selected work"
+            title="Products built for real work."
           />
           <div className="mt-16 space-y-20 md:mt-20 md:space-y-24">
             {caseStudies.map((study, index) => (
@@ -340,11 +354,11 @@ export default function Home() {
                       ))}
                     </div>
                     <h3 className="text-[clamp(1.5rem,2.2vw,2rem)] font-bold leading-[1.15] tracking-[-.02em]">
-                      <span className="case-title">{study.title}</span>
+                      {study.title}
                     </h3>
                     <p className="mt-5 flex items-start gap-2.5 text-base">
                       <span className="mt-2 size-1.5 shrink-0 rounded-full bg-lime" />
-                      {study.outcome}
+                      {study.description}
                     </p>
                   </div>
                 </article>
