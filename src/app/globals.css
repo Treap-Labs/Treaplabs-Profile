@@ -116,6 +116,18 @@ a, button { cursor: pointer; }
 :root[data-theme="light"] .mobile-theme-dark { background: transparent; color: var(--menu-subtle) !important; }
 :root[data-theme="light"] .mobile-theme-light { background: var(--menu-selected-bg); color: var(--menu-selected-fg) !important; }
 
+.hero-cinema { align-items: center; background: #0a0e14; display: flex; isolation: isolate; justify-content: center; min-height: 100svh; overflow: hidden; padding: 160px 20px 120px; position: relative; text-align: center; }
+.hero-cinema-image { object-fit: cover; object-position: center; opacity: .55; }
+/* Theme-colored edges preserve header contrast and blend into the introduction. */
+.hero-cinema-shade { background: linear-gradient(180deg, var(--canvas) 0%, transparent 27%, transparent 70%, var(--canvas) 100%), radial-gradient(ellipse at center, rgb(10 14 20 / .2), rgb(10 14 20 / .75)); inset: 0; position: absolute; }
+.hero-cinema-copy { color: #f4f8fd; position: relative; width: 100%; }
+.hero-cinema-eyebrow { color: #d0d8e5; font-size: 10px; font-weight: 500; letter-spacing: .25em; margin-bottom: 28px; text-transform: uppercase; }
+.hero-cinema-wordmark { font-family: var(--font-display); font-size: clamp(30px, 10.5vw, 156px); font-weight: 700; letter-spacing: .065em; line-height: 1.1; text-shadow: 0 4px 40px rgb(0 0 0 / .4); white-space: nowrap; }
+.hero-cinema-wordmark span { color: #7e88ff; }
+.hero-cinema-tagline { font-size: clamp(16px, 1.8vw, 24px); font-weight: 400; letter-spacing: -.02em; line-height: 1.5; margin: 24px auto 0; max-width: 28ch; text-wrap: balance; }
+.hero-cinema-down { align-items: center; bottom: 36px; color: var(--ink); display: flex; flex-direction: column; font-size: 10px; gap: 14px; letter-spacing: .18em; padding: 12px; position: absolute; text-transform: uppercase; }
+.hero-cinema-down:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+
 .marquee { overflow: hidden; white-space: nowrap; }
 .marquee-track { animation: marquee 32s linear infinite; display: flex; width: max-content; }
 .marquee:hover .marquee-track { animation-play-state: paused; }

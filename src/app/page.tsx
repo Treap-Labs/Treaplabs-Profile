@@ -163,17 +163,33 @@ function SectionHeader({
 export default function Home() {
   return (
     <>
-      <section id="hero" className="bg-canvas pt-36 md:pt-40">
-        <Container>
-          <Reveal>
-            <p className="eyebrow mb-6">Software House / Indonesia</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="max-w-5xl text-[clamp(2.75rem,6.67vw,6rem)] font-bold leading-[.98] tracking-[-.04em]">
-              Jasa pembuatan aplikasi yang bekerja untuk bisnis Anda.
+      <section id="hero" className="bg-canvas">
+        <div className="hero-cinema">
+          <Image
+            src={heroImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-cinema-image"
+          />
+          <div className="hero-cinema-shade" aria-hidden="true" />
+          <div className="hero-cinema-copy">
+            <p className="hero-cinema-eyebrow">Software House / Indonesia</p>
+            <p className="hero-cinema-wordmark" aria-label="TreapLabs">
+              TREAPLABS<span aria-hidden="true">.</span>
+            </p>
+            <h1 className="hero-cinema-tagline">
+              Aplikasi yang bekerja untuk bisnis Anda.
             </h1>
-          </Reveal>
-          <Reveal delay={0.16} className="mt-8">
+          </div>
+          <a className="hero-cinema-down" href="#hero-intro">
+            Kenali TreapLabs
+            <ArrowRight className="size-4 rotate-90" aria-hidden="true" />
+          </a>
+        </div>
+        <Container>
+          <div id="hero-intro" className="scroll-mt-28 py-12 md:py-16">
             <p className="max-w-[480px] text-lg leading-8 md:text-xl">
               TreapLabs membangun aplikasi mobile, website, dan solusi AI custom
               untuk startup, UMKM, serta perusahaan di seluruh Indonesia.
@@ -200,20 +216,7 @@ export default function Home() {
                 <strong className="text-body">Kuartal IV 2026</strong>
               </span>
             </div>
-          </Reveal>
-
-          <Reveal delay={0.24} className="mt-16 md:mt-[72px]">
-            <div className="image-zoom relative aspect-video overflow-hidden rounded-t-xl bg-hairline">
-              <Image
-                src={heroImage}
-                alt="Dashboard aplikasi mobile HRIS untuk pengelolaan karyawan"
-                fill
-                priority
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
+          </div>
         </Container>
         <div
           className="marquee border-y border-hairline py-4"
