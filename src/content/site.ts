@@ -10,7 +10,7 @@ const navigation = [
 
 export const siteConfig = {
   name: "TreapLabs",
-  title: "Jasa Pembuatan Aplikasi untuk Bisnis | TreapLabs",
+  title: "Treaplabs",
   description:
     "TreapLabs menyediakan jasa pembuatan aplikasi mobile, website, dan solusi AI custom untuk startup, UMKM, dan perusahaan di seluruh Indonesia.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://treaplabs.com",
