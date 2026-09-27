@@ -449,19 +449,17 @@ export default function Home() {
             <div className="grid gap-4">
               {team.map((member, index) => (
                 <Reveal key={member.name} delay={index * 0.06}>
-                  <article className="team-card flex min-h-40 flex-col justify-between rounded-xl border border-hairline bg-surface p-6 sm:min-h-44 sm:p-8">
-                    <div className="flex items-start justify-between">
-                      <span className="font-mono text-xs tracking-[.12em] text-muted">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="team-card-mark" aria-hidden="true" />
-                    </div>
-                    <div className="mt-10">
-                      <h3 className="text-[clamp(1.35rem,2.2vw,1.75rem)] font-bold leading-tight tracking-[-.025em]">
+                  <article className="team-card grid grid-cols-[auto_1fr_auto] items-center gap-5 rounded-xl border border-hairline bg-surface p-5 sm:gap-7 sm:p-6">
+                    <span className="font-mono text-xs tracking-[.12em] text-muted">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="text-xl font-bold leading-tight tracking-[-.025em] sm:text-2xl">
                         {member.name}
                       </h3>
-                      <p className="mt-2 text-sm text-muted">{member.role}</p>
+                      <p className="mt-1.5 text-sm text-muted">{member.role}</p>
                     </div>
+                    <span className="team-card-mark" aria-hidden="true" />
                   </article>
                 </Reveal>
               ))}
