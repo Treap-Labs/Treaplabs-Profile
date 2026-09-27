@@ -144,6 +144,10 @@ const team = [
     name: "Rachmatullah Rizaldi",
     role: "Backend Developer",
   },
+  {
+    name: "Miqdad Hanif Mutawally",
+    role: "CBO",
+  },
 ] as const;
 
 const stats = [
