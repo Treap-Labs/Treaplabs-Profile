@@ -1,5 +1,19 @@
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Image from "next/image";
+import {
+  siDocker,
+  siFlutter,
+  siKubernetes,
+  siLaravel,
+  siNextdotjs,
+  siPostgresql,
+  siPytorch,
+  siPython,
+  siReact,
+  siSupabase,
+  siTypescript,
+  type SimpleIcon,
+} from "simple-icons";
 
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
@@ -8,6 +22,35 @@ import { clients, homeContent } from "@/content/home";
 import heroImage from "@/images/optimized/hero.webp";
 import type { Locale } from "@/lib/constants";
 import { getLocalizedPath } from "@/lib/i18n";
+
+const technologyIcons: Record<string, SimpleIcon> = {
+  Docker: siDocker,
+  Flutter: siFlutter,
+  Kubernetes: siKubernetes,
+  Laravel: siLaravel,
+  "Next.js": siNextdotjs,
+  PostgreSQL: siPostgresql,
+  PyTorch: siPytorch,
+  Python: siPython,
+  "React Native": siReact,
+  Supabase: siSupabase,
+  TypeScript: siTypescript,
+};
+
+function TechnologyIcon({ technology }: { technology: string }) {
+  const icon = technologyIcons[technology];
+
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-5 shrink-0 text-muted"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d={icon.path} />
+    </svg>
+  );
+}
 
 function SectionHeader({
   eyebrow,
@@ -107,8 +150,9 @@ export function HomePage({ locale }: { locale: Locale }) {
                       {group.technologies.map((technology) => (
                         <li
                           key={technology}
-                          className="font-display text-xl font-semibold tracking-[-.02em] text-ink md:text-2xl"
+                          className="flex items-center gap-3 font-display text-xl font-semibold tracking-[-.02em] text-ink md:text-2xl"
                         >
+                          <TechnologyIcon technology={technology} />
                           {technology}
                         </li>
                       ))}
