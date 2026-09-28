@@ -150,7 +150,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                       {group.technologies.map((technology) => (
                         <li
                           key={technology}
-                          className="flex items-center gap-3 font-display text-xl font-semibold tracking-[-.02em] text-ink md:text-2xl"
+                          className="flex items-center gap-3 font-display text-lg font-semibold tracking-[-.02em] text-ink md:text-xl"
                         >
                           <TechnologyIcon technology={technology} />
                           {technology}
