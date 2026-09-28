@@ -8,7 +8,12 @@ type HomeContent = {
   build: string;
   explore: string;
   availability: string;
-  technologiesLabel: string;
+  technologiesEyebrow: string;
+  technologiesTitle: string;
+  technologyGroups: readonly {
+    category: string;
+    technologies: readonly string[];
+  }[];
   clientsTitle: string;
   servicesEyebrow: string;
   servicesTitle: string;
@@ -44,11 +49,6 @@ type HomeContent = {
   team: readonly { name: string; role: string }[];
 };
 
-export const technologies = [
-  "Flutter", "Next.js", "Laravel", "Python", "PyTorch", "Supabase",
-  "React Native", "TypeScript", "PostgreSQL", "Docker", "Kubernetes",
-] as const;
-
 export const clients = ["Spectra Komputer", "Mahdaly"] as const;
 
 export const homeContent = {
@@ -60,7 +60,15 @@ export const homeContent = {
     build: "Bangun Bersama TreapLabs",
     explore: "Lihat Proyek Kami",
     availability: "Tersedia untuk proyek baru - ",
-    technologiesLabel: "Teknologi yang kami gunakan",
+    technologiesEyebrow: "Keahlian teknologi",
+    technologiesTitle: "Perangkat modern untuk membawa bisnis Anda lebih jauh.",
+    technologyGroups: [
+      { category: "Front-end", technologies: ["Next.js", "TypeScript"] },
+      { category: "Back-end & Database", technologies: ["Laravel", "Supabase", "PostgreSQL"] },
+      { category: "Mobile", technologies: ["Flutter", "React Native"] },
+      { category: "AI & Machine Learning", technologies: ["Python", "PyTorch"] },
+      { category: "Infrastruktur", technologies: ["Docker", "Kubernetes"] },
+    ],
     clientsTitle: "Dipercaya oleh tim di",
     servicesEyebrow: "Yang kami kerjakan",
     servicesTitle: "Empat cara kami membantu Anda meluncurkan produk.",
@@ -150,7 +158,15 @@ export const homeContent = {
     build: "Build With TreapLabs",
     explore: "Explore Our Work",
     availability: "Available for new projects - ",
-    technologiesLabel: "Technologies we use",
+    technologiesEyebrow: "Tech mastery",
+    technologiesTitle: "Modern tools to move your business forward.",
+    technologyGroups: [
+      { category: "Front-end", technologies: ["Next.js", "TypeScript"] },
+      { category: "Back-end & Database", technologies: ["Laravel", "Supabase", "PostgreSQL"] },
+      { category: "Mobile", technologies: ["Flutter", "React Native"] },
+      { category: "AI & Machine Learning", technologies: ["Python", "PyTorch"] },
+      { category: "Infrastructure", technologies: ["Docker", "Kubernetes"] },
+    ],
     clientsTitle: "Trusted by teams at",
     servicesEyebrow: "What we do",
     servicesTitle: "Four ways we help you launch products.",

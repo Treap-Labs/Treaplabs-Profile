@@ -4,7 +4,7 @@ import Image from "next/image";
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
-import { clients, homeContent, technologies } from "@/content/home";
+import { clients, homeContent } from "@/content/home";
 import heroImage from "@/images/optimized/hero.webp";
 import type { Locale } from "@/lib/constants";
 import { getLocalizedPath } from "@/lib/i18n";
@@ -90,21 +90,34 @@ export function HomePage({ locale }: { locale: Locale }) {
             </div>
           </div>
         </Container>
-        <div
-          className="marquee border-y border-hairline py-4"
-          aria-label={copy.technologiesLabel}
-        >
-          <div className="marquee-track">
-            {[...technologies, ...technologies].map((technology, index) => (
-              <span
-                key={`${technology}-${index}`}
-                className="px-7 text-[13px] font-medium uppercase tracking-[.06em] text-muted"
-              >
-                {technology}
-                <span className="ml-7 text-hairline">/</span>
-              </span>
-            ))}
-          </div>
+        <div className="border-y border-hairline py-20 md:py-24">
+          <Container>
+            <SectionHeader
+              eyebrow={copy.technologiesEyebrow}
+              title={copy.technologiesTitle}
+            />
+            <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 md:mt-16 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+              {copy.technologyGroups.map((group, index) => (
+                <Reveal key={group.category} delay={index * 0.06}>
+                  <div className="border-t border-hairline pt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[.12em] text-muted">
+                      {String(index + 1).padStart(2, "0")} / {group.category}
+                    </p>
+                    <ul className="mt-7 space-y-2.5">
+                      {group.technologies.map((technology) => (
+                        <li
+                          key={technology}
+                          className="font-display text-xl font-semibold tracking-[-.02em] text-ink md:text-2xl"
+                        >
+                          {technology}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Container>
         </div>
       </section>
 
