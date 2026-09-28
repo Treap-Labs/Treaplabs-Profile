@@ -49,7 +49,7 @@ type HomeContent = {
   team: readonly { name: string; role: string }[];
 };
 
-export const clients = ["Spectra Komputer", "Mahdaly"] as const;
+export const clients = ["Spectra Komputer", "Mahdaly", "Smantik"] as const;
 
 export const homeContent = {
   id: {
