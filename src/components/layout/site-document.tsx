@@ -4,6 +4,7 @@ import { Familjen_Grotesk, Inter } from "next/font/google";
 import Script from "next/script";
 import type { ReactNode } from "react";
 
+import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SitePathProvider } from "@/components/layout/site-path-provider";
@@ -140,6 +141,7 @@ export function SiteDocument({ children, locale, initialPathname }: {
             <SiteHeader />
             <main className="flex-1">{children}</main>
             <SiteFooter />
+            <FloatingWhatsApp />
           </div>
         </SitePathProvider>
       </body>

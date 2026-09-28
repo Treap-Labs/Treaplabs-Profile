@@ -101,7 +101,7 @@ export const uiContent = {
     notFound: { title: "Halaman tidak ditemukan.", returnHome: "Kembali ke beranda" },
     floatingWhatsApp: {
       label: "Diskusi proyek",
-      ariaLabel: "Diskusikan proyek dengan TreapLabs melalui WhatsApp (tab baru)",
+      ariaLabel: "Diskusi proyek dengan TreapLabs via WhatsApp (tab baru)",
       message: "Halo TreapLabs, saya ingin berdiskusi tentang proyek digital untuk bisnis saya.",
     },
     service: {
@@ -174,7 +174,7 @@ export const uiContent = {
     notFound: { title: "Page not found.", returnHome: "Return home" },
     floatingWhatsApp: {
       label: "Let’s talk",
-      ariaLabel: "Discuss your project with TreapLabs on WhatsApp (opens in a new tab)",
+      ariaLabel: "Let’s talk with TreapLabs on WhatsApp (opens in a new tab)",
       message: "Hello TreapLabs, I'd like to discuss a digital project for my business.",
     },
     service: {
