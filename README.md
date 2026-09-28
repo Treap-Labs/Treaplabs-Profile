@@ -55,11 +55,31 @@ eligible for static generation.
 Edit `src/content/site.ts` to change the site name, navigation, description,
 and canonical URL. The production URL is `https://treaplabs.com`.
 
-Most homepage content, including services, projects, process steps, team
-members, statistics, and testimonials, is stored near the top of
-`src/app/page.tsx`. Global colors and component styles are in
+Homepage content in both languages, including services, projects, process
+steps, team members, and statistics, is stored in `src/content/home.ts`.
+Global colors and component styles are in
 `src/app/globals.css`. Local website images are stored in `src/images/` and can
 be imported directly into a page or component.
+
+## Languages
+
+Bahasa Indonesia is the default at `/`. English pages live under `/en/`,
+including all four service pages. The ID/EN control in the navbar switches to
+the equivalent page and retains the URL query string and section fragment.
+The URL determines the language, including after a refresh or a shared link.
+
+- `src/content/home.ts`: translated homepage content.
+- `src/content/services.ts`: Indonesian and English service content.
+- `src/content/ui.ts`: navigation controls, footer, service labels, and 404 text.
+- `src/content/site.ts`: navigation items and site descriptions.
+- `src/lib/i18n.ts`: locale detection and localized URLs.
+- `src/lib/metadata.ts`: canonical URLs, language alternates, and social metadata.
+
+`src/app/(id)/` and `src/app/en/` use separate root layouts backed by the shared
+`SiteDocument` component. This keeps the exported HTML `lang` correct without
+requiring JavaScript or a server. The global 404 uses Next.js's
+`experimental.globalNotFound` support for multiple root layouts; its content
+adapts to the requested URL in the browser.
 
 ## Updating the Website
 
@@ -80,7 +100,9 @@ be imported directly into a page or component.
 
    | Content | File |
    |---|---|
-   | Homepage sections and team | `src/app/page.tsx` |
+    | Homepage sections and team | `src/content/home.ts` |
+    | Homepage layout | `src/components/home/home-page.tsx` |
+    | Translated interface labels | `src/content/ui.ts` |
    | Colors and global styles | `src/app/globals.css` |
    | Header and mobile menu | `src/components/layout/site-header.tsx` |
    | Footer | `src/components/layout/site-footer.tsx` |
@@ -108,7 +130,7 @@ be imported directly into a page or component.
 6. Stage only the intended files, commit, and push:
 
    ```bash
-   git add src/app/page.tsx README.md
+    git add src/content/home.ts README.md
    git commit -m "Update team information"
    git push origin main
    ```

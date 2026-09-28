@@ -97,13 +97,17 @@ a, button { cursor: pointer; }
 .site-header--scrolled .site-nav { backdrop-filter: blur(20px); background: var(--nav-glass); border: 1px solid var(--hairline); border-radius: 999px; padding: 10px 20px; }
 .nav-link { color: var(--body); font-size: 14px; font-weight: 500; transition: color .2s; }
 .nav-link:hover { color: var(--ink); }
+.language-switcher { align-items: center; background: var(--surface); border: 1px solid var(--hairline); border-radius: 999px; display: inline-flex; gap: 2px; padding: 3px; }
+.language-switcher a { align-items: center; border-radius: 999px; color: var(--body); display: inline-flex; font-size: 11px; font-weight: 600; justify-content: center; letter-spacing: .04em; min-height: 34px; min-width: 36px; transition: background-color .2s, color .2s; }
+.language-switcher a:hover { color: var(--ink); }
+.language-switcher a[aria-current="page"] { background: var(--ink); color: var(--canvas); }
 .theme-toggle { align-items: center; border: 1px solid var(--hairline); border-radius: 999px; color: var(--ink); display: inline-flex; height: 40px; justify-content: center; transition: background-color .2s, border-color .2s, color .2s; width: 40px; }
 .theme-toggle:hover { background: var(--surface); border-color: var(--muted); }
 .desktop-theme-toggle { display: none; }
 .theme-icon-dark { display: none; }
 :root[data-theme="light"] .theme-icon-light { display: none; }
 :root[data-theme="light"] .theme-icon-dark { display: block; }
-.mobile-menu { background: var(--menu-bg); color: var(--menu-fg); display: grid; inset: 0; opacity: 0; padding: 110px 32px 48px; pointer-events: none; position: fixed; transform: translateY(-16px); transition: background-color .25s ease, color .25s ease, opacity .3s, transform .3s; visibility: hidden; z-index: 101; }
+.mobile-menu { background: var(--menu-bg); color: var(--menu-fg); display: grid; inset: 0; opacity: 0; overflow-y: auto; overscroll-behavior: contain; padding: 110px 32px 48px; pointer-events: none; position: fixed; transform: translateY(-16px); transition: background-color .25s ease, color .25s ease, opacity .3s, transform .3s; visibility: hidden; z-index: 101; }
 .mobile-menu--open { opacity: 1; pointer-events: auto; transform: translateY(0); visibility: visible; }
 .mobile-menu nav { align-self: center; }
 .mobile-menu-icon { color: var(--menu-fg); }
@@ -120,11 +124,34 @@ a, button { cursor: pointer; }
 .hero-cinema-image { object-fit: cover; object-position: center; opacity: .55; }
 /* Theme-colored edges preserve header contrast and blend into the introduction. */
 .hero-cinema-shade { background: linear-gradient(180deg, var(--canvas) 0%, transparent 27%, transparent 70%, var(--canvas) 100%), radial-gradient(ellipse at center, rgb(10 14 20 / .2), rgb(10 14 20 / .75)); inset: 0; position: absolute; }
+/* Longer, eased fades avoid a visible light-to-dark band in the light theme. */
+:root[data-theme="light"] .hero-cinema-shade {
+  background:
+    linear-gradient(180deg,
+      var(--canvas) 0%,
+      rgb(234 232 226 / .98) 4%,
+      rgb(234 232 226 / .92) 9%,
+      rgb(234 232 226 / .78) 16%,
+      rgb(234 232 226 / .58) 23%,
+      rgb(234 232 226 / .36) 30%,
+      rgb(234 232 226 / .17) 37%,
+      rgb(234 232 226 / .05) 43%,
+      rgb(234 232 226 / 0) 48%,
+      rgb(234 232 226 / 0) 54%,
+      rgb(234 232 226 / .04) 61%,
+      rgb(234 232 226 / .14) 68%,
+      rgb(234 232 226 / .32) 75%,
+      rgb(234 232 226 / .55) 82%,
+      rgb(234 232 226 / .77) 88%,
+      rgb(234 232 226 / .93) 94%,
+      var(--canvas) 100%),
+    radial-gradient(ellipse at center, rgb(10 14 20 / .24), rgb(10 14 20 / .48));
+}
 .hero-cinema-copy { color: #f4f8fd; position: relative; width: 100%; }
 .hero-cinema-eyebrow { color: #d0d8e5; font-size: 10px; font-weight: 500; letter-spacing: .25em; margin-bottom: 28px; text-transform: uppercase; }
 .hero-cinema-wordmark { font-family: var(--font-display); font-size: clamp(30px, 10.5vw, 156px); font-weight: 700; letter-spacing: .065em; line-height: 1.1; text-shadow: 0 4px 40px rgb(0 0 0 / .4); white-space: nowrap; }
 .hero-cinema-wordmark span { color: #7e88ff; }
-.hero-cinema-tagline { font-size: clamp(16px, 1.8vw, 24px); font-weight: 400; letter-spacing: -.02em; line-height: 1.5; margin: 24px auto 0; max-width: 28ch; text-wrap: balance; }
+.hero-cinema-tagline { color: #f4f8fd; font-size: clamp(16px, 1.8vw, 24px); font-weight: 400; letter-spacing: -.02em; line-height: 1.5; margin: 24px auto 0; max-width: 28ch; text-shadow: 0 2px 12px rgb(0 0 0 / .3); text-wrap: balance; }
 .hero-cinema-down { align-items: center; bottom: 36px; color: var(--ink); display: flex; flex-direction: column; font-size: 10px; gap: 14px; letter-spacing: .18em; padding: 12px; position: absolute; text-transform: uppercase; }
 .hero-cinema-down:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 
@@ -145,6 +172,7 @@ a, button { cursor: pointer; }
 .team-card { transition: background-color .25s, border-color .25s, transform .25s; }
 .team-card:hover { border-color: var(--blue); transform: translateY(-2px); }
 .team-card-mark { background: var(--lime); border-radius: 999px; height: 8px; opacity: .7; transition: transform .25s, opacity .25s; width: 8px; }
+:root[data-theme="light"] .team-card-mark { background: #4d7c0f; opacity: 1; }
 .team-card:hover .team-card-mark { opacity: 1; transform: scale(1.5); }
 .outlined-wordmark { color: transparent; font-family: var(--font-display); font-size: clamp(4rem, 12vw, 11.25rem); font-weight: 700; letter-spacing: -.04em; line-height: .92; padding-top: 16px; user-select: none; -webkit-text-stroke: 1px rgb(255 255 255 / .16); }
 .pulse-dot { animation: pulse 2s ease-in-out infinite; }
@@ -152,9 +180,11 @@ a, button { cursor: pointer; }
 
 @media (min-width: 768px) {
   .section-pad { padding: 140px 0; }
+}
+@media (min-width: 1024px) {
   .desktop-theme-toggle { display: inline-flex; }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .site-header { padding: 18px 20px; }
   .site-header--scrolled { padding: 8px 12px; }
   /* Keep the close button above the menu despite the scrolled nav's backdrop-filter. */

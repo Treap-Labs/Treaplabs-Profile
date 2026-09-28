@@ -1,15 +1,26 @@
 "use client";
 
 import { Menu, Moon, Sun, X } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { useSitePathname } from "@/components/layout/site-path-provider";
 import { siteConfig } from "@/content/site";
+import { uiContent } from "@/content/ui";
+import { getLocaleFromPathname, getLocalizedPath } from "@/lib/i18n";
 
 export function SiteHeader() {
-  const pathname = usePathname();
+  const pathname = useSitePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const locale = getLocaleFromPathname(pathname);
+  const copy = uiContent[locale].header;
+  const navigation = locale === "id" ? siteConfig.navigation : siteConfig.navigationEn;
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -25,6 +36,27 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const onResize = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", onResize);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", onResize);
+    };
+  }, [open]);
+
   const toggleTheme = () => {
     const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
     document.documentElement.dataset.theme = nextTheme;
@@ -35,18 +67,20 @@ export function SiteHeader() {
     }
   };
 
-  const sectionHref = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
+  const homePath = getLocalizedPath("/", locale);
+  const isHome = getLocalizedPath(pathname, locale) === homePath;
+  const sectionHref = (hash: string) => (isHome ? hash : `${homePath}${hash}`);
 
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="site-nav">
-        <a href={pathname === "/" ? "#hero" : "/"} className="font-display text-xl font-bold tracking-[-0.03em]">
+        <a href={isHome ? "#hero" : homePath} onClick={() => setOpen(false)} className="shrink-0 font-display text-xl font-bold tracking-[-0.03em]">
           {siteConfig.name}
         </a>
 
-        <nav aria-label="Navigasi utama" className="hidden md:block">
-          <ul className="flex items-center gap-8 lg:gap-10">
-            {siteConfig.navigation.map((item) => (
+        <nav aria-label={copy.mainNavigation} className="hidden lg:block">
+          <ul className="flex items-center gap-6 xl:gap-10">
+            {navigation.map((item) => (
               <li key={item.href}>
                 <a className="nav-link" href={sectionHref(item.href)}>
                   {item.label}
@@ -56,37 +90,41 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
+          <LanguageSwitcher onNavigate={() => setOpen(false)} />
           <button
             type="button"
             className="theme-toggle desktop-theme-toggle relative z-[102]"
-            aria-label="Ganti tema warna"
-            title="Ganti tema warna"
+            aria-label={copy.changeTheme}
+            title={copy.changeTheme}
             onClick={toggleTheme}
           >
-            <Sun className="theme-icon-light size-[18px]" />
-            <Moon className="theme-icon-dark size-[18px]" />
+            <Sun className="theme-icon-light size-[18px]" aria-hidden="true" />
+            <Moon className="theme-icon-dark size-[18px]" aria-hidden="true" />
           </button>
-          <a href={sectionHref("#contact")} className="button button-primary hidden md:inline-flex">
-            Mulai Proyek
-          </a>
+          <div className="hidden lg:block">
+            <a href={sectionHref("#contact")} className="button button-primary">
+              {copy.startProject}
+            </a>
+          </div>
           <button
             type="button"
-            className="relative z-[102] inline-flex size-10 items-center justify-center md:hidden"
+            ref={menuButton}
+            className="relative z-[102] inline-flex size-10 items-center justify-center lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Tutup menu" : "Buka menu"}
+            aria-label={open ? copy.closeMenu : copy.openMenu}
             onClick={() => setOpen((value) => !value)}
           >
-            {open ? <X className="mobile-menu-icon" /> : <Menu />}
+            {open ? <X className="mobile-menu-icon" aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
         </div>
       </div>
 
-      <div id="mobile-menu" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>
-        <nav aria-label="Navigasi mobile">
+      <div id="mobile-menu" inert={!open} className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>
+        <nav aria-label={copy.mobileNavigation}>
           <ul>
-            {siteConfig.navigation.map((item) => (
+            {navigation.map((item) => (
               <li key={item.href}>
                 <a href={sectionHref(item.href)} onClick={() => setOpen(false)}>
                   {item.label}
@@ -95,19 +133,19 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="mobile-theme-control">
-            <span>Tampilan</span>
+            <span>{copy.appearance}</span>
             <button
               type="button"
               className="mobile-theme-toggle"
-              aria-label="Ganti tema warna"
+              aria-label={copy.changeTheme}
               onClick={toggleTheme}
             >
-              <span className="mobile-theme-dark">Gelap</span>
-              <span className="mobile-theme-light">Terang</span>
+              <span className="mobile-theme-dark">{copy.dark}</span>
+              <span className="mobile-theme-light">{copy.light}</span>
             </button>
           </div>
           <a href={sectionHref("#contact")} className="button button-lime mt-10" onClick={() => setOpen(false)}>
-            Mulai Proyek <span aria-hidden="true">→</span>
+            {copy.startProject} <span aria-hidden="true">→</span>
           </a>
         </nav>
       </div>

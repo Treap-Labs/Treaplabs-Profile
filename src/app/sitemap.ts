@@ -2,24 +2,27 @@ import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/content/site";
 import { servicePages } from "@/content/services";
+import { LOCALES } from "@/lib/constants";
+import { getLanguageAlternates, getLocalizedPath } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-07-30");
 
-  return [
-    {
-      url: siteConfig.url,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    ...servicePages.map((service) => ({
-      url: `${siteConfig.url}/${service.slug}/`,
+  const paths = ["/", ...servicePages.map((service) => `/${service.slug}/`)];
+
+  return paths.flatMap((path) => {
+    const languages = Object.fromEntries(
+      Object.entries(getLanguageAlternates(path)).map(([locale, href]) => [locale, `${siteConfig.url}${href}`]),
+    );
+
+    return LOCALES.map((locale) => ({
+      url: `${siteConfig.url}${getLocalizedPath(path, locale)}`,
       lastModified,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
-  ];
+      priority: path === "/" ? 1 : 0.8,
+      alternates: { languages },
+    }));
+  });
 }

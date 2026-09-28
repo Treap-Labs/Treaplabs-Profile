@@ -4,15 +4,17 @@ import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-lin
 import { Container } from "@/components/layout/container";
 import { JsonLd } from "@/components/seo/json-ld";
 import type { ServiceContent } from "@/content/services";
-import { servicePages } from "@/content/services";
+import { servicePages, servicePagesId } from "@/content/services";
 import { siteConfig } from "@/content/site";
+import { uiContent } from "@/content/ui";
+import type { Locale } from "@/lib/constants";
+import { getLocalizedPath } from "@/lib/i18n";
 
-const whatsappMessage = encodeURIComponent(
-  "Halo TreapLabs, saya ingin berdiskusi mengenai layanan pengembangan software untuk bisnis saya.",
-);
-
-export function ServicePage({ service }: { service: ServiceContent }) {
-  const url = `${siteConfig.url}/${service.slug}/`;
+export function ServicePage({ service, locale }: { service: ServiceContent; locale: Locale }) {
+  const copy = uiContent[locale].service;
+  const whatsappMessage = encodeURIComponent(copy.whatsappMessage);
+  const url = `${siteConfig.url}${getLocalizedPath(`/${service.slug}/`, locale)}`;
+  const localizedServices = locale === "id" ? servicePagesId : servicePages;
   const schema = [
     {
       "@context": "https://schema.org",
@@ -29,14 +31,14 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Beranda", item: siteConfig.url },
+        { "@type": "ListItem", position: 1, name: copy.home, item: `${siteConfig.url}${getLocalizedPath("/", locale)}` },
         { "@type": "ListItem", position: 2, name: service.title, item: url },
       ],
     },
   ];
 
   return (
-    <>
+    <div lang={locale}>
       <JsonLd data={schema} />
       <section className="bg-canvas pb-24 pt-36 md:pb-32 md:pt-44">
         <Container>
@@ -46,15 +48,15 @@ export function ServicePage({ service }: { service: ServiceContent }) {
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 md:text-xl">{service.intro}</p>
           <TrackedWhatsAppLink href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" service={service.slug} ctaLocation="hero" className="button button-primary mt-10 px-7 py-3.5 text-base">
-            Diskusikan proyek Anda <ArrowRight className="size-4" />
+            {copy.discussProject} <ArrowRight className="size-4" />
           </TrackedWhatsAppLink>
         </Container>
       </section>
 
       <section className="section-pad bg-deep dark-section">
         <Container>
-          <p className="eyebrow mb-6 text-white/40">Manfaat untuk bisnis</p>
-          <h2 className="section-title max-w-3xl">Software yang dibangun dengan tujuan yang jelas.</h2>
+          <p className="eyebrow mb-6 text-white/40">{copy.benefits}</p>
+          <h2 className="section-title max-w-3xl">{copy.benefitsTitle}</h2>
           <div className="mt-14 grid gap-4 md:grid-cols-3">
             {service.benefits.map((benefit, index) => (
               <article key={benefit.title} className="service-tile rounded-xl p-7">
@@ -70,8 +72,8 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       <section className="section-pad bg-canvas">
         <Container className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
-            <p className="eyebrow mb-6">Yang Anda dapatkan</p>
-            <h2 className="section-title">Lingkup kerja yang transparan.</h2>
+            <p className="eyebrow mb-6">{copy.deliverables}</p>
+            <h2 className="section-title">{copy.deliverablesTitle}</h2>
             <ul className="mt-10 space-y-4">
               {service.deliverables.map((item) => (
                 <li key={item} className="flex items-center gap-3 border-b border-hairline pb-4 text-ink">
@@ -81,8 +83,8 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-6">Teknologi</p>
-            <h2 className="section-title">Tools yang tepat untuk kebutuhan Anda.</h2>
+            <p className="eyebrow mb-6">{copy.technology}</p>
+            <h2 className="section-title">{copy.technologyTitle}</h2>
             <div className="mt-10 flex flex-wrap gap-3">
               {service.technologies.map((item) => (
                 <span key={item} className="rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink">{item}</span>
@@ -90,7 +92,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             </div>
             {service.caseStudy ? (
               <div className="mt-12 rounded-xl border border-hairline bg-surface p-7">
-                <p className="eyebrow mb-4">Contoh proyek</p>
+                <p className="eyebrow mb-4">{copy.caseStudy}</p>
                 <h3 className="text-2xl font-bold">{service.caseStudy.title}</h3>
                 <p className="mt-3 leading-7">{service.caseStudy.result}</p>
               </div>
@@ -101,8 +103,8 @@ export function ServicePage({ service }: { service: ServiceContent }) {
 
       <section className="section-pad bg-surface">
         <Container>
-          <p className="eyebrow mb-6">Pertanyaan umum</p>
-          <h2 className="section-title">Sebelum memulai proyek.</h2>
+          <p className="eyebrow mb-6">{copy.faq}</p>
+          <h2 className="section-title">{copy.faqTitle}</h2>
           <div className="mt-12 divide-y divide-hairline border-y border-hairline">
             {service.faq.map((item) => (
               <details key={item.question} className="group py-6">
@@ -116,22 +118,22 @@ export function ServicePage({ service }: { service: ServiceContent }) {
 
       <section className="section-pad bg-deep text-center dark-section">
         <Container>
-          <h2 className="text-[clamp(2.75rem,5vw,4.5rem)] font-bold leading-none tracking-[-.03em]">Mari wujudkan produk Anda.</h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/50">Ceritakan kebutuhan bisnis Anda dan dapatkan konsultasi awal selama 30 menit.</p>
-          <TrackedWhatsAppLink href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" service={service.slug} ctaLocation="bottom_cta" className="button button-primary mt-10 px-8 py-4 text-base">Hubungi TreapLabs</TrackedWhatsAppLink>
+          <h2 className="text-[clamp(2.75rem,5vw,4.5rem)] font-bold leading-none tracking-[-.03em]">{copy.contactTitle}</h2>
+          <p className="mx-auto mt-6 max-w-xl text-lg text-white/50">{copy.contactDescription}</p>
+          <TrackedWhatsAppLink href={`https://wa.me/6285183170436?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" service={service.slug} ctaLocation="bottom_cta" className="button button-primary mt-10 px-8 py-4 text-base">{copy.contact}</TrackedWhatsAppLink>
         </Container>
       </section>
 
       <section className="bg-deep pb-20 dark-section">
         <Container>
-          <p className="eyebrow mb-5 text-white/35">Layanan lainnya</p>
+          <p className="eyebrow mb-5 text-white/35">{copy.otherServices}</p>
           <div className="flex flex-wrap gap-x-8 gap-y-3">
-            {servicePages.filter((item) => item.slug !== service.slug).map((item) => (
-              <a key={item.slug} href={`/${item.slug}/`} className="text-sm text-white/55 transition-colors hover:text-white">{item.eyebrow} <span aria-hidden="true">→</span></a>
+            {localizedServices.filter((item) => item.slug !== service.slug).map((item) => (
+              <a key={item.slug} href={getLocalizedPath(`/${item.slug}/`, locale)} className="text-sm text-white/55 transition-colors hover:text-white">{item.eyebrow} <span aria-hidden="true">→</span></a>
             ))}
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

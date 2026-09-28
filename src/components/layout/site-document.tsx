@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element, @next/next/no-before-interactive-script-outside-document -- Shared HTML document rendered by both App Router root layouts. */
 import type { Metadata, Viewport } from "next";
 import { Familjen_Grotesk, Inter } from "next/font/google";
 import Script from "next/script";
@@ -5,11 +6,12 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { SitePathProvider } from "@/components/layout/site-path-provider";
 import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/content/site";
-import { SITE_LOCALE } from "@/lib/constants";
+import type { Locale } from "@/lib/constants";
 
-import "./globals.css";
+import "@/app/globals.css";
 
 const themeScript = `
   try {
@@ -45,13 +47,13 @@ const globalSchema = [
     areaServed: { "@type": "Country", name: "Indonesia" },
     sameAs: Object.values(siteConfig.social),
     knowsAbout: [
-      "Pengembangan aplikasi mobile",
-      "Pengembangan website",
+      "Mobile app development",
+      "Website development",
       "Artificial intelligence",
       "AI automation",
       "AI integration",
       "Machine learning",
-      "Konsultasi teknologi",
+      "Technology consulting",
     ],
   },
   {
@@ -61,12 +63,12 @@ const globalSchema = [
     url: siteConfig.url,
     name: siteConfig.name,
     description: siteConfig.description,
-    inLanguage: "id-ID",
+    inLanguage: ["id-ID", "en-US"],
     publisher: { "@id": `${siteConfig.url}/#organization` },
   },
 ];
 
-export const metadata: Metadata = {
+export const sharedMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
@@ -74,7 +76,6 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  alternates: { canonical: "/" },
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
@@ -90,28 +91,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  openGraph: {
-    type: "website",
-    locale: SITE_LOCALE.replace("-", "_"),
-    siteName: siteConfig.name,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    url: "/",
-    images: [
-      {
-        url: "/images/treaplabs-og.png",
-        width: 1200,
-        height: 630,
-        alt: "TreapLabs - Jasa pembuatan aplikasi mobile, website, dan solusi AI",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
-    images: ["/images/treaplabs-og.png"],
-  },
   icons: {
     icon: [{ url: "/icons/treaplabs.png", type: "image/png" }],
     apple: [{ url: "/icons/treaplabs.png", type: "image/png" }],
@@ -126,9 +105,13 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export function SiteDocument({ children, locale, initialPathname }: {
+  children: ReactNode;
+  locale: Locale;
+  initialPathname?: string;
+}) {
   return (
-    <html lang="id" data-theme="dark" suppressHydrationWarning>
+    <html lang={locale} data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Script id="google-tag-manager" strategy="beforeInteractive">
@@ -152,11 +135,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           />
         </noscript>
         <JsonLd data={globalSchema} />
-        <div className="flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
+        <SitePathProvider initialPathname={initialPathname}>
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </div>
+        </SitePathProvider>
       </body>
     </html>
   );

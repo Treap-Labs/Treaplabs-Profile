@@ -4,158 +4,10 @@ import Image from "next/image";
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
+import { clients, homeContent, technologies } from "@/content/home";
 import heroImage from "@/images/optimized/hero.webp";
-
-const whatsappMessage = encodeURIComponent(
-  "Halo TreapLabs, saya tertarik untuk menjadwalkan konsultasi gratis selama 30 menit. Apakah ada jadwal yang tersedia?",
-);
-
-const technologies = [
-  "Flutter",
-  "Next.js",
-  "Laravel",
-  "Python",
-  "PyTorch",
-  "Supabase",
-  "React Native",
-  "TypeScript",
-  "PostgreSQL",
-  "Docker",
-  "Kubernetes",
-];
-
-const clients = ["Spectra Komputer", "Mahdaly"];
-
-const services = [
-  {
-    index: "01",
-    title: "Mobile App Development",
-    description:
-      "Aplikasi lintas platform berbasis Flutter yang terasa native di iOS dan Android - cepat diluncurkan dan mudah dikembangkan.",
-    tags: ["Flutter", "iOS", "Android", "Dart"],
-    href: "/jasa-pembuatan-aplikasi/",
-    large: true,
-  },
-  {
-    index: "02",
-    title: "Web Platforms",
-    description:
-      "Aplikasi web full-stack dengan arsitektur modern, performa tinggi, dan siap berkembang bersama bisnis Anda.",
-    tags: ["Next.js", "Laravel", "Supabase"],
-    href: "/jasa-pembuatan-website/",
-    large: false,
-  },
-  {
-    index: "03",
-    title: "AI Automation & Integration",
-    description:
-      "Solusi AI custom untuk mengotomasi workflow, mengintegrasikan model ke aplikasi, dan meningkatkan efisiensi operasional bisnis.",
-    tags: ["Python", "AI Integration", "Automation"],
-    href: "/solusi-ai-bisnis/",
-    large: false,
-  },
-  {
-    index: "04",
-    title: "Konsultasi Teknologi",
-    description:
-      "Review arsitektur, audit teknologi, dan dukungan langsung dari engineer senior untuk memperkuat tim Anda.",
-    tags: ["Arsitektur", "Audit", "Team Augmentation"],
-    href: "/konsultasi-teknologi/",
-    large: false,
-  },
-] as const;
-
-const caseStudies = [
-  {
-    categories: ["Web Platform", "Mobile App", "HRIS"],
-    title: "Ikigawe HRIS",
-    description:
-      "Connected workforce management across web and mobile. Employee administration, attendance, shifts, and schedules with permission-based access.",
-    image: "/images/portfolio/ikigawe-hris-mockup.webp",
-    alt: "Illustrative Ikigawe HRIS desktop attendance dashboard and mobile app mockup with demo data",
-  },
-  {
-    categories: ["Mobile App", "AI Integration"],
-    title: "Walk Around Check",
-    description:
-      "A guided vehicle-inspection workflow with six-angle photo capture, condition checklists, AI-analysis integration, and PDF reporting.",
-    image: "/images/portfolio/walk-around-check-mockup.webp",
-    alt: "Walk Around Check mobile dashboard presented in a phone mockup with sample inspection totals",
-  },
-  {
-    categories: ["E-Commerce", "Web Platform"],
-    title: "Heelwa",
-    description:
-      "A fashion storefront paired with retail administration, connecting product browsing, cart and checkout flows with inventory and point-of-sale tools.",
-    image: "/images/portfolio/heelwa-mockup.webp",
-    alt: "Heelwa fashion storefront homepage presented in a desktop mockup",
-  },
-  {
-    categories: ["SaaS", "Web Platform", "Point of Sale"],
-    title: "Juniper",
-    description:
-      "A connected cafe workspace bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
-    image: "/images/portfolio/juniper-mockup.webp",
-    alt: "Juniper cafe platform English landing page presented in a desktop mockup, featuring an illustrative dashboard",
-  },
-] as const;
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Discovery",
-    description:
-      "Kami memetakan tujuan, batasan, dan kebutuhan pengguna melalui kickoff terstruktur selama 2 minggu.",
-  },
-  {
-    number: "02",
-    title: "Design",
-    description:
-      "Prototipe high-fidelity disiapkan sebelum kode produksi dibuat, sehingga hasil akhirnya dapat dipahami sejak awal.",
-  },
-  {
-    number: "03",
-    title: "Build",
-    description:
-      "Pengerjaan dalam sprint 2 minggu dengan demo mingguan agar Anda selalu terlibat dalam setiap perkembangan.",
-  },
-  {
-    number: "04",
-    title: "Peluncuran & Dukungan",
-    description:
-      "Kami meluncurkan produk, memantau performa, dan memberikan dukungan selama 30 hari setelah peluncuran tanpa biaya tambahan.",
-  },
-] as const;
-
-const team = [
-  {
-    name: "Ali Hasyimi Assegaf",
-    role: "Founder & Lead Engineer",
-  },
-  {
-    name: "Bimantara Tito Wahyudi",
-    role: "CTO & Backend Engineer",
-  },
-  {
-    name: "Achmad Zidan Ramdani",
-    role: "Frontend Developer & Mobile Developer",
-  },
-  {
-    name: "Rachmatullah Rizaldi",
-    role: "Backend Developer",
-  },
-  {
-    name: "Miqdad Hanif Mutawally",
-    role: "CBO",
-  },
-] as const;
-
-const stats = [
-  { value: "5", label: "Proyek diselesaikan" },
-  { value: "12+", label: "Tahun pengalaman gabungan" },
-  { value: "100%", label: "Retensi klien" },
-  { value: "<4j", label: "Rata-rata waktu respons" },
-] as const;
+import type { Locale } from "@/lib/constants";
+import { getLocalizedPath } from "@/lib/i18n";
 
 function SectionHeader({
   eyebrow,
@@ -178,10 +30,13 @@ function SectionHeader({
   );
 }
 
-export default function Home() {
+export function HomePage({ locale }: { locale: Locale }) {
+  const copy = homeContent[locale];
+  const whatsappMessage = encodeURIComponent(copy.whatsappMessage);
+
   return (
-    <>
-      <section id="hero" className="bg-canvas" lang="en">
+    <div lang={locale}>
+      <section id="hero" className="bg-canvas">
         <div className="hero-cinema">
           <Image
             src={heroImage}
@@ -193,44 +48,43 @@ export default function Home() {
           />
           <div className="hero-cinema-shade" aria-hidden="true" />
           <div className="hero-cinema-copy">
-            <p className="hero-cinema-eyebrow">Software House / Indonesia</p>
+            <p className="hero-cinema-eyebrow">{copy.heroEyebrow}</p>
             <p className="hero-cinema-wordmark" aria-label="TreapLabs">
               TREAPLABS<span aria-hidden="true">.</span>
             </p>
             <h1 className="hero-cinema-tagline">
-              Software that works for your business.
+              {copy.tagline}
             </h1>
           </div>
           <a className="hero-cinema-down" href="#hero-intro">
-            Discover TreapLabs
+            {copy.discover}
             <ArrowRight className="size-4 rotate-90" aria-hidden="true" />
           </a>
         </div>
         <Container>
           <div id="hero-intro" className="scroll-mt-28 py-12 md:py-16">
             <p className="max-w-[480px] text-lg leading-8 md:text-xl">
-              TreapLabs builds mobile apps, websites, and custom AI solutions for
-              startups, small businesses, and enterprises across Indonesia.
+              {copy.intro}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <a
                 href="#contact"
                 className="button button-primary px-7 py-3.5 text-base"
               >
-                Build With TreapLabs
+                {copy.build}
               </a>
               <a
                 href="#work"
                 className="group inline-flex items-center gap-2 font-medium text-ink"
               >
-                Explore Our Work{" "}
+                {copy.explore}{" "}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
               </a>
             </div>
             <div className="mt-11 flex items-center gap-2.5 text-[13px] text-muted">
               <span className="pulse-dot size-2 rounded-full bg-lime" />
               <span>
-                Available for new projects -{" "}
+                {copy.availability}
                 <strong className="text-body">Q4 2026</strong>
               </span>
             </div>
@@ -238,7 +92,7 @@ export default function Home() {
         </Container>
         <div
           className="marquee border-y border-hairline py-4"
-          aria-label="Technologies we use"
+          aria-label={copy.technologiesLabel}
         >
           <div className="marquee-track">
             {[...technologies, ...technologies].map((technology, index) => (
@@ -257,7 +111,9 @@ export default function Home() {
       <section className="border-b border-hairline bg-canvas py-16 md:py-[72px]">
         <Container>
           <Reveal>
-            <p className="eyebrow mb-9 text-center">Dipercaya oleh tim di</p>
+            <p className="eyebrow mb-9 text-center">
+              {copy.clientsTitle}
+            </p>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-7 md:gap-x-16">
               {clients.map((client) => (
                 <span
@@ -278,12 +134,12 @@ export default function Home() {
       >
         <Container>
           <SectionHeader
-            eyebrow="Yang kami kerjakan"
-            title="Empat cara kami membantu Anda meluncurkan produk."
+            eyebrow={copy.servicesEyebrow}
+            title={copy.servicesTitle}
             dark
           />
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
-            {services.map((service, index) => (
+            {copy.services.map((service, index) => (
               <Reveal
                 key={service.index}
                 delay={index * 0.07}
@@ -294,7 +150,7 @@ export default function Home() {
                 }
               >
                 <a
-                  href={service.href}
+                  href={getLocalizedPath(service.href, locale)}
                   className={`service-tile flex h-full min-h-56 flex-col justify-between rounded-xl p-7 ${service.large ? "lg:min-h-[456px] lg:p-9" : ""}`}
                 >
                   <div>
@@ -325,14 +181,14 @@ export default function Home() {
         </Container>
       </section>
 
-      <section id="work" className="section-pad scroll-mt-20 bg-canvas" lang="en">
+      <section id="work" className="section-pad scroll-mt-20 bg-canvas">
         <Container>
           <SectionHeader
-            eyebrow="Selected work"
-            title="Products built for real work."
+            eyebrow={copy.workEyebrow}
+            title={copy.workTitle}
           />
           <div className="mt-16 space-y-20 md:mt-20 md:space-y-24">
-            {caseStudies.map((study, index) => (
+            {copy.caseStudies.map((study, index) => (
               <Reveal key={study.title}>
                 <article className="case-row grid items-center gap-10 md:grid-cols-2 md:gap-16">
                   <div
@@ -377,9 +233,12 @@ export default function Home() {
         className="dark-section section-pad scroll-mt-20 bg-deep"
       >
         <Container>
-          <SectionHeader title="Cara kami bekerja." dark />
+          <SectionHeader
+            title={copy.processTitle}
+            dark
+          />
           <div className="mt-16 grid gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step, index) => (
+            {copy.processSteps.map((step, index) => (
               <Reveal
                 key={step.number}
                 delay={index * 0.08}
@@ -400,17 +259,15 @@ export default function Home() {
             ))}
           </div>
           <Reveal className="mt-14 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/10 pt-9">
-            {["Sprint 2 minggu", "Demo mingguan", "Opsi harga tetap"].map(
-              (item) => (
-                <span
-                  key={item}
-                  className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[.08em] text-lime"
-                >
-                  <Check className="size-4" />
-                  {item}
-                </span>
-              ),
-            )}
+            {copy.processPromises.map((item) => (
+              <span
+                key={item}
+                className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[.08em] text-lime"
+              >
+                <Check className="size-4" />
+                {item}
+              </span>
+            ))}
           </Reveal>
         </Container>
       </section>
@@ -427,54 +284,47 @@ export default function Home() {
         <Container>
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
-              <p className="eyebrow mb-6">Tentang kami</p>
+              <p className="eyebrow mb-6">
+                {copy.aboutEyebrow}
+              </p>
               <h2 className="section-title max-w-lg">
-                Tim kecil,{" "}
-                <span className="text-muted">dengan alasan yang jelas.</span>
+                {copy.aboutTitle}
+                <span className="text-muted">
+                  {copy.aboutTitleMuted}
+                </span>
               </h2>
               <div className="mt-8 max-w-[480px] space-y-5 text-lg leading-[1.7]">
-                <p>
-                  Kami tidak menambah anggota tim hanya untuk memenangkan
-                  proyek. Setiap proyek TreapLabs dikerjakan oleh engineer
-                  berpengalaman yang telah meluncurkan produk nyata.
-                </p>
-                <p>
-                  Anda berkomunikasi langsung dengan engineer yang mengerjakan
-                  produk Anda, tanpa perantara. Kami percaya transparansi
-                  proses, timeline, dan biaya adalah dasar kemitraan jangka
-                  panjang.
-                </p>
+                {copy.aboutParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
             </Reveal>
-            <div className="grid gap-4">
-              {team.map((member, index) => (
-                <Reveal key={member.name} delay={index * 0.06}>
-                  <article className="team-card grid grid-cols-[auto_1fr_auto] items-center gap-5 rounded-xl border border-hairline bg-surface p-5 sm:gap-7 sm:p-6">
-                    <span className="font-mono text-xs tracking-[.12em] text-muted">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3 className="text-xl font-bold leading-tight tracking-[-.025em] sm:text-2xl">
-                        {member.name}
-                      </h3>
-                      <p className="mt-1.5 text-sm text-muted">{member.role}</p>
-                    </div>
-                    <span className="team-card-mark" aria-hidden="true" />
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-          <Reveal className="mt-20 grid grid-cols-2 gap-8 border-t border-hairline pt-12 lg:mt-24 lg:grid-cols-4 lg:pt-14">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="font-display text-5xl font-bold leading-none tracking-[-.04em] text-ink md:text-7xl">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm text-muted">{stat.label}</p>
+            <section aria-labelledby="leadership-heading" className="min-w-0">
+              <Reveal>
+                <h3 id="leadership-heading" className="eyebrow mb-6">
+                  {copy.leadershipTitle}
+                </h3>
+              </Reveal>
+              <div className="grid gap-4">
+                {copy.team.map((member, index) => (
+                  <Reveal key={member.name} delay={index * 0.06}>
+                    <article className="team-card grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 rounded-xl border border-hairline bg-surface p-5 sm:gap-6 sm:p-6">
+                      <span className="font-mono text-xs tracking-[.12em] text-muted" aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div className="min-w-0">
+                        <h4 className="text-xl font-bold leading-tight tracking-[-.025em] break-words sm:text-2xl">
+                          {member.name}
+                        </h4>
+                        <p lang="en" className="mt-2 text-sm leading-6 text-body break-words">
+                          {member.role}
+                        </p>
+                      </div>
+                      <span className="team-card-mark" aria-hidden="true" />
+                    </article>
+                  </Reveal>
+                ))}
               </div>
-            ))}
-          </Reveal>
+            </section>
+          </div>
         </Container>
       </section>
 
@@ -520,11 +370,10 @@ export default function Home() {
         <Container className="relative">
           <Reveal>
             <h2 className="text-[clamp(2.75rem,5.5vw,5rem)] font-bold leading-none tracking-[-.03em]">
-              Mari wujudkan ide Anda.
+              {copy.contactTitle}
             </h2>
             <p className="mt-6 text-lg text-white/50">
-              Ceritakan produk yang ingin Anda bangun. Kami akan menjelaskan
-              secara jujur bagaimana kami dapat membantu.
+              {copy.contactDescription}
             </p>
             <TrackedWhatsAppLink
               href={`https://wa.me/6285183170436?text=${whatsappMessage}`}
@@ -534,7 +383,7 @@ export default function Home() {
               ctaLocation="contact"
               className="button button-primary mt-11 px-9 py-4 text-base"
             >
-              Jadwalkan konsultasi 30 menit
+              {copy.consultation}
             </TrackedWhatsAppLink>
             <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/40">
               <a
@@ -556,6 +405,6 @@ export default function Home() {
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }
