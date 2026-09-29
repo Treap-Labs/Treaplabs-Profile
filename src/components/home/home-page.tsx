@@ -195,20 +195,12 @@ export function HomePage({ locale }: { locale: Locale }) {
             title={copy.servicesTitle}
             dark
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
+          <div className="mt-14 grid gap-4 md:grid-cols-2">
             {copy.services.map((service, index) => (
-              <Reveal
-                key={service.index}
-                delay={index * 0.07}
-                className={
-                  service.large
-                    ? "md:col-span-2 lg:row-span-2 lg:col-span-1"
-                    : ""
-                }
-              >
+              <Reveal key={service.index} delay={index * 0.07}>
                 <a
                   href={getLocalizedPath(service.href, locale)}
-                  className={`service-tile flex h-full min-h-56 flex-col justify-between rounded-xl p-7 ${service.large ? "lg:min-h-[456px] lg:p-9" : ""}`}
+                  className="service-tile flex h-full min-h-56 flex-col justify-between rounded-xl p-7"
                 >
                   <div>
                     <div className="mb-6 flex items-start justify-between text-xs font-semibold tracking-[.1em] text-white/30">

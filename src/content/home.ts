@@ -36,7 +36,6 @@ type HomeContent = {
     description: string;
     tags: readonly string[];
     href: string;
-    large: boolean;
   }[];
   caseStudies: readonly {
     categories: readonly string[];
@@ -114,7 +113,6 @@ export const homeContent = {
           "Aplikasi lintas platform berbasis Flutter yang terasa native di iOS dan Android - cepat diluncurkan dan mudah dikembangkan.",
         tags: ["Flutter", "iOS", "Android", "Dart"],
         href: "/jasa-pembuatan-aplikasi/",
-        large: true,
       },
       {
         index: "02",
@@ -123,7 +121,6 @@ export const homeContent = {
           "Aplikasi web full-stack dengan arsitektur modern, performa tinggi, dan siap berkembang bersama bisnis Anda.",
         tags: ["Next.js", "Laravel", "Supabase"],
         href: "/jasa-pembuatan-website/",
-        large: false,
       },
       {
         index: "03",
@@ -132,7 +129,6 @@ export const homeContent = {
           "Solusi AI khusus untuk mengotomasi alur kerja, mengintegrasikan model ke aplikasi, dan meningkatkan efisiensi operasional bisnis.",
         tags: ["Python", "Integrasi AI", "Otomasi"],
         href: "/solusi-ai-bisnis/",
-        large: false,
       },
       {
         index: "04",
@@ -141,7 +137,6 @@ export const homeContent = {
           "Evaluasi arsitektur, audit teknologi, dan dukungan langsung dari pengembang senior untuk memperkuat tim Anda.",
         tags: ["Arsitektur", "Audit", "Pendampingan Tim"],
         href: "/konsultasi-teknologi/",
-        large: false,
       },
     ],
     caseStudies: [
@@ -276,7 +271,6 @@ export const homeContent = {
           "Cross-platform Flutter apps that feel native on iOS and Android, launch quickly, and scale easily.",
         tags: ["Flutter", "iOS", "Android", "Dart"],
         href: "/jasa-pembuatan-aplikasi/",
-        large: true,
       },
       {
         index: "02",
@@ -285,7 +279,6 @@ export const homeContent = {
           "Full-stack web applications with modern architecture, high performance, and room to grow with your business.",
         tags: ["Next.js", "Laravel", "Supabase"],
         href: "/jasa-pembuatan-website/",
-        large: false,
       },
       {
         index: "03",
@@ -294,7 +287,6 @@ export const homeContent = {
           "Custom AI solutions that automate workflows, integrate models into applications, and improve operational efficiency.",
         tags: ["Python", "AI Integration", "Automation"],
         href: "/solusi-ai-bisnis/",
-        large: false,
       },
       {
         index: "04",
@@ -303,7 +295,6 @@ export const homeContent = {
           "Architecture reviews, technology audits, and direct support from senior engineers to strengthen your team.",
         tags: ["Architecture", "Audit", "Team Augmentation"],
         href: "/konsultasi-teknologi/",
-        large: false,
       },
     ],
     caseStudies: [
