@@ -215,9 +215,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                       <span>{service.index}</span>
                       <ArrowUpRight className="corner-arrow size-5" />
                     </div>
-                    <h3
-                      className={`font-bold leading-[1.1] tracking-[-.02em] ${service.large ? "text-3xl" : "text-[22px]"}`}
-                    >
+                    <h3 className="text-[22px] font-bold leading-[1.1] tracking-[-.02em]">
                       {service.title}
                     </h3>
                     <p className="mt-4 max-w-md text-[15px] leading-6 text-white/50">
