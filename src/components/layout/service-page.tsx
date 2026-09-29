@@ -94,6 +94,9 @@ export function ServicePage({ service, locale }: { service: ServiceContent; loca
               <div className="mt-12 rounded-xl border border-hairline bg-surface p-7">
                 <p className="eyebrow mb-4">{copy.caseStudy}</p>
                 <h3 className="text-2xl font-bold">{service.caseStudy.title}</h3>
+                {service.caseStudy.client ? (
+                  <p className="mt-2 text-sm text-muted">{service.caseStudy.client}</p>
+                ) : null}
                 <p className="mt-3 leading-7">{service.caseStudy.result}</p>
               </div>
             ) : null}

@@ -5,14 +5,6 @@ await Promise.all([
     .resize(1600, 1067, { fit: "cover" })
     .webp({ quality: 78, effort: 6 })
     .toFile("src/images/optimized/hero.webp"),
-  sharp("src/images/caseStudies/mobile_hris.png")
-    .resize(1200, 800, { fit: "cover" })
-    .webp({ quality: 78, effort: 6 })
-    .toFile("src/images/optimized/mobile-hris.webp"),
-  sharp("src/images/caseStudies/defect_ai.png")
-    .resize(1200, 800, { fit: "cover" })
-    .webp({ quality: 78, effort: 6 })
-    .toFile("src/images/optimized/defect-ai.webp"),
   sharp("public/images/treaplabs-og.svg")
     .png({ compressionLevel: 9 })
     .toFile("public/images/treaplabs-og.png"),

@@ -385,40 +385,6 @@ export function HomePage({ locale }: { locale: Locale }) {
         </Container>
       </section>
 
-      {/* <section id="testimonials" className="section-pad bg-canvas pt-0 md:pt-0">
-        <Container>
-          <p className="eyebrow mb-8">What clients say</p>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {testimonials.map((testimonial, index) => (
-              <Reveal key={testimonial.name} delay={index * 0.1}>
-                <figure className="flex h-full min-h-80 flex-col justify-between rounded-xl border border-hairline bg-surface p-7 transition-shadow hover:shadow-[0_16px_48px_var(--card-shadow)] md:p-11">
-                  <blockquote className="font-display text-xl font-medium leading-[1.45] tracking-[-.01em] text-ink md:text-[22px]">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-10 flex items-center gap-3.5">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      width={44}
-                      height={44}
-                      className="size-11 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-sm font-semibold text-ink">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-[13px] text-muted">
-                        {testimonial.role}, {testimonial.company}
-                      </p>
-                    </div>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section> */}
-
       <section
         id="contact"
         className="dark-section section-pad relative scroll-mt-20 overflow-hidden bg-deep text-center"

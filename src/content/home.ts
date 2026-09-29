@@ -170,10 +170,10 @@ export const homeContent = {
         alt: "Beranda etalase busana Heelwa dalam mockup desktop",
       },
       {
-        categories: ["SaaS", "Platform Web", "Sistem Kasir"],
+        categories: ["Produk Sendiri", "SaaS", "Dalam Pengembangan"],
         title: "Juniper",
         description:
-          "Platform kafe terhubung yang menyatukan kasir, pemesanan pelanggan, antrean dapur, pembayaran, inventaris, dan loyalitas di seluruh cabang.",
+          "Produk SaaS internal TreapLabs yang sedang kami kembangkan: platform kafe yang menyatukan kasir, pemesanan pelanggan, antrean dapur, pembayaran, inventaris, dan loyalitas di seluruh cabang.",
         image: "/images/portfolio/juniper-mockup.webp",
         alt: "Halaman utama platform kafe Juniper dalam mockup desktop dengan ilustrasi dashboard",
       },
@@ -332,10 +332,10 @@ export const homeContent = {
         alt: "Heelwa fashion storefront homepage presented in a desktop mockup",
       },
       {
-        categories: ["SaaS", "Web Platform", "Point of Sale"],
+        categories: ["Own Product", "SaaS", "In Development"],
         title: "Juniper",
         description:
-          "A connected cafe workspace bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
+          "An in-house TreapLabs SaaS product currently in development: a cafe platform bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
         image: "/images/portfolio/juniper-mockup.webp",
         alt: "Juniper cafe platform English landing page presented in a desktop mockup, featuring an illustrative dashboard",
       },

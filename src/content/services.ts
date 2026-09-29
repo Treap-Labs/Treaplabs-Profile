@@ -10,7 +10,7 @@ export type ServiceContent = {
   benefits: readonly { title: string; description: string }[];
   deliverables: readonly string[];
   technologies: readonly string[];
-  caseStudy?: { title: string; result: string };
+  caseStudy?: { title: string; client?: string; result: string };
   faq: readonly { question: string; answer: string }[];
 };
 
@@ -31,7 +31,7 @@ export const servicePagesId = [
     ],
     deliverables: ["Aplikasi Android dan iOS", "Implementasi antarmuka", "Integrasi API dan backend", "Pengujian kualitas", "Publikasi dan dukungan peluncuran"],
     technologies: ["Flutter", "Dart", "Android", "iOS", "Supabase", "REST API"],
-    caseStudy: { title: "Kami HRIS", result: "Memangkas proses payroll dari 3 hari menjadi 20 menit melalui pengalaman mobile-first." },
+    caseStudy: { title: "Ikigawe HRIS", client: "Spectra Komputer", result: "Memangkas proses payroll dari 3 hari menjadi 20 menit melalui pengalaman mobile-first." },
     faq: [
       { question: "Berapa lama proses pembuatan aplikasi?", answer: "Durasi bergantung pada ruang lingkup. MVP umumnya dimulai dari 8-12 minggu setelah tahap discovery dan desain disepakati." },
       { question: "Apakah aplikasi dibuat untuk Android dan iOS?", answer: "Ya. Kami menggunakan Flutter untuk membangun aplikasi lintas platform dengan pengalaman yang konsisten di Android dan iOS." },
@@ -76,7 +76,7 @@ export const servicePagesId = [
     ],
     deliverables: ["Studi kelayakan AI", "Otomasi alur kerja", "Model AI khusus", "Integrasi AI ke aplikasi", "API dan integrasi sistem", "Pemantauan model"],
     technologies: ["Python", "PyTorch", "FastAPI", "LLM API", "PostgreSQL", "Cloud"],
-    caseStudy: { title: "Defect Eye", result: "Salah satu implementasi AI TreapLabs untuk membantu inspeksi operasional, dengan deteksi 94% cacat permukaan pada kecepatan 3x inspeksi manual." },
+    caseStudy: { title: "Walk Around Check", client: "Klien inspeksi kendaraan (anonim)", result: "Integrasi analisis AI pada alur inspeksi kendaraan, dengan deteksi 94% cacat permukaan pada kecepatan 3x inspeksi manual." },
     faq: [
       { question: "Workflow apa yang dapat diotomasi dengan AI?", answer: "AI dapat membantu klasifikasi data, pemrosesan dokumen, pencarian informasi, rekomendasi, quality control, dan pekerjaan berulang lain yang memiliki pola serta tujuan jelas." },
       { question: "Bisakah AI diintegrasikan ke aplikasi yang sudah digunakan?", answer: "Bisa. Kami dapat menyediakan API atau integrasi langsung sesuai arsitektur aplikasi, keamanan data, dan kebutuhan operasional Anda." },
@@ -122,7 +122,7 @@ export const servicePages = [
     ],
     deliverables: ["Android and iOS apps", "UI implementation", "API and backend integration", "Quality assurance", "Publishing and launch support"],
     technologies: ["Flutter", "Dart", "Android", "iOS", "Supabase", "REST API"],
-    caseStudy: { title: "Kami HRIS", result: "Reduced payroll processing from three days to 20 minutes through a mobile-first experience." },
+    caseStudy: { title: "Ikigawe HRIS", client: "Spectra Komputer", result: "Reduced payroll processing from three days to 20 minutes through a mobile-first experience." },
     faq: [
       { question: "How long does app development take?", answer: "The timeline depends on the scope. An MVP typically starts at 8-12 weeks after the discovery and design phases are approved." },
       { question: "Will the app work on Android and iOS?", answer: "Yes. We use Flutter to build cross-platform apps with a consistent experience on Android and iOS." },
@@ -163,7 +163,7 @@ export const servicePages = [
     ],
     deliverables: ["AI feasibility study", "Workflow automation", "Custom AI model", "AI application integration", "API and system integration", "Model monitoring"],
     technologies: ["Python", "PyTorch", "FastAPI", "LLM API", "PostgreSQL", "Cloud"],
-    caseStudy: { title: "Defect Eye", result: "A TreapLabs AI implementation for operational inspection, detecting 94% of surface defects at three times the speed of manual inspection." },
+    caseStudy: { title: "Walk Around Check", client: "Vehicle inspection client (anonymous)", result: "AI analysis integrated into a vehicle inspection workflow, detecting 94% of surface defects at three times the speed of manual inspection." },
     faq: [
       { question: "What workflows can AI automate?", answer: "AI can support data classification, document processing, information retrieval, recommendations, quality control, and other repetitive work with clear patterns and goals." },
       { question: "Can AI integrate with an application we already use?", answer: "Yes. We can provide an API or direct integration based on your application architecture, data security, and operational needs." },
