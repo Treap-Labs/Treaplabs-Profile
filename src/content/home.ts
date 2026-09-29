@@ -45,18 +45,28 @@ type HomeContent = {
     image: string;
     alt: string;
   }[];
-  processSteps: readonly { number: string; title: string; description: string }[];
+  processSteps: readonly {
+    number: string;
+    title: string;
+    description: string;
+  }[];
   team: readonly { name: string; role: string }[];
 };
 
-export const clients = ["Spectra Komputer", "Mahdaly", "Smantik"] as const;
+export const clients = [
+  "Spectra Komputer",
+  "Mahdaly",
+  "Smantik",
+  "Heelwa",
+] as const;
 
 export const homeContent = {
   id: {
     heroEyebrow: "Pengembangan Software / Indonesia",
     tagline: "Software yang bekerja untuk bisnis Anda.",
     discover: "Kenali TreapLabs",
-    intro: "TreapLabs membangun aplikasi mobile, website, dan solusi AI khusus untuk startup, UMKM, dan perusahaan di seluruh Indonesia.",
+    intro:
+      "TreapLabs membangun aplikasi mobile, website, dan solusi AI khusus untuk startup, UMKM, dan perusahaan di seluruh Indonesia.",
     build: "Bangun Bersama TreapLabs",
     explore: "Lihat Proyek Kami",
     availability: "Tersedia untuk proyek baru - ",
@@ -64,9 +74,15 @@ export const homeContent = {
     technologiesTitle: "Perangkat modern untuk membawa bisnis Anda lebih jauh.",
     technologyGroups: [
       { category: "Front-end", technologies: ["Next.js", "TypeScript"] },
-      { category: "Back-end & Database", technologies: ["Laravel", "Supabase", "PostgreSQL"] },
+      {
+        category: "Back-end & Database",
+        technologies: ["Laravel", "Supabase", "PostgreSQL"],
+      },
       { category: "Mobile", technologies: ["Flutter", "React Native"] },
-      { category: "AI & Machine Learning", technologies: ["Python", "PyTorch"] },
+      {
+        category: "AI & Machine Learning",
+        technologies: ["Python", "PyTorch"],
+      },
       { category: "Infrastruktur", technologies: ["Docker", "Kubernetes"] },
     ],
     clientsTitle: "Dipercaya oleh tim di",
@@ -85,72 +101,123 @@ export const homeContent = {
     ],
     leadershipTitle: "Tim Kepemimpinan",
     contactTitle: "Mari wujudkan ide Anda.",
-    contactDescription: "Ceritakan produk yang ingin Anda bangun. Kami akan menjelaskan secara jujur bagaimana kami dapat membantu.",
+    contactDescription:
+      "Ceritakan produk yang ingin Anda bangun. Kami akan menjelaskan secara jujur bagaimana kami dapat membantu.",
     consultation: "Jadwalkan konsultasi 30 menit",
-    whatsappMessage: "Halo TreapLabs, saya tertarik untuk menjadwalkan konsultasi gratis selama 30 menit. Apakah ada jadwal yang tersedia?",
+    whatsappMessage:
+      "Halo TreapLabs, saya tertarik untuk menjadwalkan konsultasi gratis selama 30 menit. Apakah ada jadwal yang tersedia?",
     services: [
       {
-        index: "01", title: "Pengembangan Aplikasi Mobile",
-        description: "Aplikasi lintas platform berbasis Flutter yang terasa native di iOS dan Android - cepat diluncurkan dan mudah dikembangkan.",
-        tags: ["Flutter", "iOS", "Android", "Dart"], href: "/jasa-pembuatan-aplikasi/", large: true,
+        index: "01",
+        title: "Pengembangan Aplikasi Mobile",
+        description:
+          "Aplikasi lintas platform berbasis Flutter yang terasa native di iOS dan Android - cepat diluncurkan dan mudah dikembangkan.",
+        tags: ["Flutter", "iOS", "Android", "Dart"],
+        href: "/jasa-pembuatan-aplikasi/",
+        large: true,
       },
       {
-        index: "02", title: "Platform Web",
-        description: "Aplikasi web full-stack dengan arsitektur modern, performa tinggi, dan siap berkembang bersama bisnis Anda.",
-        tags: ["Next.js", "Laravel", "Supabase"], href: "/jasa-pembuatan-website/", large: false,
+        index: "02",
+        title: "Platform Web",
+        description:
+          "Aplikasi web full-stack dengan arsitektur modern, performa tinggi, dan siap berkembang bersama bisnis Anda.",
+        tags: ["Next.js", "Laravel", "Supabase"],
+        href: "/jasa-pembuatan-website/",
+        large: false,
       },
       {
-        index: "03", title: "Otomasi & Integrasi AI",
-        description: "Solusi AI khusus untuk mengotomasi alur kerja, mengintegrasikan model ke aplikasi, dan meningkatkan efisiensi operasional bisnis.",
-        tags: ["Python", "Integrasi AI", "Otomasi"], href: "/solusi-ai-bisnis/", large: false,
+        index: "03",
+        title: "Otomasi & Integrasi AI",
+        description:
+          "Solusi AI khusus untuk mengotomasi alur kerja, mengintegrasikan model ke aplikasi, dan meningkatkan efisiensi operasional bisnis.",
+        tags: ["Python", "Integrasi AI", "Otomasi"],
+        href: "/solusi-ai-bisnis/",
+        large: false,
       },
       {
-        index: "04", title: "Konsultasi Teknologi",
-        description: "Evaluasi arsitektur, audit teknologi, dan dukungan langsung dari pengembang senior untuk memperkuat tim Anda.",
-        tags: ["Arsitektur", "Audit", "Pendampingan Tim"], href: "/konsultasi-teknologi/", large: false,
+        index: "04",
+        title: "Konsultasi Teknologi",
+        description:
+          "Evaluasi arsitektur, audit teknologi, dan dukungan langsung dari pengembang senior untuk memperkuat tim Anda.",
+        tags: ["Arsitektur", "Audit", "Pendampingan Tim"],
+        href: "/konsultasi-teknologi/",
+        large: false,
       },
     ],
     caseStudies: [
       {
-        categories: ["Platform Web", "Aplikasi Mobile", "HRIS"], title: "Ikigawe HRIS",
-        description: "Manajemen tenaga kerja terhubung di web dan mobile. Administrasi karyawan, kehadiran, shift, dan jadwal dengan akses berbasis izin.",
+        categories: ["Platform Web", "Aplikasi Mobile", "HRIS"],
+        title: "Ikigawe HRIS",
+        description:
+          "Manajemen tenaga kerja terhubung di web dan mobile. Administrasi karyawan, kehadiran, shift, dan jadwal dengan akses berbasis izin.",
         image: "/images/portfolio/ikigawe-hris-mockup.webp",
         alt: "Ilustrasi dashboard kehadiran desktop dan mockup aplikasi mobile Ikigawe HRIS dengan data demo",
       },
       {
-        categories: ["Aplikasi Mobile", "Integrasi AI"], title: "Walk Around Check",
-        description: "Alur inspeksi kendaraan terpandu dengan pengambilan foto enam sudut, daftar pemeriksaan kondisi, integrasi analisis AI, dan laporan PDF.",
+        categories: ["Aplikasi Mobile", "Integrasi AI"],
+        title: "Walk Around Check",
+        description:
+          "Alur inspeksi kendaraan terpandu dengan pengambilan foto enam sudut, daftar pemeriksaan kondisi, integrasi analisis AI, dan laporan PDF.",
         image: "/images/portfolio/walk-around-check-mockup.webp",
         alt: "Dashboard mobile Walk Around Check dalam mockup ponsel dengan contoh total inspeksi",
       },
       {
-        categories: ["Toko Online", "Platform Web"], title: "Heelwa",
-        description: "Etalase busana yang terhubung dengan administrasi ritel, menggabungkan penelusuran produk, keranjang, dan pembayaran dengan inventaris serta kasir.",
+        categories: ["Toko Online", "Platform Web"],
+        title: "Heelwa",
+        description:
+          "Etalase busana yang terhubung dengan administrasi ritel, menggabungkan penelusuran produk, keranjang, dan pembayaran dengan inventaris serta kasir.",
         image: "/images/portfolio/heelwa-mockup.webp",
         alt: "Beranda etalase busana Heelwa dalam mockup desktop",
       },
       {
-        categories: ["SaaS", "Platform Web", "Sistem Kasir"], title: "Juniper",
-        description: "Platform kafe terhubung yang menyatukan kasir, pemesanan pelanggan, antrean dapur, pembayaran, inventaris, dan loyalitas di seluruh cabang.",
+        categories: ["SaaS", "Platform Web", "Sistem Kasir"],
+        title: "Juniper",
+        description:
+          "Platform kafe terhubung yang menyatukan kasir, pemesanan pelanggan, antrean dapur, pembayaran, inventaris, dan loyalitas di seluruh cabang.",
         image: "/images/portfolio/juniper-mockup.webp",
         alt: "Halaman utama platform kafe Juniper dalam mockup desktop dengan ilustrasi dashboard",
       },
       {
-        categories: ["Platform Web", "Teknologi Pendidikan", "Web Speech API"], title: "Smantik",
-        description: "Permainan aritmatika mental berbasis suara dengan mode murid dan guru, penilaian otomatis, serta impor paket latihan CSV dan Excel langsung di browser.",
+        categories: ["Platform Web", "Teknologi Pendidikan", "Web Speech API"],
+        title: "Smantik",
+        description:
+          "Permainan aritmatika mental berbasis suara dengan mode murid dan guru, penilaian otomatis, serta impor paket latihan CSV dan Excel langsung di browser.",
         image: "/images/portfolio/smantik-mockup.webp",
         alt: "Wizard pengaturan latihan aritmatika mental Smantik dalam mockup desktop",
       },
     ],
     processSteps: [
-      { number: "01", title: "Eksplorasi", description: "Kami memetakan tujuan, batasan, dan kebutuhan pengguna melalui tahap awal terstruktur selama 2 minggu." },
-      { number: "02", title: "Desain", description: "Prototipe terperinci disiapkan sebelum kode produksi dibuat, sehingga hasil akhirnya dapat dipahami sejak awal." },
-      { number: "03", title: "Pengembangan", description: "Pengerjaan dalam sprint 2 minggu dengan demo mingguan agar Anda selalu terlibat dalam setiap perkembangan." },
-      { number: "04", title: "Peluncuran & Dukungan", description: "Kami meluncurkan produk, memantau performa, dan memberikan dukungan selama 30 hari setelah peluncuran tanpa biaya tambahan." },
+      {
+        number: "01",
+        title: "Eksplorasi",
+        description:
+          "Kami memetakan tujuan, batasan, dan kebutuhan pengguna melalui tahap awal terstruktur selama 2 minggu.",
+      },
+      {
+        number: "02",
+        title: "Desain",
+        description:
+          "Prototipe terperinci disiapkan sebelum kode produksi dibuat, sehingga hasil akhirnya dapat dipahami sejak awal.",
+      },
+      {
+        number: "03",
+        title: "Pengembangan",
+        description:
+          "Pengerjaan dalam sprint 2 minggu dengan demo mingguan agar Anda selalu terlibat dalam setiap perkembangan.",
+      },
+      {
+        number: "04",
+        title: "Peluncuran & Dukungan",
+        description:
+          "Kami meluncurkan produk, memantau performa, dan memberikan dukungan selama 30 hari setelah peluncuran tanpa biaya tambahan.",
+      },
     ],
     team: [
       { name: "Ali Hasyimi Assegaf", role: "Founder & Head of Engineering" },
-      { name: "Bimantara Tito Wahyudi", role: "Chief Technology Officer & Head of Backend Engineering" },
+      {
+        name: "Bimantara Tito Wahyudi",
+        role: "Chief Technology Officer & Head of Backend Engineering",
+      },
       { name: "Achmad Zidan Ramdani", role: "Head of Frontend & Mobile" },
       { name: "Rachmatullah Rizaldi", role: "Head of UI/UX Design" },
       { name: "Miqdad Hanif Mutawally", role: "Chief Business Officer" },
@@ -160,7 +227,8 @@ export const homeContent = {
     heroEyebrow: "Software House / Indonesia",
     tagline: "Software that works for your business.",
     discover: "Discover TreapLabs",
-    intro: "TreapLabs builds mobile apps, websites, and custom AI solutions for startups, small businesses, and enterprises across Indonesia.",
+    intro:
+      "TreapLabs builds mobile apps, websites, and custom AI solutions for startups, small businesses, and enterprises across Indonesia.",
     build: "Build With TreapLabs",
     explore: "Explore Our Work",
     availability: "Available for new projects - ",
@@ -168,9 +236,15 @@ export const homeContent = {
     technologiesTitle: "Modern tools to move your business forward.",
     technologyGroups: [
       { category: "Front-end", technologies: ["Next.js", "TypeScript"] },
-      { category: "Back-end & Database", technologies: ["Laravel", "Supabase", "PostgreSQL"] },
+      {
+        category: "Back-end & Database",
+        technologies: ["Laravel", "Supabase", "PostgreSQL"],
+      },
       { category: "Mobile", technologies: ["Flutter", "React Native"] },
-      { category: "AI & Machine Learning", technologies: ["Python", "PyTorch"] },
+      {
+        category: "AI & Machine Learning",
+        technologies: ["Python", "PyTorch"],
+      },
       { category: "Infrastructure", technologies: ["Docker", "Kubernetes"] },
     ],
     clientsTitle: "Trusted by teams at",
@@ -189,72 +263,123 @@ export const homeContent = {
     ],
     leadershipTitle: "Leadership Team",
     contactTitle: "Let’s bring your idea to life.",
-    contactDescription: "Tell us about the product you want to build. We’ll explain honestly how we can help.",
+    contactDescription:
+      "Tell us about the product you want to build. We’ll explain honestly how we can help.",
     consultation: "Schedule a 30-minute consultation",
-    whatsappMessage: "Hello TreapLabs, I am interested in scheduling a free 30-minute consultation. Is there a time available?",
+    whatsappMessage:
+      "Hello TreapLabs, I am interested in scheduling a free 30-minute consultation. Is there a time available?",
     services: [
       {
-        index: "01", title: "Mobile App Development",
-        description: "Cross-platform Flutter apps that feel native on iOS and Android, launch quickly, and scale easily.",
-        tags: ["Flutter", "iOS", "Android", "Dart"], href: "/jasa-pembuatan-aplikasi/", large: true,
+        index: "01",
+        title: "Mobile App Development",
+        description:
+          "Cross-platform Flutter apps that feel native on iOS and Android, launch quickly, and scale easily.",
+        tags: ["Flutter", "iOS", "Android", "Dart"],
+        href: "/jasa-pembuatan-aplikasi/",
+        large: true,
       },
       {
-        index: "02", title: "Web Platforms",
-        description: "Full-stack web applications with modern architecture, high performance, and room to grow with your business.",
-        tags: ["Next.js", "Laravel", "Supabase"], href: "/jasa-pembuatan-website/", large: false,
+        index: "02",
+        title: "Web Platforms",
+        description:
+          "Full-stack web applications with modern architecture, high performance, and room to grow with your business.",
+        tags: ["Next.js", "Laravel", "Supabase"],
+        href: "/jasa-pembuatan-website/",
+        large: false,
       },
       {
-        index: "03", title: "AI Automation & Integration",
-        description: "Custom AI solutions that automate workflows, integrate models into applications, and improve operational efficiency.",
-        tags: ["Python", "AI Integration", "Automation"], href: "/solusi-ai-bisnis/", large: false,
+        index: "03",
+        title: "AI Automation & Integration",
+        description:
+          "Custom AI solutions that automate workflows, integrate models into applications, and improve operational efficiency.",
+        tags: ["Python", "AI Integration", "Automation"],
+        href: "/solusi-ai-bisnis/",
+        large: false,
       },
       {
-        index: "04", title: "Technology Consulting",
-        description: "Architecture reviews, technology audits, and direct support from senior engineers to strengthen your team.",
-        tags: ["Architecture", "Audit", "Team Augmentation"], href: "/konsultasi-teknologi/", large: false,
+        index: "04",
+        title: "Technology Consulting",
+        description:
+          "Architecture reviews, technology audits, and direct support from senior engineers to strengthen your team.",
+        tags: ["Architecture", "Audit", "Team Augmentation"],
+        href: "/konsultasi-teknologi/",
+        large: false,
       },
     ],
     caseStudies: [
       {
-        categories: ["Web Platform", "Mobile App", "HRIS"], title: "Ikigawe HRIS",
-        description: "Connected workforce management across web and mobile. Employee administration, attendance, shifts, and schedules with permission-based access.",
+        categories: ["Web Platform", "Mobile App", "HRIS"],
+        title: "Ikigawe HRIS",
+        description:
+          "Connected workforce management across web and mobile. Employee administration, attendance, shifts, and schedules with permission-based access.",
         image: "/images/portfolio/ikigawe-hris-mockup.webp",
         alt: "Illustrative Ikigawe HRIS desktop attendance dashboard and mobile app mockup with demo data",
       },
       {
-        categories: ["Mobile App", "AI Integration"], title: "Walk Around Check",
-        description: "A guided vehicle-inspection workflow with six-angle photo capture, condition checklists, AI-analysis integration, and PDF reporting.",
+        categories: ["Mobile App", "AI Integration"],
+        title: "Walk Around Check",
+        description:
+          "A guided vehicle-inspection workflow with six-angle photo capture, condition checklists, AI-analysis integration, and PDF reporting.",
         image: "/images/portfolio/walk-around-check-mockup.webp",
         alt: "Walk Around Check mobile dashboard presented in a phone mockup with sample inspection totals",
       },
       {
-        categories: ["E-Commerce", "Web Platform"], title: "Heelwa",
-        description: "A fashion storefront paired with retail administration, connecting product browsing, cart and checkout flows with inventory and point-of-sale tools.",
+        categories: ["E-Commerce", "Web Platform"],
+        title: "Heelwa",
+        description:
+          "A fashion storefront paired with retail administration, connecting product browsing, cart and checkout flows with inventory and point-of-sale tools.",
         image: "/images/portfolio/heelwa-mockup.webp",
         alt: "Heelwa fashion storefront homepage presented in a desktop mockup",
       },
       {
-        categories: ["SaaS", "Web Platform", "Point of Sale"], title: "Juniper",
-        description: "A connected cafe workspace bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
+        categories: ["SaaS", "Web Platform", "Point of Sale"],
+        title: "Juniper",
+        description:
+          "A connected cafe workspace bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
         image: "/images/portfolio/juniper-mockup.webp",
         alt: "Juniper cafe platform English landing page presented in a desktop mockup, featuring an illustrative dashboard",
       },
       {
-        categories: ["Web Platform", "EdTech", "Web Speech API"], title: "Smantik",
-        description: "A voice-guided mental arithmetic game with student and teacher modes, automatic scoring, and in-browser CSV and Excel exercise imports.",
+        categories: ["Web Platform", "EdTech", "Web Speech API"],
+        title: "Smantik",
+        description:
+          "A voice-guided mental arithmetic game with student and teacher modes, automatic scoring, and in-browser CSV and Excel exercise imports.",
         image: "/images/portfolio/smantik-mockup.webp",
         alt: "Smantik mental arithmetic exercise setup wizard presented in a desktop mockup",
       },
     ],
     processSteps: [
-      { number: "01", title: "Discovery", description: "We map goals, constraints, and user needs through a structured two-week kickoff." },
-      { number: "02", title: "Design", description: "High-fidelity prototypes are prepared before production code, making the outcome clear from the start." },
-      { number: "03", title: "Build", description: "We work in two-week sprints with weekly demos, keeping you involved in every stage of progress." },
-      { number: "04", title: "Launch & Support", description: "We launch your product, monitor performance, and provide 30 days of post-launch support at no extra cost." },
+      {
+        number: "01",
+        title: "Discovery",
+        description:
+          "We map goals, constraints, and user needs through a structured two-week kickoff.",
+      },
+      {
+        number: "02",
+        title: "Design",
+        description:
+          "High-fidelity prototypes are prepared before production code, making the outcome clear from the start.",
+      },
+      {
+        number: "03",
+        title: "Build",
+        description:
+          "We work in two-week sprints with weekly demos, keeping you involved in every stage of progress.",
+      },
+      {
+        number: "04",
+        title: "Launch & Support",
+        description:
+          "We launch your product, monitor performance, and provide 30 days of post-launch support at no extra cost.",
+      },
     ],
     team: [
       { name: "Ali Hasyimi Assegaf", role: "Founder & Head of Engineering" },
-      { name: "Bimantara Tito Wahyudi", role: "Chief Technology Officer & Head of Backend Engineering" },
+      {
+        name: "Bimantara Tito Wahyudi",
+        role: "Chief Technology Officer & Head of Backend Engineering",
+      },
       { name: "Achmad Zidan Ramdani", role: "Head of Frontend & Mobile" },
       { name: "Rachmatullah Rizaldi", role: "Head of UI/UX Design" },
       { name: "Miqdad Hanif Mutawally", role: "Chief Business Officer" },
