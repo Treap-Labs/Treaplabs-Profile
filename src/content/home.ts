@@ -135,6 +135,12 @@ export const homeContent = {
         image: "/images/portfolio/juniper-mockup.webp",
         alt: "Halaman utama platform kafe Juniper dalam mockup desktop dengan ilustrasi dashboard",
       },
+      {
+        categories: ["Platform Web", "Teknologi Pendidikan", "Web Speech API"], title: "Smantik",
+        description: "Permainan aritmatika mental berbasis suara dengan mode murid dan guru, penilaian otomatis, serta impor paket latihan CSV dan Excel langsung di browser.",
+        image: "/images/portfolio/smantik-mockup.webp",
+        alt: "Wizard pengaturan latihan aritmatika mental Smantik dalam mockup desktop",
+      },
     ],
     processSteps: [
       { number: "01", title: "Eksplorasi", description: "Kami memetakan tujuan, batasan, dan kebutuhan pengguna melalui tahap awal terstruktur selama 2 minggu." },
@@ -232,6 +238,12 @@ export const homeContent = {
         description: "A connected cafe workspace bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
         image: "/images/portfolio/juniper-mockup.webp",
         alt: "Juniper cafe platform English landing page presented in a desktop mockup, featuring an illustrative dashboard",
+      },
+      {
+        categories: ["Web Platform", "EdTech", "Web Speech API"], title: "Smantik",
+        description: "A voice-guided mental arithmetic game with student and teacher modes, automatic scoring, and in-browser CSV and Excel exercise imports.",
+        image: "/images/portfolio/smantik-mockup.webp",
+        alt: "Smantik mental arithmetic exercise setup wizard presented in a desktop mockup",
       },
     ],
     processSteps: [
