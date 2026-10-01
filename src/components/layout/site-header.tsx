@@ -70,6 +70,13 @@ export function SiteHeader() {
   const homePath = getLocalizedPath("/", locale);
   const isHome = getLocalizedPath(pathname, locale) === homePath;
   const sectionHref = (hash: string) => (isHome ? hash : `${homePath}${hash}`);
+  const navigationHref = (href: string) => href.startsWith("#") ? sectionHref(href) : getLocalizedPath(href, locale);
+  const navigationCurrent = (href: string) => {
+    if (href.startsWith("#")) return undefined;
+    const current = getLocalizedPath(pathname, locale);
+    const target = getLocalizedPath(href, locale);
+    return current === target ? "page" : current.startsWith(target) ? "true" : undefined;
+  };
 
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
@@ -82,7 +89,7 @@ export function SiteHeader() {
           <ul className="flex items-center gap-6 xl:gap-10">
             {navigation.map((item) => (
               <li key={item.href}>
-                <a className="nav-link" href={sectionHref(item.href)}>
+                <a className="nav-link" href={navigationHref(item.href)} aria-current={navigationCurrent(item.href)}>
                   {item.label}
                 </a>
               </li>
@@ -126,7 +133,7 @@ export function SiteHeader() {
           <ul>
             {navigation.map((item) => (
               <li key={item.href}>
-                <a href={sectionHref(item.href)} onClick={() => setOpen(false)}>
+                <a href={navigationHref(item.href)} aria-current={navigationCurrent(item.href)} onClick={() => setOpen(false)}>
                   {item.label}
                 </a>
               </li>

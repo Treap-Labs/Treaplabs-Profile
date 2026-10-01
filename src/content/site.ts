@@ -3,6 +3,7 @@ import type { NavigationItem } from "@/types";
 const navigationId = [
   { label: "Layanan", href: "#services" },
   { label: "Proyek", href: "#work" },
+  { label: "Artikel", href: "/articles/" },
   { label: "Proses", href: "#process" },
   { label: "Tentang", href: "#about" },
   { label: "Karier", href: "#careers" },
@@ -11,6 +12,7 @@ const navigationId = [
 const navigationEn = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
+  { label: "Articles", href: "/articles/" },
   { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
   { label: "Careers", href: "#careers" },

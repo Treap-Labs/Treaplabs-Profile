@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import type { Article } from "@/content/articles";
 import { siteConfig } from "@/content/site";
 import type { Locale } from "@/lib/constants";
 import { getLanguageAlternates, getLocalizedPath } from "@/lib/i18n";
@@ -48,6 +49,29 @@ export function getPageMetadata({
       title,
       description,
       images: [socialImage.url],
+    },
+  };
+}
+
+export function getArticleMetadata(article: Article, locale: Locale): Metadata {
+  const metadata = getPageMetadata({
+    locale,
+    path: `/articles/${article.slug}/`,
+    title: `${article.title} | TreapLabs`,
+    description: article.excerpt,
+    image: { url: article.socialImage, alt: article.cover.alt, width: 1200, height: 630 },
+  });
+
+  return {
+    ...metadata,
+    authors: [{ name: article.author, url: siteConfig.url }],
+    openGraph: {
+      ...metadata.openGraph,
+      type: "article",
+      publishedTime: article.publishedAt,
+      modifiedTime: article.publishedAt,
+      authors: [siteConfig.url],
+      section: article.category,
     },
   };
 }

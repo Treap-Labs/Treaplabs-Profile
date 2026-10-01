@@ -4,6 +4,7 @@ import Image from "next/image";
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { JsonLd } from "@/components/seo/json-ld";
+import { articleLabels, getProjectArticles } from "@/content/articles";
 import { homeContent } from "@/content/home";
 import { projectContent, projectLabels, type Project } from "@/content/projects";
 import { siteConfig } from "@/content/site";
@@ -12,6 +13,8 @@ import { getLocalizedPath } from "@/lib/i18n";
 
 export function ProjectPage({ project, locale }: { project: Project; locale: Locale }) {
   const copy = projectLabels[locale];
+  const relatedArticles = getProjectArticles(project.slug, locale);
+  const articleCopy = articleLabels[locale];
   const projects = projectContent[locale];
   const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
   const homeUrl = `${siteConfig.url}${getLocalizedPath("/", locale)}`;
@@ -100,6 +103,29 @@ export function ProjectPage({ project, locale }: { project: Project; locale: Loc
           </Container>
         </section>
       </article>
+
+      {relatedArticles.length ? (
+        <section className="border-t border-hairline bg-surface py-16 md:py-24">
+          <Container>
+            <p className="eyebrow mb-6">{articleCopy.related}</p>
+            <h2 className="section-title">{articleCopy.relatedHeading}</h2>
+            <div className="mt-10 space-y-8">
+              {relatedArticles.map((article) => (
+                <a key={article.slug} href={getLocalizedPath(`/articles/${article.slug}/`, locale)} className="group grid gap-6 rounded-xl border border-hairline bg-canvas p-5 sm:grid-cols-[220px_minmax(0,1fr)] sm:gap-8 md:p-8">
+                  <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-hairline sm:aspect-auto sm:min-h-44">
+                    <Image src={article.cover.src} alt={article.cover.alt} fill sizes="(min-width: 640px) 220px, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  </div>
+                  <div className="flex flex-col items-start justify-center">
+                    <h3 className="text-balance text-2xl font-bold leading-tight tracking-[-.02em] transition-colors group-hover:text-blue">{article.title}</h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-7">{article.excerpt}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink">{articleCopy.read}<ArrowUpRight className="size-4" aria-hidden="true" /></span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section className="border-t border-hairline bg-canvas py-16 md:py-24">
         <Container>

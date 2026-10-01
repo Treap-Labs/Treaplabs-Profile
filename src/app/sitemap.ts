@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { articleContent, articleSlugs } from "@/content/articles";
 import { siteConfig } from "@/content/site";
 import { projectSlugs } from "@/content/projects";
 import { servicePages } from "@/content/services";
@@ -14,18 +15,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const paths = [
     "/",
+    "/articles/",
+    ...articleSlugs.map((slug) => `/articles/${slug}/`),
     ...servicePages.map((service) => `/${service.slug}/`),
     ...projectSlugs.map((slug) => `/projects/${slug}/`),
   ];
 
   return paths.flatMap((path) => {
+    const article = articleContent.id.find((item) => path === `/articles/${item.slug}/`);
+    const modified = article ? new Date(article.publishedAt)
+      : path === "/articles/" || path.startsWith("/projects/") ? projectLastModified : lastModified;
     const languages = Object.fromEntries(
       Object.entries(getLanguageAlternates(path)).map(([locale, href]) => [locale, `${siteConfig.url}${href}`]),
     );
 
     return LOCALES.map((locale) => ({
       url: `${siteConfig.url}${getLocalizedPath(path, locale)}`,
-      lastModified: path.startsWith("/projects/") ? projectLastModified : lastModified,
+      lastModified: modified,
       changeFrequency: "monthly" as const,
       priority: path === "/" ? 1 : 0.8,
       alternates: { languages },

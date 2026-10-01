@@ -26,6 +26,7 @@ pnpm build      # Create the static site in out/
 pnpm lint       # Run ESLint
 pnpm typecheck  # Check TypeScript without emitting files
 pnpm optimize:images # Regenerate optimized WebP and social images
+pnpm prepare:heelwa-images # Download and optimize the supplied Heelwa event photos
 ```
 
 ## Architecture
@@ -58,6 +59,7 @@ and canonical URL. The production URL is `https://treaplabs.com`.
 Homepage content in both languages, including services, process steps, and
 team members, is stored in `src/content/home.ts`. Portfolio projects and their
 detail pages share bilingual content in `src/content/projects.ts`.
+Article content and media captions are stored in `src/content/articles.ts`.
 Global colors and component styles are in
 `src/app/globals.css`. Local website images are stored in `src/images/` and can
 be imported directly into a page or component.
@@ -65,13 +67,15 @@ be imported directly into a page or component.
 ## Languages
 
 Bahasa Indonesia is the default at `/`. English pages live under `/en/`,
-including all four service pages and five project detail pages. The ID/EN
+including all four service pages, five project detail pages, and the articles
+listing and article detail pages. The ID/EN
 control in the navbar switches to the equivalent page and retains the URL
 query string and section fragment.
 The URL determines the language, including after a refresh or a shared link.
 
 - `src/content/home.ts`: translated homepage content.
 - `src/content/projects.ts`: translated portfolio entries and project details.
+- `src/content/articles.ts`: translated article text, publication dates, event details, and media.
 - `src/content/services.ts`: Indonesian and English service content.
 - `src/content/ui.ts`: navigation controls, footer, service labels, and 404 text.
 - `src/content/site.ts`: navigation items and site descriptions.
@@ -83,6 +87,38 @@ The URL determines the language, including after a refresh or a shared link.
 requiring JavaScript or a server. The global 404 uses Next.js's
 `experimental.globalNotFound` support for multiple root layouts; its content
 adapts to the requested URL in the browser.
+
+## Articles
+
+The articles listing is available at `/articles/` and `/en/articles/`.
+The first article covers the Heelwa fashion show at MYZE Hotel Sumenep on
+10 January 2026, including the app's use for the product catalog, orders and
+checkout, point of sale, and stock management. Its publication date is separate
+from the event date.
+
+To add an article:
+
+1. Add its slug to `articleSlugs` in `src/content/articles.ts` and add matching
+   Indonesian and English entries to `articleContent`. Include descriptive
+   image alt text and captions in both languages.
+2. Put optimized photos and a 1200×630 social image under `public/images/articles/`.
+   Set the image dimensions in the content entry to match the files.
+3. Set `publishedAt` to the publication date and `event.date` to the event date
+   when relevant. Use `YYYY-MM-DD` dates.
+4. Link the story to a portfolio project with `projectSlug`. Related stories
+   appear automatically on that project's detail page.
+5. Run lint, typecheck, and build. Both language routes, language alternates,
+   article metadata, structured data, and sitemap entries are generated from
+   the content.
+
+Heelwa media was supplied in the shared
+[event folder](https://drive.google.com/drive/folders/1dbYjH7ftG2buGCbLnAw4-fgt-raW_KvK).
+The photo source IDs and filenames are recorded in
+`scripts/prepare-heelwa-article-images.mjs`. Run `pnpm prepare:heelwa-images`
+only when regenerating these assets; normal builds use the committed local
+WebP files and do not contact Drive. The runway clip (`P_AX7098.MP4`, in
+`heelwa 2026 (file raw) / Cam 1`) uses a local poster and loads the Drive player
+after the reader clicks the play button. A direct video link is also provided.
 
 ## Updating the Website
 
@@ -104,14 +140,16 @@ adapts to the requested URL in the browser.
    | Content | File |
    |---|---|
     | Homepage sections and team | `src/content/home.ts` |
-    | Portfolio projects and detail pages | `src/content/projects.ts` |
+     | Portfolio projects and detail pages | `src/content/projects.ts` |
+     | Articles, event details, and media captions | `src/content/articles.ts` |
     | Homepage layout | `src/components/home/home-page.tsx` |
     | Translated interface labels | `src/content/ui.ts` |
    | Colors and global styles | `src/app/globals.css` |
    | Header and mobile menu | `src/components/layout/site-header.tsx` |
    | Footer | `src/components/layout/site-footer.tsx` |
    | Metadata and navigation | `src/content/site.ts` |
-   | Local images | `src/images/` |
+    | Local images | `src/images/` |
+     | Article images | `public/images/articles/` |
 
    Setelah mengganti PNG sumber di `src/images/`, jalankan
    `pnpm optimize:images` agar file WebP yang digunakan website ikut diperbarui.

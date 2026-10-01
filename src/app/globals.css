@@ -127,6 +127,7 @@ a, button { cursor: pointer; }
 .site-header--scrolled .site-nav { backdrop-filter: blur(20px); background: var(--nav-glass); border: 1px solid var(--hairline); border-radius: 999px; padding: 10px 20px; }
 .nav-link { color: var(--body); font-size: 14px; font-weight: 500; transition: color .2s; }
 .nav-link:hover { color: var(--ink); }
+.nav-link[aria-current] { color: var(--ink); }
 .language-switcher { align-items: center; background: var(--surface); border: 1px solid var(--hairline); border-radius: 999px; display: inline-flex; gap: 2px; padding: 3px; }
 .language-switcher a { align-items: center; border-radius: 999px; color: var(--body); display: inline-flex; font-size: 11px; font-weight: 600; justify-content: center; letter-spacing: .04em; min-height: 34px; min-width: 36px; transition: background-color .2s, color .2s; }
 .language-switcher a:hover { color: var(--ink); }
@@ -202,6 +203,9 @@ a, button { cursor: pointer; }
 :root[data-theme="light"] .team-card-mark { background: #4d7c0f; opacity: 1; }
 .team-card:hover .team-card-mark { opacity: 1; transform: scale(1.5); }
 .outlined-wordmark { color: transparent; font-family: var(--font-display); font-size: clamp(4rem, 12vw, 11.25rem); font-weight: 700; letter-spacing: -.04em; line-height: .92; padding-top: 16px; user-select: none; -webkit-text-stroke: 1px rgb(255 255 255 / .16); }
+.article-section { scroll-margin-top: 120px; }
+.article-feature { transition: border-color .25s ease; }
+.article-feature:hover, .article-feature:focus-visible { border-color: var(--muted); }
 .pulse-dot { animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: .45; transform: scale(.8); } }
 
