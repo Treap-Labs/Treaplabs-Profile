@@ -19,6 +19,7 @@ import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-lin
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
 import { clients, homeContent } from "@/content/home";
+import { projectContent, projectLabels } from "@/content/projects";
 import heroImage from "@/images/optimized/hero.webp";
 import type { Locale } from "@/lib/constants";
 import { getLocalizedPath } from "@/lib/i18n";
@@ -235,39 +236,48 @@ export function HomePage({ locale }: { locale: Locale }) {
             title={copy.workTitle}
           />
           <div className="mt-16 space-y-20 md:mt-20 md:space-y-24">
-            {copy.caseStudies.map((study, index) => (
-              <Reveal key={study.title}>
-                <article className="case-row grid items-center gap-10 md:grid-cols-2 md:gap-16">
-                  <div
-                    className={`image-zoom relative aspect-[4/3] overflow-hidden rounded-xl bg-hairline ${index % 2 ? "md:order-2" : ""}`}
+            {projectContent[locale].map((study, index) => (
+              <Reveal key={study.slug}>
+                <article>
+                  <a
+                    href={getLocalizedPath(`/projects/${study.slug}/`, locale)}
+                    className="case-row group grid items-center gap-10 rounded-xl md:grid-cols-2 md:gap-16"
                   >
-                    <Image
-                      src={study.image}
-                      alt={study.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className={index % 2 ? "md:order-1" : ""}>
-                    <div className="mb-5 flex flex-wrap gap-2">
-                      {study.categories.map((category) => (
-                        <span
-                          key={category}
-                          className="rounded-full border border-hairline px-3 py-1 text-[11px] font-semibold uppercase tracking-[.1em] text-muted"
-                        >
-                          {category}
-                        </span>
-                      ))}
+                    <div
+                      className={`image-zoom relative aspect-[4/3] overflow-hidden rounded-xl bg-hairline ${index % 2 ? "md:order-2" : ""}`}
+                    >
+                      <Image
+                        src={study.image}
+                        alt={study.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
                     </div>
-                    <h3 className="text-[clamp(1.5rem,2.2vw,2rem)] font-bold leading-[1.15] tracking-[-.02em]">
-                      {study.title}
-                    </h3>
-                    <p className="mt-5 flex items-start gap-2.5 text-base">
-                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-lime" />
-                      {study.description}
-                    </p>
-                  </div>
+                    <div className={index % 2 ? "md:order-1" : ""}>
+                      <div className="mb-5 flex flex-wrap gap-2">
+                        {study.categories.map((category) => (
+                          <span
+                            key={category}
+                            className="rounded-full border border-hairline px-3 py-1 text-[11px] font-semibold uppercase tracking-[.1em] text-muted"
+                          >
+                            {category}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-[clamp(1.5rem,2.2vw,2rem)] font-bold leading-[1.15] tracking-[-.02em]">
+                        <span className="case-title">{study.title}</span>
+                      </h3>
+                      <p className="mt-5 flex items-start gap-2.5 text-base">
+                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-lime" />
+                        {study.description}
+                      </p>
+                      <span className="mt-7 inline-flex items-center gap-2 font-semibold text-ink">
+                        {projectLabels[locale].view}
+                        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1" aria-hidden="true" />
+                      </span>
+                    </div>
+                  </a>
                 </article>
               </Reveal>
             ))}

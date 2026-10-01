@@ -9,12 +9,23 @@ export function getPageMetadata({
   path = "/",
   title = siteConfig.title,
   description = locale === "id" ? siteConfig.description : siteConfig.descriptionEn,
+  image,
 }: {
   locale: Locale;
   path?: string;
   title?: string;
   description?: string;
+  image?: { url: string; alt: string; width: number; height: number };
 }): Metadata {
+  const socialImage = image ?? {
+    url: "/images/treaplabs-og.png",
+    width: 1200,
+    height: 630,
+    alt: locale === "id"
+      ? "TreapLabs - Pengembangan aplikasi mobile, website, dan solusi AI"
+      : "TreapLabs - Mobile app development, websites, and AI solutions",
+  };
+
   return {
     title: { absolute: title },
     description,
@@ -30,20 +41,13 @@ export function getPageMetadata({
       title,
       description,
       url: getLocalizedPath(path, locale),
-      images: [{
-        url: "/images/treaplabs-og.png",
-        width: 1200,
-        height: 630,
-        alt: locale === "id"
-          ? "TreapLabs - Pengembangan aplikasi mobile, website, dan solusi AI"
-          : "TreapLabs - Mobile app development, websites, and AI solutions",
-      }],
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/images/treaplabs-og.png"],
+      images: [socialImage.url],
     },
   };
 }

@@ -186,8 +186,10 @@ a, button { cursor: pointer; }
 .hero-cinema-down:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 
 .image-zoom img { transition: transform .6s cubic-bezier(.16,1,.3,1); }
-.image-zoom:hover img { transform: scale(1.03); }
+.case-row:hover .image-zoom img { transform: scale(1.03); }
+.case-row:focus-visible .image-zoom img { transform: scale(1.03); }
 .case-row:hover .case-title { background-size: 100% 100%; }
+.case-row:focus-visible .case-title { background-size: 100% 100%; }
 .case-title { background-image: linear-gradient(transparent calc(100% - 2px), var(--lime) 2px); background-repeat: no-repeat; background-size: 0 100%; display: inline; padding-bottom: 2px; transition: background-size .3s; }
 .service-tile { background: rgb(255 255 255 / .04); border: 1px solid rgb(255 255 255 / .1); transition: background-color .3s, border-color .3s, transform .3s; }
 .service-tile:hover { background: rgb(255 255 255 / .07); border-color: var(--blue); transform: translateY(-2px); }

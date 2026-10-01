@@ -37,13 +37,6 @@ type HomeContent = {
     tags: readonly string[];
     href: string;
   }[];
-  caseStudies: readonly {
-    categories: readonly string[];
-    title: string;
-    description: string;
-    image: string;
-    alt: string;
-  }[];
   processSteps: readonly {
     number: string;
     title: string;
@@ -137,48 +130,6 @@ export const homeContent = {
           "Evaluasi arsitektur, audit teknologi, dan dukungan langsung dari pengembang senior untuk memperkuat tim Anda.",
         tags: ["Arsitektur", "Audit", "Pendampingan Tim"],
         href: "/konsultasi-teknologi/",
-      },
-    ],
-    caseStudies: [
-      {
-        categories: ["Platform Web", "Aplikasi Mobile", "HRIS"],
-        title: "Ikigawe HRIS",
-        description:
-          "Manajemen tenaga kerja terhubung di web dan mobile. Administrasi karyawan, kehadiran, shift, dan jadwal dengan akses berbasis izin.",
-        image: "/images/portfolio/ikigawe-hris-mockup.webp",
-        alt: "Ilustrasi dashboard kehadiran desktop dan mockup aplikasi mobile Ikigawe HRIS dengan data demo",
-      },
-      {
-        categories: ["Aplikasi Mobile", "Integrasi AI"],
-        title: "Walk Around Check",
-        description:
-          "Alur inspeksi kendaraan terpandu dengan pengambilan foto enam sudut, daftar pemeriksaan kondisi, integrasi analisis AI, dan laporan PDF.",
-        image: "/images/portfolio/walk-around-check-mockup.webp",
-        alt: "Dashboard mobile Walk Around Check dalam mockup ponsel dengan contoh total inspeksi",
-      },
-      {
-        categories: ["Toko Online", "Platform Web"],
-        title: "Heelwa",
-        description:
-          "Etalase busana yang terhubung dengan administrasi ritel, menggabungkan penelusuran produk, keranjang, dan pembayaran dengan inventaris serta kasir.",
-        image: "/images/portfolio/heelwa-mockup.webp",
-        alt: "Beranda etalase busana Heelwa dalam mockup desktop",
-      },
-      {
-        categories: ["Produk Sendiri", "SaaS", "Dalam Pengembangan"],
-        title: "Juniper",
-        description:
-          "Produk SaaS internal TreapLabs yang sedang kami kembangkan: platform kafe yang menyatukan kasir, pemesanan pelanggan, antrean dapur, pembayaran, inventaris, dan loyalitas di seluruh cabang.",
-        image: "/images/portfolio/juniper-mockup.webp",
-        alt: "Halaman utama platform kafe Juniper dalam mockup desktop dengan ilustrasi dashboard",
-      },
-      {
-        categories: ["Platform Web", "Teknologi Pendidikan", "Web Speech API"],
-        title: "Smantik",
-        description:
-          "Permainan aritmatika mental berbasis suara dengan mode murid dan guru, penilaian otomatis, serta impor paket latihan CSV dan Excel langsung di browser.",
-        image: "/images/portfolio/smantik-mockup.webp",
-        alt: "Wizard pengaturan latihan aritmatika mental Smantik dalam mockup desktop",
       },
     ],
     processSteps: [
@@ -295,48 +246,6 @@ export const homeContent = {
           "Architecture reviews, technology audits, and direct support from senior engineers to strengthen your team.",
         tags: ["Architecture", "Audit", "Team Augmentation"],
         href: "/konsultasi-teknologi/",
-      },
-    ],
-    caseStudies: [
-      {
-        categories: ["Web Platform", "Mobile App", "HRIS"],
-        title: "Ikigawe HRIS",
-        description:
-          "Connected workforce management across web and mobile. Employee administration, attendance, shifts, and schedules with permission-based access.",
-        image: "/images/portfolio/ikigawe-hris-mockup.webp",
-        alt: "Illustrative Ikigawe HRIS desktop attendance dashboard and mobile app mockup with demo data",
-      },
-      {
-        categories: ["Mobile App", "AI Integration"],
-        title: "Walk Around Check",
-        description:
-          "A guided vehicle-inspection workflow with six-angle photo capture, condition checklists, AI-analysis integration, and PDF reporting.",
-        image: "/images/portfolio/walk-around-check-mockup.webp",
-        alt: "Walk Around Check mobile dashboard presented in a phone mockup with sample inspection totals",
-      },
-      {
-        categories: ["E-Commerce", "Web Platform"],
-        title: "Heelwa",
-        description:
-          "A fashion storefront paired with retail administration, connecting product browsing, cart and checkout flows with inventory and point-of-sale tools.",
-        image: "/images/portfolio/heelwa-mockup.webp",
-        alt: "Heelwa fashion storefront homepage presented in a desktop mockup",
-      },
-      {
-        categories: ["Own Product", "SaaS", "In Development"],
-        title: "Juniper",
-        description:
-          "An in-house TreapLabs SaaS product currently in development: a cafe platform bringing point of sale, customer ordering, kitchen queues, payments, inventory tracking, and loyalty together across branches.",
-        image: "/images/portfolio/juniper-mockup.webp",
-        alt: "Juniper cafe platform English landing page presented in a desktop mockup, featuring an illustrative dashboard",
-      },
-      {
-        categories: ["Web Platform", "EdTech", "Web Speech API"],
-        title: "Smantik",
-        description:
-          "A voice-guided mental arithmetic game with student and teacher modes, automatic scoring, and in-browser CSV and Excel exercise imports.",
-        image: "/images/portfolio/smantik-mockup.webp",
-        alt: "Smantik mental arithmetic exercise setup wizard presented in a desktop mockup",
       },
     ],
     processSteps: [
