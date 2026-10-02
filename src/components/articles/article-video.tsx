@@ -18,9 +18,10 @@ export function ArticleVideo({ video, locale }: { video: NonNullable<Article["vi
         {loaded ? (
           <iframe
             ref={iframe}
-            src={`https://drive.google.com/file/d/${video.driveId}/preview`}
+            src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&playsinline=1&rel=0`}
             title={video.title}
-            allow="autoplay; fullscreen; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
             onLoad={() => iframe.current?.focus()}
             className="absolute inset-0 size-full border-0"
@@ -54,7 +55,7 @@ export function ArticleVideo({ video, locale }: { video: NonNullable<Article["vi
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
           <p>{copy.videoSource}</p>
           <a
-            href={`https://drive.google.com/file/d/${video.driveId}/view`}
+            href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 font-semibold text-ink transition-colors hover:text-blue"

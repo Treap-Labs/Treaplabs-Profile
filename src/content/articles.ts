@@ -34,7 +34,7 @@ export type Article = {
   sections: readonly ArticleSection[];
   takeaway: string;
   gallery: readonly ArticleImage[];
-  video?: { driveId: string; poster: string; posterAlt: string; title: string; description: string };
+  video?: { youtubeId: string; poster: string; posterAlt: string; title: string; description: string };
 };
 
 const heelwaMedia = "/images/articles/heelwa";
@@ -150,7 +150,7 @@ export const articleContent = {
         },
       ],
       video: {
-        driveId: "16BeMaCnpX_bYEKvzNlLDZ2eQhuhJ_pB5",
+        youtubeId: "pqhEzoiEggA",
         poster: `${heelwaMedia}/runway-video-poster.webp`,
         posterAlt: "Model mengenakan busana Heelwa berwarna biru gelap di area fashion show dengan pengunjung di sekelilingnya",
         title: "Cuplikan runway Heelwa",
@@ -262,7 +262,7 @@ export const articleContent = {
         },
       ],
       video: {
-        driveId: "16BeMaCnpX_bYEKvzNlLDZ2eQhuhJ_pB5",
+        youtubeId: "pqhEzoiEggA",
         poster: `${heelwaMedia}/runway-video-poster.webp`,
         posterAlt: "A model wears a dark blue Heelwa outfit on the fashion show runway, surrounded by visitors",
         title: "A moment on the Heelwa runway",
@@ -293,8 +293,8 @@ export const articleLabels = {
     galleryDescription: "Koleksi, presentasi, dan suasana fashion show Heelwa dalam foto.",
     video: "Dari runway",
     play: "Putar video",
-    videoSource: "Video diputar melalui Google Drive.",
-    openVideo: "Buka video di Google Drive",
+    videoSource: "Video diputar melalui YouTube.",
+    openVideo: "Tonton di YouTube",
     mediaCredit: "Foto dan video: dokumentasi acara Heelwa.",
     related: "Cerita terkait",
     relatedHeading: "Proyek ini di lapangan.",
@@ -324,8 +324,8 @@ export const articleLabels = {
     galleryDescription: "The collection, presentations, and atmosphere of the Heelwa fashion show in photographs.",
     video: "From the runway",
     play: "Play video",
-    videoSource: "Video plays through Google Drive.",
-    openVideo: "Open video in Google Drive",
+    videoSource: "Video plays through YouTube.",
+    openVideo: "Watch on YouTube",
     mediaCredit: "Photos and video: Heelwa event documentation.",
     related: "Related story",
     relatedHeading: "This project in action.",

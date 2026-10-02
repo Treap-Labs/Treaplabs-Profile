@@ -116,9 +116,11 @@ Heelwa media was supplied in the shared
 The photo source IDs and filenames are recorded in
 `scripts/prepare-heelwa-article-images.mjs`. Run `pnpm prepare:heelwa-images`
 only when regenerating these assets; normal builds use the committed local
-WebP files and do not contact Drive. The runway clip (`P_AX7098.MP4`, in
-`heelwa 2026 (file raw) / Cam 1`) uses a local poster and loads the Drive player
-after the reader clicks the play button. A direct video link is also provided.
+WebP files and do not contact Drive. The article video uses the supplied
+[unlisted YouTube video](https://www.youtube.com/watch?v=pqhEzoiEggA), with a
+local runway poster and a click-to-load YouTube privacy-enhanced player.
+A direct YouTube link is also provided. Its ID is set in the `youtubeId` field
+of each language's article content.
 
 ## Updating the Website
 
