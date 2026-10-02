@@ -52,9 +52,9 @@ export const articleContent = {
   id: [
     {
       slug: "heelwa-fashion-show-myze-hotel-sumenep",
-      title: "Aplikasi TreapLabs Mendukung Fashion Show Heelwa di MYZE Hotel Sumenep",
+      title: "Di Balik Fashion Show Heelwa di MYZE Hotel Sumenep",
       excerpt:
-        "Di balik presentasi koleksi Heelwa pada 10 Januari 2026, aplikasi TreapLabs mendukung katalog produk, pesanan dan checkout, kasir, serta pengelolaan stok selama acara.",
+        "Pada 10 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Selain menampilkan koleksi busana, acara ini menjadi salah satu momen penggunaan platform Heelwa yang dikembangkan bersama TreapLabs untuk mendukung katalog produk, pesanan, kasir, dan pengelolaan stok.",
       category: "Cerita klien",
       author: "Tim TreapLabs",
       publishedAt: "2026-10-02",
@@ -69,7 +69,7 @@ export const articleContent = {
       },
       socialImage: `${heelwaMedia}/social.webp`,
       introduction: [
-        "Pada 10 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Di balik presentasi koleksi busana, aplikasi yang dikembangkan TreapLabs digunakan untuk mendukung katalog produk, pemrosesan pesanan dan checkout, pencatatan transaksi kasir, serta pengelolaan stok selama acara.",
+        "Pada 10 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Selain menampilkan koleksi busana, acara ini menjadi salah satu momen penggunaan platform Heelwa yang dikembangkan oleh TreapLabs. Platform tersebut digunakan untuk mendukung katalog produk, pemrosesan pesanan dan checkout, pencatatan transaksi kasir, serta pengelolaan stok selama acara.",
         "Bagi kami, momen ini memperlihatkan bagaimana sebuah produk digital menjadi bagian dari aktivitas bisnis secara langsung. Koleksi Heelwa menjadi pusat perhatian pengunjung, sementara aplikasi hadir sebagai alat kerja bagi tim yang menjalankan sisi ritel acara.",
       ],
       sections: [
@@ -78,7 +78,7 @@ export const articleContent = {
           title: "Koleksi di panggung, aktivitas ritel di baliknya",
           paragraphs: [
             "Dokumentasi acara memperlihatkan koleksi busana Heelwa yang dikenakan para model, sesi presentasi, serta interaksi dengan pengunjung. Warna dan detail busana tampil dalam suasana yang dekat dengan audiens, memberi ruang untuk melihat koleksi secara langsung.",
-            "Sebuah fashion show juga memiliki sisi operasional. Saat produk diperkenalkan, tim perlu memiliki informasi katalog, menangani pesanan, mencatat transaksi, dan mengetahui ketersediaan barang. Pada acara Heelwa ini, keempat kebutuhan tersebut didukung oleh aplikasi TreapLabs.",
+            "Sebuah fashion show juga memiliki sisi operasional. Saat produk diperkenalkan, tim perlu memiliki informasi katalog, menangani pesanan, mencatat transaksi, dan mengetahui ketersediaan barang. Pada acara ini, keempat kebutuhan tersebut didukung oleh platform Heelwa.",
             "Penggunaan aplikasi dalam acara menjadi pertemuan antara pengalaman melihat busana secara langsung dan alur kerja digital. Produk yang hadir dalam koleksi dapat dikelola melalui perangkat yang juga mendukung proses belanja dan administrasi ritel Heelwa.",
           ],
         },
@@ -124,7 +124,7 @@ export const articleContent = {
           paragraphs: [
             "Dalam pengembangan software, sebuah fitur memperoleh konteks yang lebih jelas ketika dipakai oleh tim bisnis. Fashion show Heelwa memperlihatkan bahwa katalog, checkout, kasir, dan inventaris bukan sekadar daftar kemampuan aplikasi: semuanya memiliki tempat dalam kegiatan yang benar-benar dijalankan.",
             "Kebutuhan brand fashion tidak berhenti pada etalase yang menarik. Ada pekerjaan di belakangnya, mulai dari mengelola koleksi hingga melayani pesanan dan mencatat penjualan. Proyek Heelwa menjadi salah satu contoh bagaimana TreapLabs membangun platform yang mencakup pengalaman pelanggan sekaligus kebutuhan administrasi bisnis.",
-            "Kami senang aplikasi TreapLabs menjadi bagian dari acara Heelwa di Sumenep. Cerita ini melengkapi halaman proyek Heelwa dengan gambaran penggunaan di lapangan: teknologi yang hadir bersama koleksi, pengunjung, dan tim yang menjalankan acara.",
+            "Kami senang platform Heelwa yang kami kembangkan menjadi bagian dari acara di Sumenep. Cerita ini melengkapi halaman proyek Heelwa dengan gambaran penggunaan di lapangan: teknologi yang hadir bersama koleksi, pengunjung, dan tim yang menjalankan acara.",
           ],
         },
       ],
@@ -162,16 +162,16 @@ export const articleContent = {
       demoVideo: {
         youtubeId: "94c9uOW7cdM",
         title: "Demo website Heelwa untuk pelanggan",
-        description: "Lihat demo website Heelwa dari sisi pelanggan untuk mengenal pengalaman belanja yang didukung platform TreapLabs.",
+        description: "Lihat demo website Heelwa dari sisi pelanggan untuk mengenal pengalaman belanja melalui platform Heelwa yang dikembangkan oleh TreapLabs.",
       },
     },
   ],
   en: [
     {
       slug: "heelwa-fashion-show-myze-hotel-sumenep",
-      title: "TreapLabs’ App Supports the Heelwa Fashion Show at MYZE Hotel Sumenep",
+      title: "Behind the Heelwa Fashion Show at MYZE Hotel Sumenep",
       excerpt:
-        "Behind Heelwa’s collection presentation on 10 January 2026, TreapLabs’ app supported the product catalog, orders and checkout, point of sale, and stock management throughout the event.",
+        "On 10 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Alongside the collection presentation, the event brought the Heelwa platform, developed with TreapLabs, into use for the product catalog, orders, point of sale, and stock management.",
       category: "Client stories",
       author: "The TreapLabs Team",
       publishedAt: "2026-10-02",
@@ -186,7 +186,7 @@ export const articleContent = {
       },
       socialImage: `${heelwaMedia}/social.webp`,
       introduction: [
-        "On 10 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Behind the collection presentation, the app developed by TreapLabs was used to support the product catalog, orders and checkout, point-of-sale transactions, and stock management throughout the event.",
+        "On 10 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Alongside the collection presentation, the event was an opportunity to use the Heelwa platform developed by TreapLabs. The platform supported the product catalog, orders and checkout, point-of-sale transactions, and stock management throughout the event.",
         "For us, this was a chance to see a digital product become part of a business’s activities in person. Heelwa’s collection took center stage for visitors, while the app served as a working tool for the team handling the retail side of the event.",
       ],
       sections: [
@@ -195,7 +195,7 @@ export const articleContent = {
           title: "A collection on the runway, retail operations behind it",
           paragraphs: [
             "The event photographs capture Heelwa’s collection worn by models, product presentations, and conversations with visitors. The colors and details of the garments were presented in a setting that brought the collection close to its audience, giving visitors an opportunity to see the pieces in person.",
-            "A fashion show also has an operational side. As products are introduced, the team needs catalog information, a way to handle orders, transaction records, and visibility into product availability. At this Heelwa event, TreapLabs’ app supported all four of those needs.",
+            "A fashion show also has an operational side. As products are introduced, the team needs catalog information, a way to handle orders, transaction records, and visibility into product availability. At this event, the Heelwa platform supported all four of those needs.",
             "Using the app at the event brought an in-person fashion experience together with a digital workflow. The products shown in the collection could be managed through a platform that also supports Heelwa’s shopping experience and retail administration.",
           ],
         },
@@ -241,7 +241,7 @@ export const articleContent = {
           paragraphs: [
             "In software development, a feature gains clearer context when a business team puts it to work. The Heelwa fashion show demonstrated that a catalog, checkout, point of sale, and inventory are more than a list of app capabilities: each has a place in the activities a business carries out.",
             "A fashion brand’s needs extend beyond an attractive storefront. There is work behind the scenes, from managing a collection to serving orders and recording sales. The Heelwa project is one example of how TreapLabs builds platforms that address both the customer experience and the administrative side of a business.",
-            "We are glad TreapLabs’ app was part of Heelwa’s event in Sumenep. This story adds a real-world perspective to the Heelwa project page: technology working alongside the collection, the visitors, and the team running the event.",
+            "We are glad the Heelwa platform we developed was part of the event in Sumenep. This story adds a real-world perspective to the Heelwa project page: technology working alongside the collection, the visitors, and the team running the event.",
           ],
         },
       ],
@@ -279,7 +279,7 @@ export const articleContent = {
       demoVideo: {
         youtubeId: "94c9uOW7cdM",
         title: "Heelwa customer website demo",
-        description: "Watch a demo of the customer-facing Heelwa website to explore the shopping experience supported by the TreapLabs platform.",
+        description: "Watch a demo of the customer-facing Heelwa website to explore the shopping experience through the Heelwa platform developed by TreapLabs.",
       },
     },
   ],
@@ -289,7 +289,7 @@ export const articleLabels = {
   id: {
     title: "Artikel",
     pageTitle: "Artikel & Cerita Klien | TreapLabs",
-    description: "Cerita proyek, kolaborasi, dan penggunaan aplikasi TreapLabs dalam aktivitas bisnis sehari-hari.",
+    description: "Cerita proyek, kolaborasi, dan penggunaan platform yang dikembangkan oleh TreapLabs dalam aktivitas bisnis sehari-hari.",
     heading: "Cerita di balik produk kami.",
     featured: "Cerita terbaru",
     read: "Baca cerita lengkap",
@@ -321,7 +321,7 @@ export const articleLabels = {
   en: {
     title: "Articles",
     pageTitle: "Articles & Client Stories | TreapLabs",
-    description: "Stories of projects, collaborations, and TreapLabs apps at work in everyday business activities.",
+    description: "Stories of projects, collaborations, and platforms developed by TreapLabs at work in everyday business activities.",
     heading: "Stories behind the products.",
     featured: "Latest story",
     read: "Read the full story",
