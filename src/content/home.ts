@@ -178,7 +178,7 @@ export const homeContent = {
       { name: "Ali Hasyimi Assegaf", role: "Founder & Head of Engineering" },
       {
         name: "Bimantara Tito Wahyudi",
-        role: "Chief Technology Officer & Head of Backend Engineering",
+        role: "Chief Technology Officer · Head of Backend & AI Engineering",
       },
       { name: "Achmad Zidan Ramdani", role: "Head of Frontend & Mobile" },
       { name: "Rachmatullah Rizaldi", role: "Head of UI/UX Design" },
@@ -308,7 +308,7 @@ export const homeContent = {
       { name: "Ali Hasyimi Assegaf", role: "Founder & Head of Engineering" },
       {
         name: "Bimantara Tito Wahyudi",
-        role: "Chief Technology Officer & Head of Backend Engineering",
+        role: "Chief Technology Officer · Head of Backend & AI Engineering",
       },
       { name: "Achmad Zidan Ramdani", role: "Head of Frontend & Mobile" },
       { name: "Rachmatullah Rizaldi", role: "Head of UI/UX Design" },
