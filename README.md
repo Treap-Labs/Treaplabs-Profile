@@ -121,6 +121,9 @@ WebP files and do not contact Drive. The article video uses the supplied
 local runway poster and a click-to-load YouTube privacy-enhanced player.
 A direct YouTube link is also provided. Its ID is set in the `youtubeId` field
 of each language's article content.
+The customer-facing website demo is an additional video at
+<https://www.youtube.com/watch?v=94c9uOW7cdM>, configured in `demoVideo` for
+both languages. It uses the Heelwa website mockup as its click-to-load poster.
 
 ## Updating the Website
 

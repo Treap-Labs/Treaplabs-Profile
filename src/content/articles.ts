@@ -19,6 +19,8 @@ export type ArticleSection = {
   image?: ArticleImage;
 };
 
+export type ArticleVideoContent = { youtubeId: string; poster: string; posterAlt: string; title: string; description: string };
+
 export type Article = {
   slug: (typeof articleSlugs)[number];
   title: string;
@@ -34,7 +36,8 @@ export type Article = {
   sections: readonly ArticleSection[];
   takeaway: string;
   gallery: readonly ArticleImage[];
-  video?: { youtubeId: string; poster: string; posterAlt: string; title: string; description: string };
+  video?: ArticleVideoContent;
+  demoVideo?: ArticleVideoContent;
 };
 
 const heelwaMedia = "/images/articles/heelwa";
@@ -156,6 +159,13 @@ export const articleContent = {
         title: "Cuplikan runway Heelwa",
         description: "Salah satu cuplikan runway dari dokumentasi acara Heelwa di MYZE Hotel Sumenep.",
       },
+      demoVideo: {
+        youtubeId: "94c9uOW7cdM",
+        poster: "/images/portfolio/heelwa-mockup.webp",
+        posterAlt: "Pratinjau website Heelwa untuk pelanggan dalam mockup desktop",
+        title: "Demo website Heelwa untuk pelanggan",
+        description: "Lihat demo website Heelwa dari sisi pelanggan untuk mengenal pengalaman belanja yang didukung platform TreapLabs.",
+      },
     },
   ],
   en: [
@@ -268,6 +278,13 @@ export const articleContent = {
         title: "A moment on the Heelwa runway",
         description: "A runway clip from the Heelwa event at MYZE Hotel Sumenep.",
       },
+      demoVideo: {
+        youtubeId: "94c9uOW7cdM",
+        poster: "/images/portfolio/heelwa-mockup.webp",
+        posterAlt: "Preview of the customer-facing Heelwa website in a desktop mockup",
+        title: "Heelwa customer website demo",
+        description: "Watch a demo of the customer-facing Heelwa website to explore the shopping experience supported by the TreapLabs platform.",
+      },
     },
   ],
 } as const satisfies Record<Locale, readonly Article[]>;
@@ -292,6 +309,7 @@ export const articleLabels = {
     gallery: "Dokumentasi acara",
     galleryDescription: "Koleksi, presentasi, dan suasana fashion show Heelwa dalam foto.",
     video: "Dari runway",
+    demoVideo: "Demo website pelanggan",
     play: "Putar video",
     videoSource: "Video diputar melalui YouTube.",
     openVideo: "Tonton di YouTube",
@@ -323,6 +341,7 @@ export const articleLabels = {
     gallery: "The event in pictures",
     galleryDescription: "The collection, presentations, and atmosphere of the Heelwa fashion show in photographs.",
     video: "From the runway",
+    demoVideo: "Customer website demo",
     play: "Play video",
     videoSource: "Video plays through YouTube.",
     openVideo: "Watch on YouTube",

@@ -39,6 +39,7 @@ export function ArticlePage({ article, locale }: { article: Article; locale: Loc
     ...article.sections.map((section) => ({ id: section.id, title: section.title })),
     ...(article.gallery.length ? [{ id: "gallery", title: copy.gallery }] : []),
     ...(article.video ? [{ id: "video", title: copy.video }] : []),
+    ...(article.demoVideo ? [{ id: "website-demo", title: copy.demoVideo }] : []),
   ];
   const schema = [
     {
@@ -187,6 +188,14 @@ export function ArticlePage({ article, locale }: { article: Article; locale: Loc
                   <p className="eyebrow mb-4">{copy.video}</p>
                   <h2 id="video-heading" className="mb-8 text-3xl font-bold leading-tight tracking-[-.03em] md:text-4xl">{article.video.title}</h2>
                   <ArticleVideo video={article.video} locale={locale} />
+                </section>
+              ) : null}
+
+              {article.demoVideo ? (
+                <section id="website-demo" className="article-section mt-14 md:mt-16" aria-labelledby="website-demo-heading">
+                  <p className="eyebrow mb-4">{copy.demoVideo}</p>
+                  <h2 id="website-demo-heading" className="mb-8 text-3xl font-bold leading-tight tracking-[-.03em] md:text-4xl">{article.demoVideo.title}</h2>
+                  <ArticleVideo video={article.demoVideo} locale={locale} />
                 </section>
               ) : null}
 
