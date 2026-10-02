@@ -1,8 +1,11 @@
 import { ArrowRight, ArrowUpRight, Bot, Check } from "lucide-react";
 import Image from "next/image";
 import {
+  siDart,
   siDocker,
+  siFastapi,
   siFlutter,
+  siGithubactions,
   siKubernetes,
   siLaravel,
   siLanggraph,
@@ -14,6 +17,7 @@ import {
   siPython,
   siReact,
   siSupabase,
+  siTailwindcss,
   siTypescript,
   type SimpleIcon,
 } from "simple-icons";
@@ -29,8 +33,11 @@ import type { Locale } from "@/lib/constants";
 import { getLocalizedPath } from "@/lib/i18n";
 
 const technologyIcons: Record<string, SimpleIcon> = {
+  Dart: siDart,
   Docker: siDocker,
+  FastAPI: siFastapi,
   Flutter: siFlutter,
+  "GitHub Actions": siGithubactions,
   Kubernetes: siKubernetes,
   Laravel: siLaravel,
   LangGraph: siLanggraph,
@@ -42,6 +49,7 @@ const technologyIcons: Record<string, SimpleIcon> = {
   Python: siPython,
   "React Native": siReact,
   Supabase: siSupabase,
+  "Tailwind CSS": siTailwindcss,
   TypeScript: siTypescript,
 };
 

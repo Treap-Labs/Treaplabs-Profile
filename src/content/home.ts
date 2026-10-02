@@ -67,12 +67,15 @@ export const homeContent = {
     technologiesEyebrow: "Keahlian teknologi",
     technologiesTitle: "Perangkat modern untuk membawa bisnis Anda lebih jauh.",
     technologyGroups: [
-      { category: "Front-end", technologies: ["Next.js", "TypeScript"] },
+      {
+        category: "Front-end",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      },
       {
         category: "Back-end & Database",
-        technologies: ["Laravel", "Supabase", "PostgreSQL"],
+        technologies: ["Laravel", "Supabase", "PostgreSQL", "FastAPI"],
       },
-      { category: "Mobile", technologies: ["Flutter", "React Native"] },
+      { category: "Mobile", technologies: ["Flutter", "React Native", "Dart"] },
       {
         category: "AI & Otomasi",
         technologies: [
@@ -84,7 +87,10 @@ export const homeContent = {
           "Hermes Agent",
         ],
       },
-      { category: "Infrastruktur", technologies: ["Docker", "Kubernetes"] },
+      {
+        category: "Infrastruktur",
+        technologies: ["Docker", "Kubernetes", "GitHub Actions"],
+      },
     ],
     clientsTitle: "Dipercaya oleh tim di",
     servicesEyebrow: "Yang kami kerjakan",
@@ -192,12 +198,15 @@ export const homeContent = {
     technologiesEyebrow: "Tech mastery",
     technologiesTitle: "Modern tools to move your business forward.",
     technologyGroups: [
-      { category: "Front-end", technologies: ["Next.js", "TypeScript"] },
+      {
+        category: "Front-end",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      },
       {
         category: "Back-end & Database",
-        technologies: ["Laravel", "Supabase", "PostgreSQL"],
+        technologies: ["Laravel", "Supabase", "PostgreSQL", "FastAPI"],
       },
-      { category: "Mobile", technologies: ["Flutter", "React Native"] },
+      { category: "Mobile", technologies: ["Flutter", "React Native", "Dart"] },
       {
         category: "AI & Automation",
         technologies: [
@@ -209,7 +218,10 @@ export const homeContent = {
           "Hermes Agent",
         ],
       },
-      { category: "Infrastructure", technologies: ["Docker", "Kubernetes"] },
+      {
+        category: "Infrastructure",
+        technologies: ["Docker", "Kubernetes", "GitHub Actions"],
+      },
     ],
     clientsTitle: "Trusted by teams at",
     servicesEyebrow: "What we do",
