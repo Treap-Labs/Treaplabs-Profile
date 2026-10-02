@@ -43,7 +43,7 @@ export type Article = {
 const heelwaMedia = "/images/articles/heelwa";
 const heelwaEvent = {
   name: "Heelwa Fashion Show",
-  date: "2026-01-10",
+  date: "2026-01-09",
   venue: "MYZE Hotel Sumenep",
   city: "Sumenep, Jawa Timur",
 };
@@ -54,7 +54,7 @@ export const articleContent = {
       slug: "heelwa-fashion-show-myze-hotel-sumenep",
       title: "Di Balik Fashion Show Heelwa di MYZE Hotel Sumenep",
       excerpt:
-        "Pada 10 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Selain menampilkan koleksi busana, acara ini menjadi salah satu momen penggunaan platform Heelwa yang dikembangkan bersama TreapLabs untuk mendukung katalog produk, pesanan, kasir, dan pengelolaan stok.",
+        "Pada 9 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Selain menampilkan koleksi busana, acara ini menjadi salah satu momen penggunaan platform Heelwa yang dikembangkan bersama TreapLabs untuk mendukung katalog produk, pesanan, kasir, dan pengelolaan stok.",
       category: "Cerita klien",
       author: "Tim TreapLabs",
       publishedAt: "2026-10-02",
@@ -65,11 +65,11 @@ export const articleContent = {
         width: 2000,
         height: 1331,
         alt: "Para model berfoto bersama dalam busana Heelwa di MYZE Hotel Sumenep, dengan pengunjung di sekitar area acara",
-        caption: "Presentasi koleksi Heelwa di MYZE Hotel Sumenep, 10 Januari 2026.",
+        caption: "Presentasi koleksi Heelwa di MYZE Hotel Sumenep, 9 Januari 2026.",
       },
       socialImage: `${heelwaMedia}/social.webp`,
       introduction: [
-        "Pada 10 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Selain menampilkan koleksi busana, acara ini menjadi salah satu momen penggunaan platform Heelwa yang dikembangkan oleh TreapLabs. Platform tersebut digunakan untuk mendukung katalog produk, pemrosesan pesanan dan checkout, pencatatan transaksi kasir, serta pengelolaan stok selama acara.",
+        "Pada 9 Januari 2026, Heelwa menggelar fashion show di MYZE Hotel Sumenep. Selain menampilkan koleksi busana, acara ini menjadi salah satu momen penggunaan platform Heelwa yang dikembangkan oleh TreapLabs. Platform tersebut digunakan untuk mendukung katalog produk, pemrosesan pesanan dan checkout, pencatatan transaksi kasir, serta pengelolaan stok selama acara.",
         "Bagi kami, momen ini memperlihatkan bagaimana sebuah produk digital menjadi bagian dari aktivitas bisnis secara langsung. Koleksi Heelwa menjadi pusat perhatian pengunjung, sementara aplikasi hadir sebagai alat kerja bagi tim yang menjalankan sisi ritel acara.",
       ],
       sections: [
@@ -171,7 +171,7 @@ export const articleContent = {
       slug: "heelwa-fashion-show-myze-hotel-sumenep",
       title: "Behind the Heelwa Fashion Show at MYZE Hotel Sumenep",
       excerpt:
-        "On 10 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Alongside the collection presentation, the event brought the Heelwa platform, developed with TreapLabs, into use for the product catalog, orders, point of sale, and stock management.",
+        "On 9 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Alongside the collection presentation, the event brought the Heelwa platform, developed with TreapLabs, into use for the product catalog, orders, point of sale, and stock management.",
       category: "Client stories",
       author: "The TreapLabs Team",
       publishedAt: "2026-10-02",
@@ -182,11 +182,11 @@ export const articleContent = {
         width: 2000,
         height: 1331,
         alt: "Models pose together in Heelwa outfits at MYZE Hotel Sumenep, with visitors gathered around the event area",
-        caption: "Heelwa’s collection presentation at MYZE Hotel Sumenep, 10 January 2026.",
+        caption: "Heelwa’s collection presentation at MYZE Hotel Sumenep, 9 January 2026.",
       },
       socialImage: `${heelwaMedia}/social.webp`,
       introduction: [
-        "On 10 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Alongside the collection presentation, the event was an opportunity to use the Heelwa platform developed by TreapLabs. The platform supported the product catalog, orders and checkout, point-of-sale transactions, and stock management throughout the event.",
+        "On 9 January 2026, Heelwa held a fashion show at MYZE Hotel Sumenep. Alongside the collection presentation, the event was an opportunity to use the Heelwa platform developed by TreapLabs. The platform supported the product catalog, orders and checkout, point-of-sale transactions, and stock management throughout the event.",
         "For us, this was a chance to see a digital product become part of a business’s activities in person. Heelwa’s collection took center stage for visitors, while the app served as a working tool for the team handling the retail side of the event.",
       ],
       sections: [

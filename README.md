@@ -92,7 +92,7 @@ adapts to the requested URL in the browser.
 
 The articles listing is available at `/articles/` and `/en/articles/`.
 The first article covers the Heelwa fashion show at MYZE Hotel Sumenep on
-10 January 2026, including the app's use for the product catalog, orders and
+9 January 2026, including the app's use for the product catalog, orders and
 checkout, point of sale, and stock management. Its publication date is separate
 from the event date.
 
