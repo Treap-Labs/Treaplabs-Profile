@@ -288,7 +288,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       {featuredArticle ? (
-        <section className="section-pad border-t border-hairline bg-surface" aria-labelledby="featured-article-heading">
+        <section className="section-pad border-t border-hairline bg-canvas" aria-labelledby="featured-article-heading">
           <Container>
             <Reveal>
               <p className="eyebrow mb-6">{copy.articlesEyebrow}</p>
@@ -298,7 +298,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               <article>
                 <a
                   href={getLocalizedPath(`/articles/${featuredArticle.slug}/`, locale)}
-                  className="group grid overflow-hidden rounded-xl border border-hairline bg-canvas lg:grid-cols-2"
+                  className="group grid overflow-hidden rounded-xl border border-hairline bg-surface lg:grid-cols-2"
                 >
                   <div className="relative aspect-[3/2] overflow-hidden bg-hairline lg:aspect-auto lg:min-h-[380px]">
                     <Image
