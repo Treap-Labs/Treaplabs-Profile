@@ -1,11 +1,14 @@
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Bot, Check } from "lucide-react";
 import Image from "next/image";
 import {
   siDocker,
   siFlutter,
   siKubernetes,
   siLaravel,
+  siLanggraph,
   siNextdotjs,
+  siN8n,
+  siOllama,
   siPostgresql,
   siPytorch,
   siPython,
@@ -30,7 +33,10 @@ const technologyIcons: Record<string, SimpleIcon> = {
   Flutter: siFlutter,
   Kubernetes: siKubernetes,
   Laravel: siLaravel,
+  LangGraph: siLanggraph,
   "Next.js": siNextdotjs,
+  n8n: siN8n,
+  Ollama: siOllama,
   PostgreSQL: siPostgresql,
   PyTorch: siPytorch,
   Python: siPython,
@@ -40,6 +46,10 @@ const technologyIcons: Record<string, SimpleIcon> = {
 };
 
 function TechnologyIcon({ technology }: { technology: string }) {
+  if (technology === "Hermes Agent") {
+    return <Bot aria-hidden="true" className="size-5 shrink-0 text-muted" />;
+  }
+
   const icon = technologyIcons[technology];
 
   return (
