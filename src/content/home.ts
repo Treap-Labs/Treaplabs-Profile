@@ -84,7 +84,6 @@ export const homeContent = {
           "n8n",
           "LangGraph",
           "Ollama",
-          "Hermes Agent",
         ],
       },
       {
@@ -215,7 +214,6 @@ export const homeContent = {
           "n8n",
           "LangGraph",
           "Ollama",
-          "Hermes Agent",
         ],
       },
       {

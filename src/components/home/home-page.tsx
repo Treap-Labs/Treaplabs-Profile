@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Bot, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Image from "next/image";
 import {
   siDart,
@@ -54,10 +54,6 @@ const technologyIcons: Record<string, SimpleIcon> = {
 };
 
 function TechnologyIcon({ technology }: { technology: string }) {
-  if (technology === "Hermes Agent") {
-    return <Bot aria-hidden="true" className="size-5 shrink-0 text-muted" />;
-  }
-
   const icon = technologyIcons[technology];
 
   return (
