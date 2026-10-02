@@ -123,7 +123,8 @@ A direct YouTube link is also provided. Its ID is set in the `youtubeId` field
 of each language's article content.
 The customer-facing website demo is an additional video at
 <https://www.youtube.com/watch?v=94c9uOW7cdM>, configured in `demoVideo` for
-both languages. It uses the Heelwa website mockup as its click-to-load poster.
+both languages. It uses the default YouTube player thumbnail and controls,
+loaded lazily without autoplay. Omit `poster` to use this default player display.
 
 ## Updating the Website
 

@@ -15,15 +15,16 @@ export function ArticleVideo({ video, locale }: { video: NonNullable<Article["vi
   return (
     <figure>
       <div className="relative aspect-video overflow-hidden rounded-xl bg-deep">
-        {loaded ? (
+        {loaded || !video.poster ? (
           <iframe
             ref={iframe}
-            src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&playsinline=1&rel=0`}
+            src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?playsinline=1&rel=0${loaded ? "&autoplay=1" : ""}`}
             title={video.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            onLoad={() => iframe.current?.focus()}
+            loading={video.poster ? "eager" : "lazy"}
+            onLoad={() => { if (loaded) iframe.current?.focus(); }}
             className="absolute inset-0 size-full border-0"
           />
         ) : (
@@ -35,7 +36,7 @@ export function ArticleVideo({ video, locale }: { video: NonNullable<Article["vi
           >
             <Image
               src={video.poster}
-              alt={video.posterAlt}
+              alt={video.posterAlt ?? video.title}
               fill
               sizes="(min-width: 1280px) 820px, (min-width: 1024px) 70vw, 100vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

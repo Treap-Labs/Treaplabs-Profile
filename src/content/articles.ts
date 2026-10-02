@@ -19,7 +19,7 @@ export type ArticleSection = {
   image?: ArticleImage;
 };
 
-export type ArticleVideoContent = { youtubeId: string; poster: string; posterAlt: string; title: string; description: string };
+export type ArticleVideoContent = { youtubeId: string; poster?: string; posterAlt?: string; title: string; description: string };
 
 export type Article = {
   slug: (typeof articleSlugs)[number];
@@ -161,8 +161,6 @@ export const articleContent = {
       },
       demoVideo: {
         youtubeId: "94c9uOW7cdM",
-        poster: "/images/portfolio/heelwa-mockup.webp",
-        posterAlt: "Pratinjau website Heelwa untuk pelanggan dalam mockup desktop",
         title: "Demo website Heelwa untuk pelanggan",
         description: "Lihat demo website Heelwa dari sisi pelanggan untuk mengenal pengalaman belanja yang didukung platform TreapLabs.",
       },
@@ -280,8 +278,6 @@ export const articleContent = {
       },
       demoVideo: {
         youtubeId: "94c9uOW7cdM",
-        poster: "/images/portfolio/heelwa-mockup.webp",
-        posterAlt: "Preview of the customer-facing Heelwa website in a desktop mockup",
         title: "Heelwa customer website demo",
         description: "Watch a demo of the customer-facing Heelwa website to explore the shopping experience supported by the TreapLabs platform.",
       },
