@@ -19,6 +19,8 @@ type HomeContent = {
   servicesTitle: string;
   workEyebrow: string;
   workTitle: string;
+  articlesEyebrow: string;
+  articlesTitle: string;
   processTitle: string;
   processPromises: readonly string[];
   aboutEyebrow: string;
@@ -82,6 +84,8 @@ export const homeContent = {
     servicesTitle: "Empat cara kami membantu Anda meluncurkan produk.",
     workEyebrow: "Proyek pilihan",
     workTitle: "Produk yang dibangun untuk pekerjaan nyata.",
+    articlesEyebrow: "Cerita pilihan",
+    articlesTitle: "Lihat bagaimana produk kami bekerja di lapangan.",
     processTitle: "Cara kami bekerja.",
     processPromises: ["Sprint 2 minggu", "Demo mingguan", "Opsi harga tetap"],
     aboutEyebrow: "Tentang kami",
@@ -198,6 +202,8 @@ export const homeContent = {
     servicesTitle: "Four ways we help you launch products.",
     workEyebrow: "Selected work",
     workTitle: "Products built for real work.",
+    articlesEyebrow: "Featured story",
+    articlesTitle: "See our products at work in the real world.",
     processTitle: "How we work.",
     processPromises: ["Two-week sprints", "Weekly demos", "Fixed-price option"],
     aboutEyebrow: "About us",

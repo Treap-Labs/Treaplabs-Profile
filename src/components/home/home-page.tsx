@@ -18,6 +18,7 @@ import {
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
+import { articleLabels, getArticle } from "@/content/articles";
 import { clients, homeContent } from "@/content/home";
 import { projectContent, projectLabels } from "@/content/projects";
 import heroImage from "@/images/optimized/hero.webp";
@@ -76,6 +77,7 @@ function SectionHeader({
 
 export function HomePage({ locale }: { locale: Locale }) {
   const copy = homeContent[locale];
+  const featuredArticle = getArticle("heelwa-fashion-show-myze-hotel-sumenep", locale);
   const whatsappMessage = encodeURIComponent(copy.whatsappMessage);
 
   return (
@@ -284,6 +286,46 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
         </Container>
       </section>
+
+      {featuredArticle ? (
+        <section className="section-pad border-t border-hairline bg-surface" aria-labelledby="featured-article-heading">
+          <Container>
+            <Reveal>
+              <p className="eyebrow mb-6">{copy.articlesEyebrow}</p>
+              <h2 id="featured-article-heading" className="section-title max-w-3xl">{copy.articlesTitle}</h2>
+            </Reveal>
+            <Reveal className="mt-12 md:mt-16">
+              <article>
+                <a
+                  href={getLocalizedPath(`/articles/${featuredArticle.slug}/`, locale)}
+                  className="group grid overflow-hidden rounded-xl border border-hairline bg-canvas lg:grid-cols-2"
+                >
+                  <div className="relative aspect-[3/2] overflow-hidden bg-hairline lg:aspect-auto lg:min-h-[380px]">
+                    <Image
+                      src={featuredArticle.cover.src}
+                      alt={featuredArticle.cover.alt}
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+                    <p className="eyebrow">{featuredArticle.category}</p>
+                    <h3 className="mt-6 text-balance text-[clamp(1.75rem,3vw,2.75rem)] font-bold leading-[1.1] tracking-[-.03em] transition-colors group-hover:text-blue group-focus-visible:text-blue">
+                      {featuredArticle.title}
+                    </h3>
+                    <p className="mt-5 leading-7">{featuredArticle.excerpt}</p>
+                    <span className="mt-8 inline-flex items-center gap-2 font-semibold text-ink">
+                      {articleLabels[locale].read}
+                      <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1" aria-hidden="true" />
+                    </span>
+                  </div>
+                </a>
+              </article>
+            </Reveal>
+          </Container>
+        </section>
+      ) : null}
 
       <section
         id="process"
